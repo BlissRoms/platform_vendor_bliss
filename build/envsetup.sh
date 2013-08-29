@@ -7,6 +7,8 @@ Additional BlissRoms functions:
 - brunch:          Sets up build environment using breakfast(),
                    and then comiles using mka() against bacon target.
 - mka:             Builds using SCHED_BATCH on all processors.
+- pushboot:        Push a file from your OUT dir to your phone and
+                   reboots it, using absolute path.
 EOF
 }
 
@@ -248,4 +250,19 @@ function mka() {
             schedtool -B -n 1 -e ionice -n 1 make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` "$@"
             ;;
     esac
+}
+
+function pushboot() {
+    if [ ! -f $OUT/$* ]; then
+        echo "File not found: $OUT/$*"
+        return 1
+    fi
+
+    adb root
+    sleep 1
+    adb wait-for-device
+    adb remount
+
+    adb push $OUT/$* /$*
+    adb reboot
 }

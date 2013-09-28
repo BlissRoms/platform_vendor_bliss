@@ -45,3 +45,10 @@ PRODUCT_COPY_FILES += \
 
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
+
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/bliss/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/bliss/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
+    vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist

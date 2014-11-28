@@ -52,3 +52,8 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/bliss/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
     vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    $(LOCAL_PATH)/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon

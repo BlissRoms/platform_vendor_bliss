@@ -72,6 +72,9 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# Squisher Location
+SQUISHER_SCRIPT := vendor/bliss/tools/squisher
+
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
 

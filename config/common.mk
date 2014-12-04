@@ -167,6 +167,9 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 
+# Squisher Location
+SQUISHER_SCRIPT := vendor/bliss/tools/squisher
+
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

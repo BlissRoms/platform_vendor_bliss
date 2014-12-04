@@ -118,6 +118,9 @@ endif
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
+# Squisher Location
+SQUISHER_SCRIPT := vendor/bliss/tools/squisher
+
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

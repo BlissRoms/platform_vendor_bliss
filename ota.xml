@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014 BlissRoms Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<ROM>
+	<!--ROM Name-->
+		<RomName>BLISS_OTA_ROM</RomName>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+		<VersionName>BLISS_OTA_VERNAME</VersionName>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+		<VersionNumber type="integer">BLISS_OTA_VERSION</VersionNumber>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+		<DirectUrl>BLISS_OTA_URL</DirectUrl>
+
+	<!--Do not edit this!-->
+		<HttpUrl>BlissRoms Server</HttpUrl>
+
+	<!--BlissRoms Android Version-->
+		<Android>7.1.1</Android>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+	<!-- You can disable MD5 checking like this: <CheckMD5 nil="true" />-->
+		<CheckMD5>BLISS_OTA_MD5</CheckMD5>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+	<!--Please enter this in BYTES only. Otherwise an incorrect value will be shown-->
+		<FileSize type="integer">BLISS_OTA_FILESIZE</FileSize>
+
+	<!--Maintainer Name/Last Uploader's Name-->
+		<Developer>BLISS_DEVELOPER</Developer>
+
+	<!--Official Bliss Website-->
+		<WebsiteURL>http://blissroms.com/</WebsiteURL>
+
+	<!-- Your Donate URL (Please use goo.gl to shorten to avoid CDATA requirement -
+	  Default: http://goo.gl/tymMFo will go to Team Bliss)-->
+		<DonateURL>BLISS_DONATE</DonateURL>
+
+	<!--Put the changelog here... Use DaringFireball's Markdown to format it-->
+	<!--Surround special characters with the CDATA tags or your XML will NOT parse-->
+	<Changelog>
+	### Changelog BLISS_OTA_VERSION
+
+	https://downloads.blissroms.com/Bliss/Changelog/CHANGELOG-bliss.txt
+	</Changelog>
+
+	<!--Number of addons and the target addons xml. Remove both if no addons available! -->
+		<AddonCount>2</AddonCount>
+		<AddonsURL>https://downloads.blissroms.com/Add-ons/addons.xml</AddonsURL>
+
+</ROM>

@@ -81,7 +81,10 @@ PRODUCT_COPY_FILES += \
 
 endif
 
-# Bliss Versioning System
+# Bliss OTA
+-include vendor/bliss/config/bliss_ota.mk
+
+#Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
 # Backup Tool
@@ -98,7 +101,17 @@ PRODUCT_COPY_FILES += \
 
 # Bliss Custom Apps
 PRODUCT_PACKAGES += \
-ThemeInterfacer
+ThemeInterfacer \
+BlissOTA
+
+# libs for BlissOTA
+ifneq ($(filter arm64,$(TARGET_ARCH)),)
+PRODUCT_COPY_FILES +=\
+    vendor/bliss/prebuilt/common/lib/libbypass.so:system/lib/libbypass.so
+else
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/lib64/libbypass.so:system/lib64/libbypass.so
+endif
 
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)

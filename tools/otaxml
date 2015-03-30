@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+# BlissRoms OTA Updater ota.xml generator
+#
+# Copyright (C) 2014 tobitege and BlissRoms
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Exports
+
+. $ANDROID_BUILD_TOP/vendor/bliss/tools/colors
+
+export otaxml=ota.xml
+
+if [ -f $otaxml ];
+then
+  rm -f $otaxml
+fi
+
+cp vendor/bliss/ota.xml $otaxml
+
+touch $otaxml
+
+BLISS_OTA_MD5=$(cat "$OUT/$BLISS_OTA_VERNAME.zip.md5sum" | cut -d ' ' -f 1)
+BLISS_OTA_FILESIZE=$(ls -la "$OUT/$BLISS_OTA_VERNAME.zip" | cut -d ' ' -f 5)
+
+sed -i "s/BLISS_OTA_ROM/${BLISS_OTA_ROM}/g" $otaxml
+sed -i "s/BLISS_OTA_VERNAME/${BLISS_OTA_VERNAME}/g" $otaxml
+sed -i "s/BLISS_OTA_VERSION/${BLISS_OTA_VER}/g" $otaxml
+sed -i "s|BLISS_OTA_URL|${BLISS_OTA_URL}|g" $otaxml
+sed -i "s/BLISS_OTA_MD5/${BLISS_OTA_MD5}/g" $otaxml
+sed -i "s/BLISS_OTA_FILESIZE/${BLISS_OTA_FILESIZE}/g" $otaxml
+sed -i "s/BLISS_DEVELOPER/${BLISS_DEVELOPER}/g" $otaxml
+sed -i "s|BLISS_DONATE|${BLISS_DONATE}|g" $otaxml
+
+cp $otaxml $OUT/
+rm $otaxml
+
+echo ${bldppl}"ota.xml generated."${txtrst}

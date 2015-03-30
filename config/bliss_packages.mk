@@ -80,4 +80,5 @@ PRODUCT_PACKAGES += \
 
 # Bliss Custom Apps
 PRODUCT_PACKAGES += \
-    ThemeInterfacer
+    ThemeInterfacer \
+    BlissOTA

@@ -1,3 +1,18 @@
+#
+#	Copyright (C) 2015 BlissRoms Project
+# 
+# 	Licensed under the Attribution-NonCommercial-ShareAlike 4.0 International 
+# 	(the "License") you may not use this file except in compliance with the License.
+# 	You may obtain a copy of the License at
+# 
+# 		http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+# 
+# 	Unless required by applicable law or agreed to in writing, software
+# 	distributed under the License is distributed on an "AS IS" BASIS,
+#	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#	See the License for the specific language governing permissions and
+#	limitations under the License.
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -89,13 +104,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/bliss/overlay/common
 
-# Proprietary latinime libs needed for Keyboard swyping
+# Proprietary libs for BlissOTA and keyboard swyping
 ifneq ($(filter arm64,$(TARGET_ARCH)),)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/bliss/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    vendor/bliss/prebuilt/common/lib/libbypass.so:system/lib/libbypass.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+    vendor/bliss/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    vendor/bliss/prebuilt/common/lib64/libbypass.so:system/lib64/libbypass.so
 endif
 
 # by default, do not update the recovery with system updates
@@ -114,6 +131,9 @@ HWUI_COMPILE_FOR_PERF := true
 
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
+
+# Bliss OTA System
+-include vendor/bliss/config/bliss_ota.mk
 
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk

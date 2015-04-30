@@ -1,4 +1,3 @@
-for combo in $(cat vendor/bliss/bliss-device-targets)
-do
-    add_lunch_combo $combo
-done
+. "$(gettop)/vendor/bliss/build/envsetup.sh"
+
+bliss_device_combos

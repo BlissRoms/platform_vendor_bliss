@@ -256,6 +256,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.version=$(BLISS_OTA_VERSION) \
     ro.ota.device=$(TARGET_DEVICE) \
     ro.ota.manifest=$(BLISS_DEVICE_URL)/ota$(BLISS_OTA_XMLVER).xml
+    
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/bliss/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 

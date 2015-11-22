@@ -264,6 +264,11 @@ export BLISS_OTA_VERNAME=$(BLISS_VERSION)
 export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
 export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/bliss/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 ifndef CM_PLATFORM_SDK_VERSION
   # This is the canonical definition of the SDK version, which defines
   # the set of APIs and functionality available in the platform.  It

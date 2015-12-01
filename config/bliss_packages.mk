@@ -55,6 +55,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SoundRecorder
 
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
+
 # Custom off-mode charger
 ifneq ($(WITH_CM_CHARGER),false)
 PRODUCT_PACKAGES += \

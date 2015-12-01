@@ -53,7 +53,7 @@ PRODUCT_COPY_FILES += \
 # Misc packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
-    Browser2 \
+    Browser \
     libemoji \
     libsepol \
     e2fsck \

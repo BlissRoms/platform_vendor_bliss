@@ -26,25 +26,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
+    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh \
+    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/bliss/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
-# SLIM-specific init file
+# Bliss-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
+    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.bliss.rc
+
+# AdAway App
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/AdAway/AdAway.apk:system/priv-app/AdAway/AdAway.apk
+
+# KernelAdiutor
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
 
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/bliss/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/bliss/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -52,13 +61,17 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/bliss/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/bliss/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/bliss/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/bliss/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/bliss/prebuilt/common/bin/sysinit:system/bin/sysinit
+
+
+# Bliss Audio Mods
+-include vendor/bliss/config/bliss_audio_mod.mk
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -73,9 +86,9 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# AudioFX
+# Other packages
 PRODUCT_PACKAGES += \
-    AudioFX
+    BlissOTA
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -86,10 +99,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SlimLauncher \
     LatinIME \
-    BluetoothExt \
-    DashClock
-
-#    SlimFileManager removed until updated
+    BluetoothExt
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -113,10 +123,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
 
-# easy way to extend to add more packages
--include vendor/extra/product.mk
+PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
+# by default, do not update the recovery with system updates
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -130,7 +140,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/slim/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/bliss/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -148,56 +158,46 @@ $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/bliss/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 else
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/bliss/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 endif
 
-# Versioning System
-# SlimLP first version.
-PRODUCT_VERSION_MAJOR = 6.0
-PRODUCT_VERSION_MINOR = alpha
-PRODUCT_VERSION_MAINTENANCE = 0.1
-ifdef SLIM_BUILD_EXTRA
-    SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
-endif
-ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
-    PLATFORM_VERSION_CODENAME := UNOFFICIAL
-endif
-
-ifeq ($(SLIM_BUILD_TYPE),DM)
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
-endif
-
-ifndef SLIM_POSTFIX
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
-endif
-
-PLATFORM_VERSION_CODENAME := $(SLIM_BUILD_TYPE)
-
-# SlimIRC
-# export INCLUDE_SLIMIRC=1 for unofficial builds
-ifneq ($(filter WEEKLY OFFICIAL,$(SLIM_BUILD_TYPE)),)
-    INCLUDE_SLIMIRC = 1
-endif
-
-ifneq ($(INCLUDE_SLIMIRC),)
-    PRODUCT_PACKAGES += SlimIRC
-endif
-
-# Set all versions
-SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
-SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
+# BLISS Versioning System
+-include vendor/bliss/config/versions.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    slim.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
-    ro.slim.version=$(SLIM_VERSION) \
-    ro.modversion=$(SLIM_MOD_VERSION) \
-    ro.slim.buildtype=$(SLIM_BUILD_TYPE)
+    ro.bliss.version=$(BLISS_VERSION)
 
-EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
+# Team Bliss OTA Updater
+ifeq ($(BLISS_DONATE),)
+  BLISS_DONATE =: 
+endif
+BLISS_OTA_BUILDDIR := Official
+ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
+  BLISS_OTA_BUILDDIR := Nightlies
+endif
+BLISS_BASE_URL    := http://downloads.blissroms.com/Bliss
+ifeq ($(BLISS_DEVICE_URL),)
+  BLISS_DEVICE_URL := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(TARGET_DEVICE)
+endif
+BLISS_OTA_VERSION := $(shell date +%Y%m%d%H)
+BLISS_ROM_NAME    := Bliss
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ota.systemname=$(BLISS_ROM_NAME) \
+    ro.ota.version=$(BLISS_OTA_VERSION) \
+    ro.ota.device=$(TARGET_DEVICE) \
+    ro.ota.manifest=$(BLISS_DEVICE_URL)/ota$(BLISS_OTA_XMLVER).xml
+
+export BLISS_OTA_ROM=$(BLISS_ROM_NAME)
+export BLISS_OTA_VERNAME=$(BLISS_VERSION)
+export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
+export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip
+
+EXTENDED_POST_PROCESS_PROPS := vendor/bliss/tools/bliss_process_props.py
+
+$(call prepend-product-if-exists, vendor/extra/product.mk)

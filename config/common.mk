@@ -88,7 +88,8 @@ PRODUCT_PACKAGES += \
 
 # Other packages
 PRODUCT_PACKAGES += \
-    BlissOTA
+    BlissOTA \
+    BlissSettings
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \

@@ -51,7 +51,6 @@
         <item>reboot</item>
         <item>profile</item>
         <item>airplane</item>
-        <item>bugreport</item>
         <item>users</item>
     </string-array>
 
@@ -63,7 +62,6 @@
         <item>org.cyanogenmod.platform.internal.PartnerInterfaceService</item>
         <item>org.cyanogenmod.platform.internal.CMTelephonyManagerService</item>
         <item>org.cyanogenmod.platform.internal.CMHardwareService</item>
-        <item>org.cyanogenmod.platform.internal.AppSuggestManagerService</item>
         <item>org.cyanogenmod.platform.internal.PerformanceManagerService</item>
     </string-array>
 </resources>

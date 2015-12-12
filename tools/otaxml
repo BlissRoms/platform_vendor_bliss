@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Exports
+
+. $ANDROID_BUILD_TOP/vendor/bliss/tools/colors
+
+export otaxml=ota${BLISS_OTA_XMLVER}.xml
+
+if [ -f $otaxml ];
+then
+  rm -f $otaxml
+fi
+
+cp vendor/bliss/ota.xml $otaxml
+
+touch $otaxml
+
+BLISS_OTA_MD5=$(cat "$OUT/$BLISS_OTA_VERNAME.zip.md5sum" | cut -d ' ' -f 1)
+BLISS_OTA_FILESIZE=$(ls -la "$OUT/$BLISS_OTA_VERNAME.zip" | cut -d ' ' -f 5)
+
+sed -i "s/BLISS_OTA_ROM/${BLISS_OTA_ROM}/g" $otaxml
+sed -i "s/BLISS_OTA_VERNAME/${BLISS_OTA_VERNAME}/g" $otaxml
+sed -i "s/BLISS_OTA_VERSION/${BLISS_OTA_VER}/g" $otaxml
+sed -i "s|BLISS_OTA_URL|${BLISS_OTA_URL}|g" $otaxml
+sed -i "s/BLISS_OTA_MD5/${BLISS_OTA_MD5}/g" $otaxml
+sed -i "s/BLISS_OTA_FILESIZE/${BLISS_OTA_FILESIZE}/g" $otaxml
+sed -i "s/BLISS_DEVELOPER/${BLISS_DEVELOPER}/g" $otaxml
+sed -i "s|BLISS_DONATE|${BLISS_DONATE}|g" $otaxml
+
+cp $otaxml $OUT/
+rm $otaxml
+
+echo ${bldppl}"ota.xml generated."${txtrst}

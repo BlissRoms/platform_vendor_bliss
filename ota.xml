@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROM>
+	<!--ROM Name-->
+		<RomName>BLISS_OTA_ROM</RomName>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+		<VersionName>BLISS_OTA_VERNAME</VersionName>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+		<VersionNumber type="integer">BLISS_OTA_VERSION</VersionNumber>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+		<DirectUrl>BLISS_OTA_URL</DirectUrl>
+
+	<!--Do not edit this!-->
+		<HttpUrl>BlissRoms Server</HttpUrl>
+
+	<!--BlissPop Android Version-->
+		<Android>6.0.1</Android>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+	<!-- You can disable MD5 checking like this: <CheckMD5 nil="true" />-->
+		<CheckMD5>BLISS_OTA_MD5</CheckMD5>
+
+	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
+	<!--Please enter this in BYTES only. Otherwise an incorrect value will be shown-->
+		<FileSize type="integer">BLISS_OTA_FILESIZE</FileSize>
+
+	<!--Maintainer Name/Last Uploader's Name-->
+		<Developer>BLISS_DEVELOPER</Developer>
+
+	<!--Official Bliss Website-->
+		<WebsiteURL>http://blissroms.com/</WebsiteURL>
+
+	<!-- Your Donate URL (Please use goo.gl to shorten to avoid CDATA requirement -
+	  Default: http://goo.gl/k6jPX9 will go to Shaun)-->
+		<DonateURL>BLISS_DONATE</DonateURL>
+
+	<!--Put the changelog here... Use DaringFireball's Markdown to format it-->
+	<!--Surround special characters with the CDATA tags or your XML will NOT parse-->
+	<Changelog>
+	### Changelog BLISS_OTA_VERSION
+
+	http://downloads.blissroms.com/Changelog/CHANGELOG-bliss.txt
+	</Changelog>
+
+	<!--Number of addons and the target addons xml. Remove both if no addons available! -->
+		<AddonCount>2</AddonCount>
+		<AddonsURL>http://downloads.blissroms.com/Add-ons/addons.xml</AddonsURL>
+
+</ROM>

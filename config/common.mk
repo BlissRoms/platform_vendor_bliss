@@ -262,6 +262,17 @@ export BLISS_OTA_VERNAME=$(BLISS_VERSION)
 export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
 export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip
 
+ifeq ($(OTA_64),true)
+TARGET_ARCH_ABI := arm64-v8a
+TARGET_LIB_DIR := lib64
+else
+TARGET_ARCH_ABI := armeabi-v7a
+TARGET_LIB_DIR := lib
+endif
+
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/$(TARGET_LIB_DIR)/$(TARGET_ARCH_ABI)/libbypass.so:system/$(TARGET_LIB_DIR)/libbypass.so
+
 # SuperSU
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \

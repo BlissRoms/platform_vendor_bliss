@@ -142,11 +142,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
-    CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
-    CMAccount \
     CMSettingsProvider
 
 # CM Platform Library

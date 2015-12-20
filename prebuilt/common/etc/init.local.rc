@@ -134,13 +134,6 @@ service sysinit /system/bin/sysinit
     oneshot
     disabled
 
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B \
-        -o /data/data/com.android.shell/files/bugreports/bugreport
-    oneshot
-    disabled
-    keycodes 114 115 116
-
 # adb over network
 on property:adb.network.port=*
     setprop service.adb.tcp.port ${adb.network.port}

@@ -9,7 +9,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhotoTable \
     SoundRecorder \
-    PhotoPhase
+    PhotoPhase \
+    Screencast
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \

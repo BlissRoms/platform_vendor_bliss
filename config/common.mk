@@ -161,8 +161,8 @@ PRODUCT_PACKAGES += \
 # Other packages
 PRODUCT_PACKAGES += \
     BlissOTA \
-    BlissSettings \
     OmniSwitch
+
 # Extra tools in Bliss
 PRODUCT_PACKAGES += \
     libsepol \

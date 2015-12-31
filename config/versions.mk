@@ -16,6 +16,9 @@ endif
 ifdef BLISS_RELEASE
     BLISS_BUILDTYPE := RELEASE
 endif
+ifdef BLISS_BETA
+    BLISS_BUILDTYPE := BETA
+endif
 # Set Unofficial if no buildtype set (Buildtype should ONLY be set by BLISS Devs!)
 ifdef BLISS_BUILDTYPE
 else

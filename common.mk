@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     BluetoothExt \
     Browser \
+    MusicFX \
     libemoji \
     libsepol \
     e2fsck \

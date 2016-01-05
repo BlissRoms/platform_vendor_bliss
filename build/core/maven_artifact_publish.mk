@@ -18,24 +18,25 @@ ifeq ($(strip $(LOCAL_MAVEN_POM)),)
   $(warning LOCAL_MAVEN_POM not defined.)
 endif
 ifeq ($(strip $(LOCAL_MAVEN_REPO)),)
-  $(warning LOCAL_MAVEN_REPO not defined.)
+  $(error LOCAL_MAVEN_REPO not defined.)
+endif
+ifeq ($(strip $(LOCAL_MAVEN_TARGET_MODULE)),)
+  $(error LOCAL_MAVEN_TARGET_MODULE not defined.)
 endif
 ifeq ($(strip $(LOCAL_MAVEN_REPO_ID)),)
   $(warning LOCAL_MAVEN_REPO_ID not defined.)
 endif
 
-
 $(full_target): pomfile := $(LOCAL_MAVEN_POM)
 $(full_target): repo := $(LOCAL_MAVEN_REPO)
-ifdef LOCAL_MAVEN_TARGET_MODULE
 $(full_target): path_to_file := $(call intermediates-dir-for,JAVA_LIBRARIES,$(LOCAL_MAVEN_TARGET_MODULE),,COMMON)/javalib.jar
-endif
 $(full_target): repoId := $(LOCAL_MAVEN_REPO_ID)
 $(full_target): classifier := $(LOCAL_MAVEN_CLASSIFIER)
 $(full_target): sources := $(LOCAL_MAVEN_SOURCES)
 $(full_target): javadoc := $(LOCAL_MAVEN_JAVADOC)
+$(full_target): artifact_path := $(LOCAL_MAVEN_ARTIFACT_PATH)
+$(full_target): artifact_path ?= $(basename $(path_to_file))
 
-ifdef LOCAL_MAVEN_TARGET_MODULE
 $(full_target): $(LOCAL_MAVEN_TARGET_MODULE) $(path_to_file) $(artifact_path) $(ACP)
 	@echo -e ${CL_GRN}"Renaming generated sdk javalib jar"${CL_RST}
 	$(hide) $(ACP) $(path_to_file) $(artifact_path)
@@ -43,11 +44,10 @@ $(full_target): $(LOCAL_MAVEN_TARGET_MODULE) $(path_to_file) $(artifact_path) $(
 	$(hide) mvn -e -X gpg:sign-and-deploy-file \
 		    -DpomFile=$(pomfile) \
 			-Durl=$(repo) \
-			-Dfile=$(path_to_file) \
+			-Dfile=$(artifact_path) \
 			-DrepositoryId=$(repoId) \
 			-Dclassifier=$(classifier) \
 			-Dsources=$(sources) \
 			-Djavadoc=$(javadoc)
 	@echo -e ${CL_GRN}"Publishing:"${CL_RST}" $@"
-endif
 $(LOCAL_MODULE): $(full_target)

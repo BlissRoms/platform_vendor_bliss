@@ -241,8 +241,8 @@ ifeq ($(BLISS_DONATE),)
   BLISS_DONATE =: http://goo.gl/31q5YL
 endif
 BLISS_OTA_BUILDDIR := Official
-ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
-  BLISS_OTA_BUILDDIR := Nightlies
+ifeq ($(BLISS_BUILDTYPE),MAINTENANCE)
+  BLISS_OTA_BUILDDIR := Maintenance
 endif
 BLISS_BASE_URL    := http://downloads.blissroms.com/Bliss
 ifeq ($(BLISS_DEVICE_URL),)

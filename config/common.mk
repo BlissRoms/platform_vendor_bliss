@@ -53,7 +53,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    persist.sys.root_access=3
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!

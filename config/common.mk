@@ -53,8 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1 \
-    persist.sys.root_access=3
+    ro.build.selinux=1
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
@@ -100,7 +99,7 @@ PRODUCT_COPY_FILES += \
 
 # Bliss-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.bliss.rc
+    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -222,7 +221,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
+    persist.sys.root_access=3
 
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 

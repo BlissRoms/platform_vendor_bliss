@@ -228,7 +228,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false

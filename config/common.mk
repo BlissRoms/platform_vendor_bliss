@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMSettingsProvider
 
+# Exchange support
+PRODUCT_PACKAGES += \
+    Exchange2
+
 # CM Platform Library
 PRODUCT_PACKAGES += \
     org.cyanogenmod.platform-res \

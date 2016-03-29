@@ -124,7 +124,7 @@ include vendor/bliss/config/themes_common.mk
 -include vendor/bliss/config/bliss_audio_mod.mk
 
 # CMSDK
-include vendor/cm/config/cmsdk_common.mk
+include vendor/bliss/config/cmsdk_common.mk
 
 # Required CM packages
 PRODUCT_PACKAGES += \

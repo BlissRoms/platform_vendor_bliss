@@ -159,6 +159,7 @@ PRODUCT_PACKAGES += \
 # Other packages
 PRODUCT_PACKAGES += \
     BlissOTA \
+    CalendarWidget \
     OmniSwitch
 
 # Extra tools in Bliss

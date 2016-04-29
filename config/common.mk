@@ -148,6 +148,7 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMSettingsProvider \
+    CyanogenSetupWizard \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider

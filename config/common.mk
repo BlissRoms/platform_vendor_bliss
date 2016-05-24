@@ -66,7 +66,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 # Backup Tool
-ifneq ($(WITH_GMS),true)
+ifneq (,$(filter true, $(CYNGN_TARGET) $(EXTERNAL_CLEAN_TARGET)))
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \

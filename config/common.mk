@@ -89,11 +89,11 @@ endif
 
 # AdAway App
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/AdAway/AdAway.apk:system/priv-app/AdAway/AdAway.apk
+    vendor/bliss/prebuilt/common/app/AdAway.apk:system/priv-app/AdAway/AdAway.apk
 
 # KernelAdiutor
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+    vendor/bliss/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
 
 # Bliss-specific init file
 PRODUCT_COPY_FILES += \

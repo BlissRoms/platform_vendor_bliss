@@ -132,6 +132,7 @@ PRODUCT_PACKAGES += \
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
+    Gello \
     libemoji \
     Terminal
 

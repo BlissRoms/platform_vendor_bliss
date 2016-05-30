@@ -256,6 +256,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.version=$(BLISS_OTA_VERSION) \
     ro.ota.device=$(TARGET_DEVICE) \
     ro.ota.manifest=$(BLISS_DEVICE_URL)/ota$(BLISS_OTA_XMLVER).xml
+
+# Export parameters required for OTA.xml
+export BLISS_OTA_ROM=$(BLISS_ROM_NAME)
+export BLISS_OTA_VERNAME=$(BLISS_VERSION)
+export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
+export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip
     
 ifeq ($(OTA_64),true)
 TARGET_ARCH_ABI := arm64-v8a

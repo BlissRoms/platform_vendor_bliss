@@ -12,10 +12,7 @@
 	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
 		<DirectUrl>BLISS_OTA_URL</DirectUrl>
 
-	<!--Do not edit this!-->
-		<HttpUrl>BlissRoms Server</HttpUrl>
-
-	<!--BlissPop Android Version-->
+	<!--Bliss Android Version-->
 		<Android>6.0.1</Android>
 
 	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
@@ -43,9 +40,5 @@
 
 	http://downloads.blissroms.com/Changelog/CHANGELOG-bliss.txt
 	</Changelog>
-
-	<!--Number of addons and the target addons xml. Remove both if no addons available! -->
-		<AddonCount>2</AddonCount>
-		<AddonsURL>http://downloads.blissroms.com/Add-ons/addons.xml</AddonsURL>
 
 </ROM>

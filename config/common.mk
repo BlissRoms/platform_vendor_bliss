@@ -76,7 +76,8 @@ PRODUCT_PACKAGES += \
     oprofiled \
     sqlite3 \
     strace \
-    Terminal
+    Terminal \
+    Launcher3
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
@@ -92,7 +93,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     messaging \
     CellBroadcastReceiver \
-    Stk
+    Stk \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 #RCS //Needed for Contacts and Mms Apps
 PRODUCT_PACKAGES += \

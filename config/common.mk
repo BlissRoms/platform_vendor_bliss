@@ -72,6 +72,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh \
     vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh

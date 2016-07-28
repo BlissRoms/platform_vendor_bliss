@@ -1,0 +1,2 @@
+# For camera
+allow mediaserver media_rw_data_file:file write;

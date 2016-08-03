@@ -242,6 +242,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
 
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+PRODUCT_VERSION_MAJOR = 13
+PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAINTENANCE := 2
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false

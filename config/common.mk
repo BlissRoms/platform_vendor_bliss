@@ -100,6 +100,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SoundRecorder
 
+# Custom off-mode charger
+ifneq ($(WITH_CM_CHARGER),false)
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    cm_charger_res_images \
+    font_log.png \
+    libhealthd.cm
+endif
+
 # World APN list
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml

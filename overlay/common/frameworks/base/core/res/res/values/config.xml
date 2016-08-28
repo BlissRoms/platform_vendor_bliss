@@ -37,7 +37,7 @@
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
-    <!-- Disable stock OTA components if installed -->
+    <!-- Disable stock OTA components if installed 
     <string-array name="config_disabledComponents" translatable="false">
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
@@ -47,7 +47,7 @@
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$Receiver</item>
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$ActiveReceiver</item>
     </string-array>
-
+-->
     <!-- Hide Project Fi app unless it is being used -->
     <string-array name="config_disabledUntilUsedPreinstalledCarrierApps">
         <item>com.google.android.apps.tycho</item>

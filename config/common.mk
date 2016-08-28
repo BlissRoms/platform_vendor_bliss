@@ -2,7 +2,7 @@
 PRODUCT_BRAND ?= bliss
 
 # Local path for prebuilts
-LOCAL_PATH:= vendor/bliss/prebuilts/common
+LOCAL_PATH:= vendor/bliss/prebuilt/common
 
 # Common build prop overrides 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -25,7 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dun.override=0
 
 # Common overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlays/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
 # Proprietary latinime lib needed for swyping
 PRODUCT_COPY_FILES += \
@@ -44,4 +44,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Bliss Versioning System
--include vendor/bliss/configs/versions.mk
+-include vendor/bliss/config/versions.mk

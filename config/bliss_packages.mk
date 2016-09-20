@@ -74,3 +74,7 @@ PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
 PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
+
+# Bliss Custom Apps
+PRODUCT_PACKAGES += \
+    masquerade

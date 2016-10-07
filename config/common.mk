@@ -127,3 +127,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/vi:system/bin/vi
+
+# Boot Animation
+PRODUCT_PACKAGES += \
+    bootanimation.zip

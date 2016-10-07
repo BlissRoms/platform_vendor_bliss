@@ -244,7 +244,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 PRODUCT_VERSION_MAJOR = 13
 PRODUCT_VERSION_MINOR = 0
-PRODUCT_VERSION_MAINTENANCE := 3
+PRODUCT_VERSION_MAINTENANCE := 4
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false

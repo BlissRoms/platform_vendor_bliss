@@ -113,9 +113,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Include AOSP audio files
 include vendor/bliss/config/aosp_audio.mk
 
-# Include Bliss audio files
-include vendor/bliss/config/bliss_audio.mk
-
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
 include vendor/bliss/config/lineage_sdk_common.mk
@@ -158,8 +155,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
+# Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+
+# Bliss Versioning System
+-include vendor/bliss/config/versions.mk
 
 -include vendor/bliss/config/misc_packages.mk
 -include $(WORKSPACE)/build_env/image-auto-bits.mk

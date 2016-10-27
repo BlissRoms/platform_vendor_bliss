@@ -136,4 +136,7 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# Bliss Versioning System
+-include vendor/bliss/config/versions.mk
+
 $(call inherit-product-if-exists, vendor/extra/product.mk)

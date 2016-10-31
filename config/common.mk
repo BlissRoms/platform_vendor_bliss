@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # Init file
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.local.rc
+    vendor/bliss/prebuilt/common/etc/init.bliss.rc:root/init.bliss.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \

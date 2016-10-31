@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
     MusicFX \
     Terminal \
     LatinIME \
-    Launcher3
+    Launcher3 \
+    SnapdragonGallery
 
 # Telephony packages
 PRODUCT_PACKAGES += \

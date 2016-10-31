@@ -3,7 +3,8 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     MusicFX \
     Terminal \
-    LatinIME
+    LatinIME \
+    Launcher3
 
 # Telephony packages
 PRODUCT_PACKAGES += \

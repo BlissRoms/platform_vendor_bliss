@@ -5,7 +5,8 @@ PRODUCT_PACKAGES += \
     Terminal \
     LatinIME \
     Launcher3 \
-    SnapdragonGallery
+    SnapdragonGallery \
+    SnapdragonMusic
 
 # Telephony packages
 PRODUCT_PACKAGES += \

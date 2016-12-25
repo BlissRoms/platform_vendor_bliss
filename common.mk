@@ -17,7 +17,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
 # Backup Tool
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/aosp/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
@@ -77,16 +77,6 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace \
     Terminal
-
-# Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # Telephony packages
 PRODUCT_PACKAGES += \

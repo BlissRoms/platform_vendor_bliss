@@ -54,7 +54,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     BluetoothExt \
     Browser \
-    MusicFX \
     libemoji \
     libsepol \
     e2fsck \
@@ -88,13 +87,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-#RCS //Needed for Contacts and Mms Apps
+# RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
     rcs_service_aidl.xml \
     rcs_service_aidl_static \
     rcs_service_api \
     rcs_service_api.xml
+
+# Multimedia
+PRODUCT_PACKAGES += \
+    MusicFX \
+    SnapdragonGallery \
+    SnapdragonMusic
 
 # Mms depends on SoundRecorder for recorded audio messages
 PRODUCT_PACKAGES += \

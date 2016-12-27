@@ -95,9 +95,10 @@ PRODUCT_PACKAGES += \
     rcs_service_api \
     rcs_service_api.xml
 
-# Multimedia
+# Snapdragon packages
 PRODUCT_PACKAGES += \
     MusicFX \
+    SnapdragonCamera \
     SnapdragonGallery \
     SnapdragonMusic
 

@@ -18,29 +18,29 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
 # Backup Tool
 #PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosp/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/aosp/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/bliss/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/aosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aosp/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/bliss/prebuilt/common/bin/sysinit:system/bin/sysinit \
+    vendor/bliss/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/bliss/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Init file
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.local.rc:root/init.local.rc
+    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.local.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/aosp/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/aosp/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/bliss/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/bliss/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

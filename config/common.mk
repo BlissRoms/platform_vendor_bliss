@@ -75,6 +75,9 @@ endif
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
+
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
 

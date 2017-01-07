@@ -118,4 +118,6 @@ HWUI_COMPILE_FOR_PERF := true
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
+$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
+$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)
 $(call inherit-product-if-exists, vendor/extra/product.mk)

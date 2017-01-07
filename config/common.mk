@@ -181,6 +181,9 @@ PRODUCT_COPY_FILES += \
 # Google sounds
 -include vendor/bliss/prebuilt/common/sounds/GoogleAudio.mk
 
+$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
+$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/priv-app/Android.mk)
+
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/vi:system/bin/vi

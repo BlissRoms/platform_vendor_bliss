@@ -108,5 +108,9 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/lib64/libbypass.so:system/lib64/libbypass.so
 endif
 
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)

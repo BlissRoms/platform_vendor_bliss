@@ -44,72 +44,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# Misc packages
-PRODUCT_PACKAGES += \
-    BluetoothExt \
-    Browser \
-    libemoji \
-    libsepol \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    bash \
-    powertop \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs \
-    mkfs.ntfs \
-    fsck.ntfs \
-    mount.ntfs \
-    gdbserver \
-    micro_bench \
-    oprofiled \
-    sqlite3 \
-    strace \
-    Terminal \
-    WallpaperPicker
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    messaging \
-    CellBroadcastReceiver \
-    Stk \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
-# RCS
-PRODUCT_PACKAGES += \
-    rcs_service_aidl \
-    rcs_service_aidl.xml \
-    rcs_service_aidl_static \
-    rcs_service_api \
-    rcs_service_api.xml
-
-# Snapdragon packages
-PRODUCT_PACKAGES += \
-    MusicFX \
-    SnapdragonCamera \
-    SnapdragonGallery \
-    SnapdragonMusic
-
-# Mms depends on SoundRecorder for recorded audio messages
-PRODUCT_PACKAGES += \
-    SoundRecorder
-
-# Custom off-mode charger
-ifneq ($(WITH_CM_CHARGER),false)
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    cm_charger_res_images \
-    font_log.png \
-    libhealthd.cm
-endif
-
 # World APN list
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
@@ -137,5 +71,11 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
+
+# Bliss Packages
+-include vendor/bliss/config/bliss_packages.mk
+
+# Bliss Versioning System
+-include vendor/bliss/config/versions.mk
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)

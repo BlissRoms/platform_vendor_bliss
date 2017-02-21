@@ -158,7 +158,8 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider \
     DataUsageProvider \
-    WallpaperPicker
+    WallpaperPicker \
+    Browser
 
 # Exchange support
 PRODUCT_PACKAGES += \

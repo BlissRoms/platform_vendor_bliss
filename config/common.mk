@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \
 
 # Bliss Custom Apps
 PRODUCT_PACKAGES += \
-masquerade
+ThemeInterfacer
 
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)

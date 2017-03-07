@@ -80,4 +80,4 @@ PRODUCT_PACKAGES += \
 
 # Bliss Custom Apps
 PRODUCT_PACKAGES += \
-    masquerade
+    ThemeInterfacer

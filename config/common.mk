@@ -115,6 +115,13 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/lib64/libbypass.so:system/lib64/libbypass.so
 endif
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 

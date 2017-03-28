@@ -82,3 +82,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ThemeInterfacer \
     BlissOTA
+
+# OmniRom packages
+PRODUCT_PACKAGES += \
+    OmniStyle \
+    OmniSwitch

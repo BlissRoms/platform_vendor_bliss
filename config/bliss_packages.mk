@@ -86,4 +86,5 @@ PRODUCT_PACKAGES += \
 # OmniRom packages
 PRODUCT_PACKAGES += \
     OmniStyle \
-    OmniSwitch
+    OmniSwitch \
+    OmniJaws

@@ -22,7 +22,7 @@ BLISS_OTA_BUILDDIR := Official
 ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
   BLISS_OTA_BUILDDIR := Nightlies
 endif
-BLISS_BASE_URL    := https://downloads.blissroms.com
+BLISS_BASE_URL    := https://downloads.blissroms.com/Bliss
 BLISS_DEVICE_URL  := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(BLISS_BUILD)
 BLISS_OTA_VERSION := $(shell date +%Y%m%d)
 BLISS_ROM_NAME    := BlissRoms

@@ -35,4 +35,5 @@ BLISS_DISPLAY_VERSION := $(VERSION)
 BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.bliss.version=$(BLISS_DISPLAY_VERSION)
+  ro.bliss.version=$(BLISS_DISPLAY_VERSION) \
+  ro.caf.version=$(shell grep "<default revision=" .repo/manifest.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')

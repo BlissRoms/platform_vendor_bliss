@@ -16,7 +16,7 @@
 
 # BlissRoms OTA Updater
 ifeq ($(BLISS_DONATE),)
-  BLISS_DONATE =: http://goo.gl/tymMFo
+  BLISS_DONATE =: https://www.paypal.me/TeamBliss
 endif
 BLISS_OTA_BUILDDIR := Official
 ifeq ($(BLISS_BUILDTYPE),NIGHTLY)

@@ -132,16 +132,16 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 #endif
 
 # Squisher Location
-SQUISHER_SCRIPT := vendor/bliss/tools/squisher
+#SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
 # Compile libhwui in performance mode
-HWUI_COMPILE_FOR_PERF := true
+#HWUI_COMPILE_FOR_PERF := true
 
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
 
 # Bliss OTA System
--include vendor/bliss/config/bliss_ota.mk
+#-include vendor/bliss/config/bliss_ota.mk
 
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk

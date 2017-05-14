@@ -73,18 +73,18 @@ PRODUCT_PACKAGES += \
 endif
 
 # DU Utils Library
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
+#PRODUCT_BOOT_JARS += \
+#    org.dirtyunicorns.utils
+#PRODUCT_PACKAGES += \
+#    org.dirtyunicorns.utils
 
 # Bliss Custom Apps
-PRODUCT_PACKAGES += \
-    ThemeInterfacer \
-    BlissOTA
+#PRODUCT_PACKAGES += \
+#    ThemeInterfacer \
+#    BlissOTA
 
 # OmniRom packages
-PRODUCT_PACKAGES += \
-    OmniStyle \
-    OmniSwitch \
-    OmniJaws
+#PRODUCT_PACKAGES += \
+#    OmniStyle \
+#    OmniSwitch \
+#    OmniJaws

@@ -79,8 +79,8 @@ endif
 #    org.dirtyunicorns.utils
 
 # Bliss Custom Apps
-#PRODUCT_PACKAGES += \
-#    ThemeInterfacer \
+PRODUCT_PACKAGES += \
+    ThemeInterfacer \
 #    BlissOTA
 
 # OmniRom packages
@@ -88,3 +88,4 @@ endif
 #    OmniStyle \
 #    OmniSwitch \
 #    OmniJaws
+

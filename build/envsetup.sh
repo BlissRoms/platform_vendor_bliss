@@ -246,14 +246,7 @@ alias bib=breakfast
 
 # Make using all available CPUs
 function mka() {
-    case `uname -s` in
-        Darwin)
-            m -j "$@"
-            ;;
-        *)
-            mk_timer schedtool -B -n 10 -e ionice -n 7 m -j "$@"
-            ;;
-    esac
+    m -j "$@"
 }
 
 function pushboot() {

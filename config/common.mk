@@ -113,6 +113,15 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
 
+# Custom off-mode charger
+ifneq ($(WITH_BLISS_CHARGER),false)
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    bliss_charger_res_images \
+    font_log.png \
+    libhealthd.bliss
+endif
+
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 

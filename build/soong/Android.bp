@@ -1,0 +1,7 @@
+bootstrap_go_package {
+    name: "soong-bliss",
+    pkgPath: "bliss/soong/android",
+    srcs: [
+        "android/variable.go",
+    ],
+}

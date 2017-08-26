@@ -14,8 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo bliss_emulator-userdebug
-
-. "$(gettop)/vendor/bliss/build/envsetup.sh"
-
-bliss_device_combos
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/utils/emulator/bliss_emulator.mk

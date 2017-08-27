@@ -30,29 +30,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     messaging \
     CellBroadcastReceiver \
-    Stk \
-    telephony-ext \
-    rcscommon
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext \
-    rcscommon
-
-# RCS
-PRODUCT_PACKAGES += \
-    rcs_service_aidl \
-    rcs_service_aidl.xml \
-    rcs_service_aidl_static \
-    rcs_service_api \
-    rcs_service_api.xml \
-    rcscommon.xml
-
-# Snapdragon packages
-PRODUCT_PACKAGES += \
-    MusicFX \
-    SnapdragonCamera \
-    SnapdragonGallery \
-    SnapdragonMusic
+    Stk
 
 # Mms depends on SoundRecorder for recorded audio messages
 PRODUCT_PACKAGES += \
@@ -72,19 +50,3 @@ PRODUCT_PACKAGES += \
     libhealthd.cm
 endif
 
-# DU Utils Library
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
-
-# Bliss Custom Apps
-PRODUCT_PACKAGES += \
-    ThemeInterfacer \
-    BlissOTA
-
-# OmniRom packages
-PRODUCT_PACKAGES += \
-    OmniStyle \
-    OmniSwitch \
-    OmniJaws

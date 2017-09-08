@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +46,8 @@
 #define LOGI(x...) do { KLOG_INFO("charger", x); } while (0)
 #define LOGV(x...) do { KLOG_DEBUG("charger", x); } while (0)
 
+static const GRFont* gr_font = NULL;
+
 struct frame {
     int min_capacity;
     GRSurface *surface;
@@ -62,7 +65,10 @@ static struct animation anim = {
     .num_frames = 0,
 };
 
-static bool font_inited;
+static const GRFont* get_font()
+{
+    return gr_font;
+}
 
 static int draw_surface_centered(GRSurface* surface)
 {
@@ -85,14 +91,14 @@ static void draw_capacity(int capacity)
 
     struct frame *f = &anim.frames[0];
     int font_x, font_y;
-    gr_font_size(&font_x, &font_y);
-    int w = gr_measure(cap_str);
+    gr_font_size(get_font(), &font_x, &font_y);
+    int w = gr_measure(get_font(), cap_str);
     int h = gr_get_height(f->surface);
     int x = (gr_fb_width() - w) / 2;
     int y = (gr_fb_height() + h) / 2;
 
     gr_color(255, 255, 255, 255);
-    gr_text(x, y + font_y / 2, cap_str, 0);
+    gr_text(get_font(), x, y + font_y / 2, cap_str, 0);
 }
 
 #ifdef QCOM_HARDWARE
@@ -284,11 +290,11 @@ void healthd_board_init(struct healthd_config*)
     char value[PROP_VALUE_MAX];
     int rc = 0, scale_count = 0, i;
     GRSurface **scale_frames;
-    int scale_fps;  // Not in use (charger/cm_battery_scale doesn't have FPS text
+    int scale_fps;  // Not in use (charger/bliss_battery_scale doesn't have FPS text
                     // chunk). We are using hard-coded frame.disp_time instead.
 
-    rc = res_create_multi_display_surface("charger/cm_battery_scale",
-            &scale_fps, &scale_count, &scale_frames);
+    rc = res_create_multi_display_surface("charger/bliss_battery_scale",
+            &scale_count, &scale_fps, &scale_frames);
     if (rc < 0) {
         LOGE("%s: Unable to load battery scale image", __func__);
         return;
@@ -322,10 +328,6 @@ void healthd_board_mode_charger_draw_battery(
 {
     int start_frame = 0;
     int capacity = -1;
-
-    if (!font_inited) {
-        font_inited = true;
-    }
 
     if (batt_prop && batt_prop->batteryLevel >= 0) {
         capacity = batt_prop->batteryLevel;
@@ -404,4 +406,14 @@ void healthd_board_mode_charger_set_backlight(bool)
 
 void healthd_board_mode_charger_init(void)
 {
+    GRFont* tmp_font;
+    int res = gr_init_font("font_log", &tmp_font);
+    if (res == 0) {
+        gr_font = tmp_font;
+    } else {
+        LOGW("Couldn't open font, falling back to default!\n");
+        gr_font = gr_sys_font();
+    }
+
 }
+

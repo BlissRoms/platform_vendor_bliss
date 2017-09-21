@@ -66,10 +66,9 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/bliss/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# Init file
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.bliss.rc:root/init.bliss.rc \
-    vendor/bliss/prebuilt/common/etc/init.blissupdater.rc:system/etc/init/init.blissupdater.rc
+# Copy all Bliss-specific init rc files
+	$(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
+		$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \

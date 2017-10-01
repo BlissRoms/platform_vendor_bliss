@@ -17,6 +17,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+
  # Bootanimation support
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension

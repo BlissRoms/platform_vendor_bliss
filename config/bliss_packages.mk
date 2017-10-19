@@ -41,3 +41,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
+
+# Bliss Packages
+PRODUCT_PACKAGES += \
+    Launcher3

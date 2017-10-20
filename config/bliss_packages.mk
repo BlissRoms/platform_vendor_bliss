@@ -44,4 +44,5 @@ PRODUCT_PACKAGES += \
 
 # Bliss Packages
 PRODUCT_PACKAGES += \
-    Launcher3
+    Launcher3 \
+    SnapdragonGallery

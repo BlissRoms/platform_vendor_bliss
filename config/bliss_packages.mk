@@ -45,4 +45,6 @@ PRODUCT_PACKAGES += \
 # Bliss Packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    SnapdragonGallery
+    MusicFX \
+    SnapdragonGallery \
+    SnapdragonMusic

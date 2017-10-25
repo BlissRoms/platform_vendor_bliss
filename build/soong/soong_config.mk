@@ -11,6 +11,7 @@ bliss_soong:
 	echo '    "Libart_img_base": "$(LIBART_IMG_BASE)",'; \
 	echo '    "QTIAudioPath":  "$(call project-path-for,qcom-audio)",'; \
 	echo '    "QTIDisplayPath":  "$(call project-path-for,qcom-display)",'; \
-	echo '    "QTIMediaPath":  "$(call project-path-for,qcom-media)"';  \
-	echo '},'; \
+	echo '    "QTIMediaPath":  "$(call project-path-for,qcom-media)",';  \
+	echo '    "Cant_reallocate_omx_buffers":  $(if $(filter omap4,$(TARGET_BOARD_PLATFORM)),true,false),';  \
+        echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)

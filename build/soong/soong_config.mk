@@ -14,5 +14,6 @@ bliss_soong:
 	echo '    "QTIMediaPath":  "$(call project-path-for,qcom-media)",';  \
 	echo '    "Cant_reallocate_omx_buffers":  $(if $(filter omap4,$(TARGET_BOARD_PLATFORM)),true,false),';  \
 	echo '    "Qcom_bsp_legacy":  $(if $(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),true,false),';  \
-        echo '},'; \
+	echo '    "Qti_flac_decoder":  $(if $(strip $(AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER)),true,false)';  \
+	echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)

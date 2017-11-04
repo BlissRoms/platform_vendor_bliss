@@ -23,6 +23,7 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
     vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+    vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist
 
  # Bootanimation support
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))

@@ -2,7 +2,6 @@
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service
 
 # HWComposer HAL
 PRODUCT_PACKAGES += \
@@ -11,6 +10,7 @@ PRODUCT_PACKAGES += \
 # Audio HAL
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \ 
     android.hardware.audio.effect@2.0-impl \
     android.hardware.broadcastradio@1.0-impl \
     android.hardware.soundtrigger@2.0-impl
@@ -28,6 +28,11 @@ PRODUCT_PACKAGES += \
 # DRM HAL
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
+
+# DumpState HAL 
+PRODUCT_PACKAGES += \ 
+    android.hardware.dumpstate@1.0-impl \ 
+    android.hardware.dumpstate@1.0-service 
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -63,9 +68,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl
 
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
+# RenderScript HAL 
+PRODUCT_PACKAGES += \ 
+    android.hardware.renderscript@1.0-impl 
 
 # Sensors HAL
 PRODUCT_PACKAGES += \
@@ -75,9 +80,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
 
-# USB HAL
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+# USB HAL 
+PRODUCT_PACKAGES += \ 
+    android.hardware.usb@1.0-impl \ 
+    android.hardware.usb@1.0-service 
 
 # Vibrator
 PRODUCT_PACKAGES += \

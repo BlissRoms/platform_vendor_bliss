@@ -2,7 +2,7 @@
 
 CWD=`pwd`
 WIDTH=$1
-HEIGHT=$(echo "$WIDTH/1.6" | bc)
+HEIGHT=$(echo "$WIDTH/1.5" | bc)
 RWIDTH=$WIDTH
 RHEIGHT=$HEIGHT
 HALF_RES=$2

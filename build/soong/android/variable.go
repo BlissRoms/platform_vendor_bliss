@@ -34,6 +34,18 @@ type Product_variables struct {
 	Uses_generic_camera_parameter_library struct {
 		Srcs []string
 	}
+
+	Target_uses_qsml struct {
+		Cflags []string
+		Shared_libs []string
+		Header_libs []string
+		Required []string
+	}
+
+	Target_uses_eigen struct {
+		Shared_libs []string
+		Required []string
+	}
 }
 
 type ProductVariables struct {
@@ -50,4 +62,6 @@ type ProductVariables struct {
 	Qcom_bsp_legacy         *bool `json:",omitempty"`
 	Qti_flac_decoder        *bool `json:",omitempty"`
 	Use_legacy_rescaling    *bool `json:",omitempty"`
+	Target_uses_qsml      *bool `json:",omitempty"`
+	Target_uses_eigen       *bool `json:",omitempty"`
 }

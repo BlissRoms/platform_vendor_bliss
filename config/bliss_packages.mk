@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     strace \
     Terminal \
     WallpaperPicker \
+    LiveWallpapers \
     LiveWallpapersPicker
 
 # Telephony packages

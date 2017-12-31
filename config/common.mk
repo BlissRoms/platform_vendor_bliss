@@ -32,6 +32,11 @@ ifeq ($(USE_CHROMIUM), true)
         Chromium
 endif
 
+# enable ADB authentication if not on eng build
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES  += ro.adb.secure=1
+endif
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \

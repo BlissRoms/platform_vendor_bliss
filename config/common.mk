@@ -74,6 +74,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/bliss/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh
 
+# Clean up packages cache to avoid wrong strings and resources
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \

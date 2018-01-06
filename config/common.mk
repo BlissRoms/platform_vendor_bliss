@@ -91,10 +91,13 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
 
-# Custom off-mode charger
-ifneq ($(WITH_BLISS_CHARGER),false)
+# Charger
 PRODUCT_PACKAGES += \
-    charger_res_images \
+    charger_res_images
+
+# Custom off-mode charger
+ifeq ($(WITH_BLISS_CHARGER),true)
+PRODUCT_PACKAGES += \
     bliss_charger_res_images \
     font_log.png \
     libhealthd.bliss

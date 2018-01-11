@@ -50,3 +50,8 @@ PRODUCT_PACKAGES += \
     MusicFX \
     SnapdragonGallery \
     SnapdragonMusic
+    
+# Themes
+PRODUCT_PACKAGES += \
+    PixelTheme \
+    SluttyPinkTheme

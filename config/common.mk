@@ -124,11 +124,6 @@ $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-# Themes
-PRODUCT_PACKAGES += \
-    PixelTheme \
-    Stock
-
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \ 
     vendor/bliss/prebuilt/common/bin/vi:system/bin/vi 

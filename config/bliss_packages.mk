@@ -58,4 +58,8 @@ PRODUCT_PACKAGES += \
     SluttyPinkTheme \
     DarknessMeisterTheme \
     SmokedGreenTheme \
-    AmberTheme
+    AmberTheme \
+    Bl4ckAndYell0Theme \
+    GboardDarkTheme \
+    
+    

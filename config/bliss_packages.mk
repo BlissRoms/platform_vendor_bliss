@@ -52,11 +52,10 @@ PRODUCT_PACKAGES += \
     SnapdragonMusic
     
 # Themes
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \ 
+	Stock \
     PixelTheme \
     SluttyPinkTheme \
     DarknessMeisterTheme \
     SmokedGreenTheme \
-    AmberTheme \
-    Bl4ckAndYell0Theme \
-    
+    AmberTheme

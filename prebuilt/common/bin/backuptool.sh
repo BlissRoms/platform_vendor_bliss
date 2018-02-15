@@ -5,7 +5,7 @@
 
 export C=/tmp/backupdir
 export S=/system
-export V=8.0
+export V=11.4
 
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
@@ -19,15 +19,7 @@ preserve_addon_d() {
   fi
 }
 
-# Restore /system/addon.d from /tmp/addon.d
-restore_addon_d() {
-  if [ -d /tmp/addon.d/ ]; then
-    cp -a /tmp/addon.d/* /system/addon.d/
-    rm -rf /tmp/addon.d/
-  fi
-}
-
-# Proceed only if /system is the expected major and minor version
+# Proceed only if /system is the expected Bliss version
 check_prereq() {
 # If there is no build.prop file the partition is probably empty.
 if [ ! -r /system/build.prop ]; then
@@ -40,11 +32,21 @@ fi
 return 1
 }
 
+# Restore /system/addon.d from /tmp/addon.d
+restore_addon_d() {
+  if [ -d /tmp/addon.d/ ]; then
+    mkdir -p /system/addon.d/
+    cp -a /tmp/addon.d/* /system/addon.d/
+    rm -rf /tmp/addon.d/
+  fi
+}
+
 check_blacklist() {
-  if [ -f /system/addon.d/blacklist ];then
+  if [ -f /system/addon.d/blacklist -a -d /$1/addon.d/ ]; then
       ## Discard any known bad backup scripts
       cd /$1/addon.d/
       for f in *sh; do
+          [ -f $f ] || continue
           s=$(md5sum $f | cut -c-32)
           grep -q $s /system/addon.d/blacklist && rm -f $f
       done

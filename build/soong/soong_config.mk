@@ -20,6 +20,7 @@ bliss_soong:
 	echo '    "Use_legacy_rescaling":  $(if $(strip $(TARGET_OMX_LEGACY_RESCALING)),true,false),';  \
 	echo '    "TargetUsesProprietaryLibs":  $(if $(strip $(TARGET_USES_PROPRIETARY_LIBS)),true,false),';  \
 	echo '    "Target_uses_qsml":  $(if $(strip $(TARGET_USES_QSML)),true,false),';  \
-	echo '    "Target_uses_eigen":  $(if $(strip $(TARGET_USES_QSML)),false,true)';  \
+	echo '    "Target_uses_eigen":  $(if $(strip $(TARGET_USES_QSML)),false,true),';  \
+	echo '    "Target_shim_libs": "$(TARGET_LD_SHIM_LIBS)"'; \
 	echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WIDTH="$1"
-HEIGHT="$2"
+HEIGHT="$(echo "$WIDTH" | bc)"
 BOOTANIOUT="$ANDROID_PRODUCT_OUT/obj/BOOTANIMATION"
 
 if [ "$HEIGHT" -lt "$WIDTH" ]; then

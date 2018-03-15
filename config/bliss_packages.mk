@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
     TelecommTheme \
     DocumentsUITheme
 
+# Fonts
+PRODUCT_PACKAGES += \
+    BlissFonts
+
 PRODUCT_PACKAGES += \
     AccentSluttyPink \
     AccentPixel \

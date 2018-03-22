@@ -82,6 +82,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
+#permissions
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/etc/permissions/privapp-permissions-bliss.xml:system/etc/permissions/privapp-permissions-bliss.xml
+
 # whitelist packages for location providers not in system
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms

@@ -22,5 +22,6 @@ bliss_soong:
 	echo '    "Target_uses_qsml":  $(if $(strip $(TARGET_USES_QSML)),true,false),';  \
 	echo '    "Target_uses_eigen":  $(if $(strip $(TARGET_USES_QSML)),false,true),';  \
 	echo '    "Target_shim_libs": "$(subst $(space),:,$(TARGET_LD_SHIM_LIBS))"'; \
+	echo '    "Uses_qti_camera_device": $(if $(filter true,$(TARGET_USES_QTI_CAMERA_DEVICE)),true,false)'; \
 	echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)

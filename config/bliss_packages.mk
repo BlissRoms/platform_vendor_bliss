@@ -54,6 +54,7 @@ PRODUCT_PACKAGES += \
 # Themes
 PRODUCT_PACKAGES += \
     Stock \
+	DarkBlissTheme \
     PixelTheme \
     SluttyPinkTheme \
     DarknessMeisterTheme \

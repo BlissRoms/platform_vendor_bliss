@@ -128,3 +128,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 PRODUCT_PACKAGES += \
     PixelTheme \
     Stock
+
+# Prebuilt vi editor
+PRODUCT_COPY_FILES += \ 
+    vendor/bliss/prebuilt/common/bin/vi:system/bin/vi 

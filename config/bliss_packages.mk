@@ -50,17 +50,16 @@ PRODUCT_PACKAGES += \
     MusicFX \
     SnapdragonGallery \
     SnapdragonMusic
-    
+
 # Themes
 PRODUCT_PACKAGES += \
     Stock \
-	DarkBlissTheme \
+    DarkBlissTheme \
+    BlackBlissTheme \
     PixelTheme \
     SluttyPinkTheme \
     DarknessMeisterTheme \
     SmokedGreenTheme \
     AmberTheme \
     Bl4ckAndYell0Theme \
-    GboardDarkTheme 
-    
-    
+    GboardDarkTheme

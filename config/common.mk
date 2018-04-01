@@ -125,5 +125,5 @@ $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.m
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
 # Prebuilt vi editor
-PRODUCT_COPY_FILES += \ 
-    vendor/bliss/prebuilt/common/bin/vi:system/bin/vi 
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/bin/vi:system/bin/vi

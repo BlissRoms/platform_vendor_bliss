@@ -51,6 +51,10 @@ PRODUCT_PACKAGES += \
     SnapdragonGallery \
     SnapdragonMusic
 
+# Substratum
+PRODUCT_PACKAGES += \
+    SubstratumService
+
 # Themes
 PRODUCT_PACKAGES += \
     Stock \

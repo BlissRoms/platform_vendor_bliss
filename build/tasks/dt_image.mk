@@ -8,7 +8,7 @@ INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
 ifeq ($(strip $(BOARD_KERNEL_PREBUILT_DT)),)
 
 ifeq ($(strip $(TARGET_CUSTOM_DTBTOOL)),)
-DTBTOOL_NAME := dtbToolCM
+DTBTOOL_NAME := dtbToolLineage
 else
 DTBTOOL_NAME := $(TARGET_CUSTOM_DTBTOOL)
 endif

@@ -1,3 +1,3 @@
-# Bliss Packages
+# Boot Animation
 PRODUCT_PACKAGES += \
-    BlissBootAnimation
+    bootanimation.zip

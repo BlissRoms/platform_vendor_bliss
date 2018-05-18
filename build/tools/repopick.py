@@ -144,7 +144,7 @@ def fetch_query(remote_url, query):
 
 if __name__ == '__main__':
     # Default to BlissRoms Gerrit
-    default_gerrit = 'https://review.blissroms.org'
+    default_gerrit = 'https://review.blissroms.com'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking

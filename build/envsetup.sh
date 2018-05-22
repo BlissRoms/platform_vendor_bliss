@@ -91,7 +91,7 @@ function blissremote()
     proj="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
 
     if (echo "$proj" | egrep -q 'external|system|build|bionic|art|libcore|prebuilt|dalvik') ; then
-        pfx="android_"
+        pfx="platform_"
     fi
 
     project="${proj//\//_}"
@@ -160,7 +160,7 @@ function cafremote()
 function bliss_push()
 {
     local branch ssh_name path_opt proj
-    branch="lp5.1"
+    branch="o8.1"
     ssh_name="bliss_review"
     path_opt=
 
@@ -176,7 +176,7 @@ function bliss_push()
     proj="${proj//\//_}"
 
     if (echo "$proj" | egrep -q 'external|system|build|bionic|art|libcore|prebuilt|dalvik') ; then
-        proj="android_$proj"
+        proj="platform_$proj"
     fi
 
     git $path_opt push "ssh://${ssh_name}/BlissRoms/$proj" "HEAD:refs/for/$branch"

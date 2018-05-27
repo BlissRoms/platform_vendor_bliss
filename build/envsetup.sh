@@ -273,6 +273,11 @@ function breakfast()
 
 alias bib=breakfast
 
+function repopick() {
+    T=$(gettop)
+    $T/vendor/bliss/build/tools/repopick.py $@
+}
+
 function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)

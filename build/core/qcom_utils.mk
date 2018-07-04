@@ -32,7 +32,9 @@ QCOM_BOARD_PLATFORMS += msm8996
 QCOM_BOARD_PLATFORMS += msm8998
 
 QCOM_BOARD_PLATFORMS += sdm660
+QCOM_BOARD_PLATFORMS += sdm845
 
+# MSM7000 Family
 MSM7K_BOARD_PLATFORMS := msm7x30
 MSM7K_BOARD_PLATFORMS += msm7x27
 MSM7K_BOARD_PLATFORMS += msm7x27a
@@ -118,11 +120,13 @@ endef
 # The following utilities are meant for board platform specific
 # featurisation
 
+ifndef get-vendor-board-platforms
 # $(call get-vendor-board-platforms,v)
 # returns list of board platforms for vendor v
 define get-vendor-board-platforms
 $(if $(call match-word,$(BOARD_USES_$(1)_HARDWARE),true),$($(1)_BOARD_PLATFORMS))
 endef
+endif # get-vendor-board-platforms
 
 # $(call is-board-platform,bp)
 # returns true or empty

@@ -42,6 +42,13 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
     vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.$
+    vendor/bliss/prebuilt/common/bin/backuptool_ab.functions:system/bin/backupt$
+    vendor/bliss/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backu$
+endif
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/sysinit:system/bin/sysinit \

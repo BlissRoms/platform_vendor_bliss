@@ -40,7 +40,9 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
     vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
-    vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist
+    vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh
+
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
@@ -48,6 +50,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool_ab.functions:system/bin/backupt$
     vendor/bliss/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backu$
 endif
+
+# Backup services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \

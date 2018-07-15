@@ -5,7 +5,9 @@
 
 export C=/tmp/backupdir
 export S=/system
-export V=11.4
+export V=11.4-Stable
+
+export ADDOND_VERSION=1
 
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
@@ -15,6 +17,18 @@ preserve_addon_d() {
   if [ -d /system/addon.d/ ]; then
     mkdir -p /tmp/addon.d/
     cp -a /system/addon.d/* /tmp/addon.d/
+
+    # Discard any scripts that aren't at least our version level
+    for f in /postinstall/tmp/addon.d/*sh; do
+      SCRIPT_VERSION=$(grep "^# ADDOND_VERSION=" $f | cut -d= -f2)
+      if [ -z "$SCRIPT_VERSION" ]; then
+        SCRIPT_VERSION=1
+      fi
+      if [ $SCRIPT_VERSION -lt $ADDOND_VERSION ]; then
+        rm $f
+      fi
+    done
+
     chmod 755 /tmp/addon.d/*.sh
   fi
 }
@@ -25,7 +39,7 @@ check_prereq() {
 if [ ! -r /system/build.prop ]; then
     return 0
 fi
-if ( ! grep -q "^ro.build.version.release=$V.*" /system/build.prop ); then
+if ( ! grep -q "^ro.bliss.version=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version: $V"
   return 0
 fi

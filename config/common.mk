@@ -84,7 +84,9 @@ PRODUCT_COPY_FILES += \
 
 #permissions
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/etc/permissions/privapp-permissions-bliss.xml:system/etc/permissions/privapp-permissions-bliss.xml
+    vendor/bliss/prebuilt/etc/permissions/privapp-permissions-bliss.xml:system/etc/permissions/privapp-permissions-bliss.xml \
+    vendor/bliss/prebuilt/etc/permissions/privapp-permissions-elgoog.xml:system/etc/permissions/privapp-permissions-elgoog.xml
+
 
 # whitelist packages for location providers not in system
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -106,17 +106,6 @@ endif
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
-# Root Solutions
-ifeq ($(DEFAULT_ROOT_METHOD),supersu)
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/zip/supersu.zip:system/addon.d/supersu.zip \
-    vendor/bliss/prebuilt/etc/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-
-#else ifeq ($(DEFAULT_ROOT_METHOD),magisk)
-#PRODUCT_COPY_FILES += \
-#    vendor/bliss/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
-endif
-
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

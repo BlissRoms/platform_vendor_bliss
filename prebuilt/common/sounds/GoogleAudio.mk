@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := vendor/bliss/google
+LOCAL_PATH := vendor/bliss/prebuilt/common/sounds
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/alarms/A_real_hoot.ogg:system/media/audio/alarms/A_real_hoot.ogg \

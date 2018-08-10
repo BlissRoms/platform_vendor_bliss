@@ -377,7 +377,7 @@ function write_packages() {
         fi
         printf 'LOCAL_MODULE_TAGS := optional\n'
         printf 'LOCAL_MODULE_CLASS := %s\n' "$CLASS"
-        if [ "$CLASS" = "APPS" ]; then
+        if [ "$CLASS" = "APPS" ] || [ "$CLASS" = "JAVA_LIBRARIES" ]; then
             printf 'LOCAL_DEX_PREOPT := false\n'
         fi
         if [ ! -z "$EXTENSION" ]; then

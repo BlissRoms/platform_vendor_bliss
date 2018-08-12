@@ -1,32 +1,32 @@
-# Misc packages
+# Misc Tools
 PRODUCT_PACKAGES += \
-    BluetoothExt \
-    Browser \
+    7z \
+    awk \
+    bzip2 \
+    bash \
+    curl \
+    fsck.exfat \
+    fsck.ntfs \
+    gdbserver \
+    htop \
     libemoji \
     libsepol \
-    e2fsck \
+    lib7z \
     mke2fs \
-    tune2fs \
-    bash \
-    powertop \
-    mount.exfat \
-    fsck.exfat \
     mkfs.exfat \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs \
     mkfs.ntfs \
-    fsck.ntfs \
     mount.ntfs \
-    gdbserver \
     micro_bench \
     oprofiled \
+    powertop \
+    pigz \
     sqlite3 \
     strace \
-    Terminal \
-    WallpaperPicker \
-    LiveWallpapers \
-    LiveWallpapersPicker
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
 
 # Telephony packages
 PRODUCT_PACKAGES += \
@@ -35,8 +35,8 @@ PRODUCT_PACKAGES += \
     Stk
 
 # Mms depends on SoundRecorder for recorded audio messages
-PRODUCT_PACKAGES += \
-    SoundRecorder
+#PRODUCT_PACKAGES += \
+#    SoundRecorder
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
@@ -44,25 +44,30 @@ PRODUCT_PACKAGES += \
     librsjni
 
 # Bliss Packages
-PRODUCT_PACKAGES += \
-    Launcher3 \
-    MusicFX \
-    SnapdragonGallery \
-    SnapdragonMusic
+#PRODUCT_PACKAGES += \
+#    Launcher3 \
+#    MusicFX \
+#    SnapdragonGallery \
+#    SnapdragonMusic
 
 # Substratum
-PRODUCT_PACKAGES += \
-    SubstratumService
+#PRODUCT_PACKAGES += \
+#    SubstratumService
 
 # Themes
+#PRODUCT_PACKAGES += \
+#    Stock \
+#    DarkBlissTheme \
+#    BlackBlissTheme \
+#    PixelTheme \
+#    SluttyPinkTheme \
+#    DarknessMeisterTheme \
+#    SmokedGreenTheme \
+#    AmberTheme \
+#    Bl4ckAndYell0Theme \
+#    GboardDarkTheme
+
+# Misc Packages
 PRODUCT_PACKAGES += \
-    Stock \
-    DarkBlissTheme \
-    BlackBlissTheme \
-    PixelTheme \
-    SluttyPinkTheme \
-    DarknessMeisterTheme \
-    SmokedGreenTheme \
-    AmberTheme \
-    Bl4ckAndYell0Theme \
-    GboardDarkTheme
+    LiveWallpapersPicker \
+    Terminal

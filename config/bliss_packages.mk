@@ -70,4 +70,5 @@ PRODUCT_PACKAGES += \
 # Misc Packages
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
-    Terminal
+    Terminal \
+    LatinIME

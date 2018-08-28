@@ -122,6 +122,7 @@ PRODUCT_COPY_FILES += \
 -include vendor/bliss/config/bliss_packages.mk
 
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
+$(call inherit-product-if-exists, vendor/bliss/google/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
@@ -132,11 +133,3 @@ PRODUCT_COPY_FILES += \
 # Boot Animation
 PRODUCT_PACKAGES += \
     bootanimation.zip
-
-# Additional apps
-PRODUCT_PACKAGES += \
-    OmniSwitch \
-    OmniJaws \
-    OmniStyle \
-    OmniChange \
-    

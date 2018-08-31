@@ -132,3 +132,11 @@ PRODUCT_COPY_FILES += \
 # Boot Animation
 PRODUCT_PACKAGES += \
     bootanimation.zip
+
+# Additional apps
+PRODUCT_PACKAGES += \
+    OmniSwitch \
+    OmniJaws \
+    OmniStyle \
+    OmniChange \
+    

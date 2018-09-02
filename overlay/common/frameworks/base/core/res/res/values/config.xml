@@ -30,12 +30,12 @@
 
     <!-- Defines the default set of global actions. Actions may still be disabled or hidden based
          on the current state of the device. -->
-    <string-array translatable="false" name="config_globalActionsList">
+    <!-- <string-array translatable="false" name="config_globalActionsList">
         <item>power</item>
         <item>reboot</item>
         <item>airplane</item>
         <item>silent</item>
-    </string-array>
+    </string-array> -->
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->

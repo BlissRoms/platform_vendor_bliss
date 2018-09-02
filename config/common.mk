@@ -73,8 +73,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/bliss/overlay/common \
-    
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     vendor/bliss/google/themes
 
 # Proprietary latinime libs needed for Keyboard swyping

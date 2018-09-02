@@ -72,7 +72,8 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/bliss/overlay/common
+    vendor/bliss/overlay/common \
+    vendor/bliss/google/themes
 
 # Proprietary latinime libs needed for Keyboard swyping
 ifneq ($(filter arm64,$(TARGET_ARCH)),)

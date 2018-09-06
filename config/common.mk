@@ -90,7 +90,7 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    apns-conf.xml
 
 #permissions
 PRODUCT_COPY_FILES += \

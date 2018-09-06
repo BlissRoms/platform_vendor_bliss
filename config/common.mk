@@ -89,8 +89,8 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # World APN list
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+PRODUCT_PACKAGES += \
+    apns-conf.xml
 
 #permissions
 PRODUCT_COPY_FILES += \

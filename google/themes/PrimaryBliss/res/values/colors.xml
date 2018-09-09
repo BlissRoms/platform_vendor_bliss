@@ -7,8 +7,8 @@
     <color name="omni_text2">#b3fefefe</color>  <!-- text secondary -->
     <color name="omni_text3">#a0fefefe</color>  <!-- text tertiary -->
     <color name="omni_text4">#defefefe</color>  <!-- text toast -->
-    <color name="omni_color1">#ff191919</color> <!-- PRIMARY DARK -->
-    <color name="omni_color2">#ff2d2d2d</color> <!-- PRIMARY LIGHT -->
+    <color name="omni_color1">#181818</color> <!-- PRIMARY DARK -->
+    <color name="omni_color2">#2d2d2d</color> <!-- PRIMARY LIGHT -->
     <color name="omni_color6">#b3fefefe</color> <!-- WIFI ICON IN DETAILS -->
     <color name="omni_color7">#ff393939</color> <!-- FLOATING DIALOG COLOR ON VERY DARK THEMES MAKE THIS A BIT LIGHTER -->
     <color name="omni_color9">#e6393939</color> <!-- TOAST (NEEDS SOME ALPHA) -->

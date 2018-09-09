@@ -83,14 +83,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NotificationsDark \
     NotificationsLight \
-    NotificationsPrimary
+    NotificationsPrimary \
+    NotificationsBlack
 
 PRODUCT_PACKAGES += \
     AccentSluttyPink \
     AccentPixel \
     AccentGoldenShower \
     AccentDeepOrange \
-    AccentOmni \
     AccentWhite \
     AccentTeal \
     AccentFromHell \
@@ -98,12 +98,13 @@ PRODUCT_PACKAGES += \
     AccentSmokingGreen \
     AccentDeadRed \
     AccentRottenOrange \
-    AccentDeepPurple
+    AccentDeepPurple \
+    AccentBliss
 
 PRODUCT_PACKAGES += \
     PrimaryAlmostBlack \
     PrimaryBlack \
-    PrimaryOmni \
+    PrimaryBliss \
     PrimaryWhite \
     PrimaryColdWhite \
     PrimaryWarmWhite \

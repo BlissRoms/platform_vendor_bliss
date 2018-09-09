@@ -1,8 +1,8 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_PACKAGE_NAME := PrimaryOmni
-LOCAL_RRO_THEME := PrimaryOmni
+LOCAL_PACKAGE_NAME := NotificationsBlack
+LOCAL_RRO_THEME := NotificationsBlack
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_SDK_VERSION := current

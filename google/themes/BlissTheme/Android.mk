@@ -1,8 +1,8 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_PACKAGE_NAME := AccentOmni
-LOCAL_RRO_THEME := AccentOmni
+LOCAL_PACKAGE_NAME := BlissTheme
+LOCAL_RRO_THEME := BlissTheme
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_SDK_VERSION := current

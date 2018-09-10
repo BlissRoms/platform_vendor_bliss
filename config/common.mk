@@ -139,3 +139,8 @@ PRODUCT_COPY_FILES += \
 # Boot Animation
 PRODUCT_PACKAGES += \
     bootanimation.zip
+
+# We modify several neverallows, so let the build proceed
+ifneq ($(TARGET_BUILD_VARIANT),user)
+SELINUX_IGNORE_NEVERALLOWS := true
+endif

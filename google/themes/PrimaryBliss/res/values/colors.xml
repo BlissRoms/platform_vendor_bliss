@@ -3,16 +3,17 @@
     <color name="omni_theme_color">@color/omni_color1</color>
     <color name="system_error">#ffff4120</color>
 
-    <color name="omni_text1">#fffefefe</color> <!-- text primary -->
-    <color name="omni_text2">#b3fefefe</color>  <!-- text secondary -->
-    <color name="omni_text3">#a0fefefe</color>  <!-- text tertiary -->
-    <color name="omni_text4">#defefefe</color>  <!-- text toast -->
+    <color name="omni_text1">#FFE8EAF6</color> <!-- text primary -->
+    <color name="omni_text2">#B3E8EAF6</color>  <!-- text secondary -->
+    <color name="omni_text3">#A0E8EAF6</color>  <!-- text tertiary -->
+    <color name="omni_text4">#deE8EAF6</color>  <!-- text with "de" alpha -->
     <color name="omni_color1">#181818</color> <!-- PRIMARY DARK -->
     <color name="omni_color2">#2d2d2d</color> <!-- PRIMARY LIGHT -->
-    <color name="omni_color6">#b3fefefe</color> <!-- WIFI ICON IN DETAILS -->
-    <color name="omni_color7">#ff393939</color> <!-- FLOATING DIALOG COLOR ON VERY DARK THEMES MAKE THIS A BIT LIGHTER -->
-    <color name="omni_color9">#e6393939</color> <!-- TOAST (NEEDS SOME ALPHA) -->
-    <color name="omni_color900">#ff191919</color> <!-- PRIMARY DARK -->
+    <color name="omni_color6">#b3e8eaf6</color> <!-- WIFI ICON IN DETAILS -->
+    <color name="omni_color7">#2d2d2d</color> <!-- FLOATING DIALOG COLOR ON VERY DARK THEMES MAKE THIS A BIT LIGHTER -->
+    <color name="omni_color8">#81abff</color> <!-- SPECIAL (CHECK WHERE THIS IS ASSIGNED) -->
+    <color name="omni_color9">#e6262626</color> <!-- TOAST (NEEDS SOME ALPHA) -->
+    <color name="omni_color900">#151515</color> <!-- PRIMARY DARK -->
 
     <!-- PRIMARY LIGHT -->
     <color name="primary_dark_device_default_settings">@*android:color/omni_color2</color> <!-- Main BG settings -->

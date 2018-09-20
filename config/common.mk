@@ -190,3 +190,9 @@ PRODUCT_PACKAGES += \
 ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
+
+# Accents
+include vendor/bliss/config/accents.mk
+
+# Themes
+include vendor/bliss/config/themes.mk

@@ -44,11 +44,8 @@ PRODUCT_PACKAGES += \
     librsjni
 
 # Bliss Packages
-#PRODUCT_PACKAGES += \
-#    Launcher3 \
-#    MusicFX \
-#    SnapdragonGallery \
-#    SnapdragonMusic
+PRODUCT_PACKAGES += \
+    Blissify
 
 # Substratum
 #PRODUCT_PACKAGES += \

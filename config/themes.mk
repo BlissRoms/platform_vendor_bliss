@@ -2,4 +2,11 @@
 PRODUCT_PACKAGES += \
     SettingsDark \
     SettingsIntelligenceDark \
-    SystemDark
+    SystemDark \
+    UserOne \
+    UserTwo \
+    UserThree \
+    UserFour \
+    UserFive \
+    UserSix \
+    UserSeven

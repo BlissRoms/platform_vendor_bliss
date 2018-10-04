@@ -1,4 +1,6 @@
-1080 1080 25
-c 1 0 part0
-c 0 0 part1
-c 1 0 part2
+1080 810 60
+c 0 0 part0
+c 1 0 part1
+c 60 0 part2
+
+

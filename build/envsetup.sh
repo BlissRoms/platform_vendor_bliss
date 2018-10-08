@@ -296,9 +296,15 @@ function fixup_common_out_dir() {
     fi
 }
 
+if [[ $(uname -s) = "Darwin" ]];then
+        jobs=$(sysctl -n hw.ncpu)
+ elif [[ $(uname -s) = "Linux" ]];then
+        jobs=$(nproc)
+fi
+
 # Make using all available CPUs
 function mka() {
-    m -j "$@"
+    m -j$jobs "$@"
 }
 
 function pushboot() {

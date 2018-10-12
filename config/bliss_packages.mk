@@ -43,10 +43,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-# Bliss Packages
-PRODUCT_PACKAGES += \
-    Blissify
-
 # Substratum
 #PRODUCT_PACKAGES += \
 #    SubstratumService

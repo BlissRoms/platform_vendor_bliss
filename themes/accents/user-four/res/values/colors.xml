@@ -23,4 +23,7 @@
     <color name="accent_device_default_light">#FF42f4aa</color>
     <color name="accent_device_default_dark">#FF42f4aa</color>
 
+    <!-- Fastscroller -->
+    <color name="fastscroller_text_color">#FF000000</color>
+
 </resources>

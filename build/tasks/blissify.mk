@@ -40,3 +40,8 @@ blissify: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_CYN}"Have A Truly Blissful Experience"${CL_RST}
 	@echo -e ${CL_CYN}"==============================================="${CL_RST}
 	@echo -e ""
+
+# Generate Bliss Changelog
+	$(hide) ./vendor/bliss/tools/changelog
+	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/Changelog-$(BLISS_VERSION).txt
+	$(hide) cp $(PRODUCT_OUT)/Changelog-$(BLISS_VERSION).txt $(PRODUCT_OUT)/system/etc/Changelog.txt

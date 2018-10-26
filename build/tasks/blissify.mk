@@ -17,6 +17,11 @@ BLISS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BLISS_VERSION).zip
 
 .PHONY: blissify
 blissify: $(INTERNAL_OTA_PACKAGE_TARGET)
+	# Generate Bliss Changelog
+	$(hide) ./vendor/bliss/tools/changelog
+	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/Changelog-$(BLISS_VERSION).txt
+	$(hide) cp $(PRODUCT_OUT)/Changelog-$(BLISS_VERSION).txt $(PRODUCT_OUT)/system/etc/Changelog.txt
+	
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLISS_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(BLISS_TARGET_PACKAGE) > $(BLISS_TARGET_PACKAGE).md5
 	@echo -e ${CL_CYN}""${CL_CYN}
@@ -41,7 +46,3 @@ blissify: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_CYN}"==============================================="${CL_RST}
 	@echo -e ""
 
-# Generate Bliss Changelog
-	$(hide) ./vendor/bliss/tools/changelog
-	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/Changelog-$(BLISS_VERSION).txt
-	$(hide) cp $(PRODUCT_OUT)/Changelog-$(BLISS_VERSION).txt $(PRODUCT_OUT)/system/etc/Changelog.txt

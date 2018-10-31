@@ -62,9 +62,10 @@ PRODUCT_PACKAGES += \
 
 # Misc Packages
 PRODUCT_PACKAGES += \
+    ExactCalculator \
     LiveWallpapersPicker \
-    Terminal \
-    LatinIME
+    LatinIME \
+    Terminal
 
 # Additional apps
 PRODUCT_PACKAGES += \
@@ -105,3 +106,17 @@ PRODUCT_PACKAGES += \
     PrimaryColdWhite \
     PrimaryWarmWhite \
     PrimaryDarkBlue
+    
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
+# rsync
+PRODUCT_PACKAGES += \
+    rsync

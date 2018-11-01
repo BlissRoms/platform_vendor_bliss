@@ -65,7 +65,8 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveWallpapersPicker \
     LatinIME \
-    Terminal
+    Terminal \
+    Launcher3
 
 # Additional apps
 PRODUCT_PACKAGES += \

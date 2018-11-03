@@ -107,6 +107,13 @@ PRODUCT_PACKAGES += \
     PrimaryColdWhite \
     PrimaryWarmWhite \
     PrimaryDarkBlue
+
+# QS tile styles
+PRODUCT_PACKAGES += \
+    QStileCircleTrim \
+    QStileDefault \
+    QStileDualToneCircle \
+    QStileSquircleTrim
     
 # Openssh
 PRODUCT_PACKAGES += \

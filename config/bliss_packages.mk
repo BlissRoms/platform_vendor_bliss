@@ -155,7 +155,8 @@ PRODUCT_PACKAGES += \
     QStileOreo \
     QStileOreoCircleTrim \
     QStileOreoSquircleTrim \
-    QStileSquircleTrim
+    QStileSquircleTrim \
+    QStileSquaremedo
     
 # Openssh
 PRODUCT_PACKAGES += \

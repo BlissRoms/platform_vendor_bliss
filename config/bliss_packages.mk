@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
     NotificationsPrimary \
     NotificationsBlack \
     DialerTheme \
-    TelecommTheme
+    TelecommTheme \
+    DocumentsUITheme
 
 PRODUCT_PACKAGES += \
     AccentSluttyPink \

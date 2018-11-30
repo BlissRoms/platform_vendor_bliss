@@ -20,8 +20,6 @@ endif
 ifdef BLISS_BUILDTYPE
 else
     BLISS_BUILDTYPE := UNOFFICIAL
-    BLISS_VERSION_MAJOR := 8
-    BLISS_VERSION_MINOR := 0
 endif
 
 # Set BLISS version

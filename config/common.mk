@@ -181,6 +181,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
+# CustomDoze for all devices
+PRODUCT_PACKAGES += \
+    CustomDoze
+
 # We modify several neverallows, so let the build proceed
 ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true

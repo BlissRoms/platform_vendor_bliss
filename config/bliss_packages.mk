@@ -131,6 +131,7 @@ PRODUCT_PACKAGES += \
     PrimaryAlmostBlack \
     PrimaryBlack \
     PrimaryBliss \
+    PrimaryBlissClear \
     PrimaryWhite \
     PrimaryColdWhite \
     PrimaryWarmWhite \

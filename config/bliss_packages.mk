@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
     AccentBubblegumPink \
     AccentFrenchBleu \
     AccentManiaAmber \
+    AccentMisticBrown \
     AccentSeasideMint \
     AccentDreamyPurple \
     AccentSpookedPurple \

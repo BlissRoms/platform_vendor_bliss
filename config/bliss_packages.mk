@@ -113,6 +113,7 @@ PRODUCT_PACKAGES += \
     AccentBubblegumPink \
     AccentFrenchBleu \
     AccentManiaAmber \
+    AccentMisticBrown \
     AccentSeasideMint \
     AccentDreamyPurple \
     AccentSpookedPurple \
@@ -132,6 +133,8 @@ PRODUCT_PACKAGES += \
     PrimaryAlmostBlack \
     PrimaryBlack \
     PrimaryBliss \
+    PrimaryBlissClear \
+    PrimaryEyeSoother \
     PrimaryWhite \
     PrimaryColdWhite \
     PrimaryWarmWhite \

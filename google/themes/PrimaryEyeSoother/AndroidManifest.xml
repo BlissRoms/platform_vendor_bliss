@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.omnirom.theme.primary.eyesoother"
+    platformBuildVersionCode="28"
+    platformBuildVersionName="9.0.0">
+
+    <overlay android:priority="2" android:targetPackage="android" />
+
+
+    <application android:hasCode="false"
+                 android:label="Eye Soother" />
+</manifest>
+
+

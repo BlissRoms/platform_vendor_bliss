@@ -25,6 +25,20 @@ type Product_variables struct {
 	Target_process_sdk_version_override struct {
 		Cppflags []string
 	}
+        Device_support_hwfde struct {
+                Cflags []string
+		Header_libs []string
+		Shared_libs []string
+	}
+	Device_support_hwfde_perf struct {
+		Cflags []string
+	}
+	Device_support_legacy_hwfde struct {
+		Cflags []string
+	}
+	Device_support_wait_for_qsee struct {
+		Cflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -36,5 +50,9 @@ type ProductVariables struct {
 	Uses_nvidia_enhancements  *bool `json:",omitempty"`
 	Uses_qcom_bsp_legacy  *bool `json:",omitempty"`
 	Uses_qti_camera_device  *bool `json:",omitempty"`
- 	Target_process_sdk_version_override *string `json:",omitempty"`
+	Target_process_sdk_version_override *string `json:",omitempty"`
+	Device_support_hwfde       *bool `json:",omitempty"`
+	Device_support_hwfde_perf  *bool `json:",omitempty"`
+	Device_support_legacy_hwfde  *bool `json:",omitempty"`
+	Device_support_wait_for_qsee  *bool `json:",omitempty"`
 }

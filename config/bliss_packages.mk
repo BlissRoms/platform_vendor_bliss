@@ -70,6 +70,11 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     SoundPickerPrebuilt
 
+# Cutout control overlays
+PRODUCT_PACKAGES += \
+    HideCutout \
+    StatusBarStock
+
 # Snap Camera
 PRODUCT_PACKAGES += \
     Snap

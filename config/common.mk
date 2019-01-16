@@ -34,10 +34,6 @@ ifeq ($(USE_CHROMIUM), true)
         Chromium
 endif
 
-# Ambient Play
-PRODUCT_PACKAGES += \
-    AmbientPlayHistoryProvider
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \

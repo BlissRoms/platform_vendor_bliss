@@ -170,4 +170,7 @@
     <!-- Sharesheet: define a max number of targets per application for new shortcuts-based direct share introduced in Q -->
     <integer name="config_maxShortcutTargetsPerApp">8</integer>
 
+    <!-- Whether device supports an alt. ambient display -->
+    <bool name="config_alt_ambient_display">true</bool>
+
 </resources>

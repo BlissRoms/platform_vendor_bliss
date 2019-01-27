@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
 
 # Misc Packages
 PRODUCT_PACKAGES += \
+    CustomDoze \
     LiveWallpapersPicker \
     Terminal \
     ThemePicker \

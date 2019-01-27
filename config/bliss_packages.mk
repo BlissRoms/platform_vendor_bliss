@@ -55,6 +55,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    CustomDoze \
     LatinIME \
     DeskClock \
     ThemePicker \

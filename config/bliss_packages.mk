@@ -150,6 +150,7 @@ PRODUCT_PACKAGES += \
     QSTileCircleTrim \
     QSTileCircleDualTone \
     QSTileCircleGradient \
+    QSTileCircleOutline \
     QSTileCookie \
     QSTileDottedCircle \
     QSTileDualToneCircle \

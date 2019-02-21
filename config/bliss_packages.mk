@@ -66,7 +66,8 @@ PRODUCT_PACKAGES += \
     GalleryGoPrebuilt \
     PixelThemes \
     AboutBliss \
-    BlissStatistics
+    BlissStatistics \
+    Lawnchair
 
 # Accents
 PRODUCT_PACKAGES += \

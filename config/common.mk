@@ -155,6 +155,11 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # Google Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
 
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

@@ -146,6 +146,7 @@ endif
 
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
+
 # Fonts
 PRODUCT_COPY_FILES += \
     vendor/bliss/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
@@ -155,6 +156,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
     vendor/bliss/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
 
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
 
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk

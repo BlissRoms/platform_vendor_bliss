@@ -30,7 +30,7 @@ endif
 ifdef BLISS_RELEASE
     BLISS_VERSION := Bliss-v$(VERSION)
 else
-    BLISS_VERSION := Bliss-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)-$(shell date +%Y%m%d-%H%M)
+    BLISS_VERSION := Bliss-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)-$(shell date +%Y%m%d)
 endif
 
 BLISS_DISPLAY_VERSION := $(VERSION)

@@ -42,4 +42,8 @@
     <!-- Dialogs -->
     <color name="background_floating_material_dark">@*android:color/omni_color7</color> <!-- dialogs like sime settins -->
 
+    <!-- Gradient Shit -->
+    <color name="gradient_start">@*android:color/gradient_start_dark</color>
+    <color name="gradient_end">@*android:color/gradient_end_dark</color>
+
 </resources>

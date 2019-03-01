@@ -80,4 +80,8 @@
     <color name="notification_snooze_text">@*android:color/omni_text1</color>
     <color name="notification_text_color1">@*android:color/omni_text1</color>
 
+    <!-- Gradient Shit -->
+    <color name="gradient_start">@*android:color/gradient_start_dark</color>
+    <color name="gradient_end">@*android:color/gradient_end_dark</color>
+
 </resources>

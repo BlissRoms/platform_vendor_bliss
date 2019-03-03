@@ -146,18 +146,26 @@ PRODUCT_PACKAGES += \
 
 # QS tile styles
 PRODUCT_PACKAGES += \
-    QStileCircleTrim \
-    QStileDefault \
-    QStileCircleDualTone \
-    QStileDualToneCircle \
-    QStileCircleGradient \
-    QStileDottedCircle \
-    QStileInkDrop \
-    QStileOreo \
-    QStileOreoCircleTrim \
-    QStileOreoSquircleTrim \
-    QStileSquircleTrim \
-    QStileSquaremedo
+    QSTileDefault \
+    QSTileCircleTrim \
+    QSTileCircleDualTone \
+    QSTileCircleGradient \
+    QSTileCookie \
+    QSTileDottedCircle \
+    QSTileDualToneCircle \
+    QSTileInk \
+    QSTileInkdrop \
+    QSTileMountain \
+    QSTileNinja \
+    QSTileOreo \
+    QSTileOreoCircleTrim \
+    QSTileOreoSquircleTrim \
+    QSTilePokesign \
+    QSTileSquaremedo \
+    QSTileSquircle \
+    QSTileSquircleTrim \
+    QSTileTeardrop \
+    QSTileWavey
     
 # Openssh
 PRODUCT_PACKAGES += \

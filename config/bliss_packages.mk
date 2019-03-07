@@ -67,7 +67,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Terminal \
     Launcher3 \
-    WallpaperPicker
+    WallpaperPicker \
+    BlissUpdater
 
 # Additional apps
 PRODUCT_PACKAGES += \

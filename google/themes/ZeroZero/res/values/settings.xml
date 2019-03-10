@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.DeviceDefault.Settings" parent="@*android:style/Theme.Material">
+    <style name="Theme.DeviceDefault.Settings" parent="@*android:style/Theme.DeviceDefault">
         <item name="android:actionBarTheme">@*android:style/ThemeOverlay.DeviceDefault.ActionBar.Accent</item>
         <item name="android:popupTheme">@*android:style/ThemeOverlay.DeviceDefault.Popup.Light</item>
         <item name="android:colorEdgeEffect">@*android:color/omni_color4</item>

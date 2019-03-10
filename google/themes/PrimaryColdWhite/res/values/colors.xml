@@ -42,4 +42,8 @@
 
     <color name="zen_introduction">@*android:color/omni_color1</color>
 
+    <!-- Gradient Shit -->
+    <color name="gradient_start">@*android:color/gradient_start_dark</color>
+    <color name="gradient_end">@*android:color/gradient_end_dark</color>
+
 </resources>

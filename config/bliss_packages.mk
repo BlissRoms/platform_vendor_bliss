@@ -131,7 +131,14 @@ PRODUCT_PACKAGES += \
     AccentHazedPink \
     AccentColdYellow \
     AccentNewHouseOrange \
-    AccentIllusionsPurple
+    AccentIllusionsPurple \
+    AccentFlare \
+    AccentSublime \
+    AccentSincityRed \
+    AccentOrangeCoral \
+    AccentPureLust \
+    AccentQuepal \
+    AccentShadesOfGrey
 
 PRODUCT_PACKAGES += \
     PrimaryAlmostBlack \
@@ -146,18 +153,27 @@ PRODUCT_PACKAGES += \
 
 # QS tile styles
 PRODUCT_PACKAGES += \
-    QStileCircleTrim \
-    QStileDefault \
-    QStileCircleDualTone \
-    QStileDualToneCircle \
-    QStileCircleGradient \
-    QStileDottedCircle \
-    QStileInkDrop \
-    QStileOreo \
-    QStileOreoCircleTrim \
-    QStileOreoSquircleTrim \
-    QStileSquircleTrim \
-    QStileSquaremedo
+    QSTileDefault \
+    QSTileCircleTrim \
+    QSTileCircleDualTone \
+    QSTileCircleGradient \
+    QSTileCircleOutline \
+    QSTileCookie \
+    QSTileDottedCircle \
+    QSTileDualToneCircle \
+    QSTileInk \
+    QSTileInkdrop \
+    QSTileMountain \
+    QSTileNinja \
+    QSTileOreo \
+    QSTileOreoCircleTrim \
+    QSTileOreoSquircleTrim \
+    QSTilePokesign \
+    QSTileSquaremedo \
+    QSTileSquircle \
+    QSTileSquircleTrim \
+    QSTileTeardrop \
+    QSTileWavey
     
 # Openssh
 PRODUCT_PACKAGES += \

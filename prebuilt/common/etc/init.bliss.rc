@@ -20,6 +20,9 @@ on init
 
 on post-fs-data
     mkdir /data/.ssh 0750 root shell
+    
+    # Create an additional OTA package directory that unlike /data/bliss_updates
+    mkdir /data/bliss_updates 0770 system cache
 
     # Run sysinit
     start sysinit

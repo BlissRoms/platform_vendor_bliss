@@ -1,0 +1,3 @@
+on post-fs-data
+    # Create an additional OTA package directory that unlike /data/bliss_updates
+    mkdir /data/bliss_updates 0770 system cache

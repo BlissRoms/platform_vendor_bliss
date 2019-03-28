@@ -39,4 +39,5 @@ BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bliss.version=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.build.status=$(BLISS_BUILDTYPE) \
-  ro.bliss.releasetype=$(BLISS_BUILDTYPE)
+  ro.bliss.releasetype=$(BLISS_BUILDTYPE) \
+  ro.bliss.changelog.version=Changelog-$(BLISS_VERSION)

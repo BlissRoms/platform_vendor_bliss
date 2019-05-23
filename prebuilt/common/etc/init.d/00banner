@@ -4,4 +4,8 @@
 #
 L="log -p i -t bliss"
 
-$L "Welcome to Android `getprop ro.build.version.release` / Bliss-getprop ro.bliss.version";
+echo "======================================="
+echo "               BlissRoms               "
+echo "======================================="
+
+$L "Welcome to BlissRoms `getprop ro.build.version.release` / Bliss-getprop ro.bliss.version";

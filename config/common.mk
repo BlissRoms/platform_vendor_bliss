@@ -113,12 +113,14 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/bliss/overlay/common
 
 # Proprietary latinime libs needed for Keyboard swyping
-ifneq ($(filter arm64,$(TARGET_ARCH)),)
+ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/bliss/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    vendor/bliss/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+    vendor/bliss/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    vendor/bliss/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
 # by default, do not update the recovery with system updates

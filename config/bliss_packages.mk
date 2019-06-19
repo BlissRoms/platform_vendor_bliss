@@ -47,18 +47,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    SubstratumService
 
-# Themes
-#PRODUCT_PACKAGES += \
-#    Stock \
-#    DarkBlissTheme \
-#    BlackBlissTheme \
-#    PixelTheme \
-#    SluttyPinkTheme \
-#    DarknessMeisterTheme \
-#    SmokedGreenTheme \
-#    AmberTheme \
-#    Bl4ckAndYell0Theme \
-#    GboardDarkTheme
 
 # Misc Packages
 PRODUCT_PACKAGES += \
@@ -77,105 +65,6 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     OmniStyle \
     OmniChange
-
-PRODUCT_PACKAGES += \
-    NotificationsDark \
-    NotificationsLight \
-    DocumentsUITheme \
-    NotificationsPrimary \
-    NotificationsBlack \
-    DialerTheme \
-    TelecommTheme \
-    DocumentsUITheme
-
-# Fonts
-PRODUCT_PACKAGES += \
-    BlissFonts
-
-PRODUCT_PACKAGES += \
-    AccentSluttyPink \
-    AccentPixel \
-    AccentGoldenShower \
-    AccentDeepOrange \
-    AccentWhite \
-    AccentTeal \
-    AccentFromHell \
-    AccentBlueMonday \
-    AccentSmokingGreen \
-    AccentDeadRed \
-    AccentRottenOrange \
-    AccentDeepPurple \
-    AccentBliss \
-    AccentCandyRed \
-    AccentExtendedGreen \
-    AccentJadeGreen \
-    AccentPaleBlue \
-    AccentPaleRed \
-    AccentObfusBleu \
-    AccentNotImpPurple \
-    AccentHolillusion \
-    AccentMoveMint \
-    AccentFootprintPurple \
-    AccentBubblegumPink \
-    AccentFrenchBleu \
-    AccentManiaAmber \
-    AccentMisticBrown \
-    AccentSeasideMint \
-    AccentDreamyPurple \
-    AccentSpookedPurple \
-    AccentHeirloomBleu \
-    AccentTruFilPink \
-    AccentWarmthOrange \
-    AccentColdBleu \
-    AccentDiffDayGreen \
-    AccentDuskPurple \
-    AccentBurningRed \
-    AccentHazedPink \
-    AccentColdYellow \
-    AccentNewHouseOrange \
-    AccentIllusionsPurple \
-    AccentFlare \
-    AccentSublime \
-    AccentSincityRed \
-    AccentOrangeCoral \
-    AccentPureLust \
-    AccentQuepal \
-    AccentShadesOfGrey
-
-PRODUCT_PACKAGES += \
-    PrimaryAlmostBlack \
-    PrimaryBlack \
-    PrimaryBliss \
-    PrimaryBlissClear \
-    PrimaryEyeSoother \
-    PrimaryWhite \
-    PrimaryColdWhite \
-    PrimaryWarmWhite \
-    PrimaryDarkBlue
-
-# QS tile styles
-PRODUCT_PACKAGES += \
-    QSTileDefault \
-    QSTileCircleTrim \
-    QSTileCircleDualTone \
-    QSTileCircleGradient \
-    QSTileCircleOutline \
-    QSTileCookie \
-    QSTileDottedCircle \
-    QSTileDualToneCircle \
-    QSTileInk \
-    QSTileInkdrop \
-    QSTileMountain \
-    QSTileNinja \
-    QSTileOreo \
-    QSTileOreoCircleTrim \
-    QSTileOreoSquircleTrim \
-    QSTilePokesign \
-    QSTileSquaremedo \
-    QSTileSquircle \
-    QSTileSquircleTrim \
-    QSTileTeardrop \
-    QSTileWavey
     
 # Openssh
 PRODUCT_PACKAGES += \

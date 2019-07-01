@@ -15,8 +15,18 @@
 # limitations under the License.
 #
 
+ifeq ($(TARGET_SCREEN_WIDTH),)
+    $(warning TARGET_SCREEN_WIDTH is not set, using default value: 1080)
+    TARGET_SCREEN_WIDTH := 1080
+endif
+ifeq ($(TARGET_SCREEN_HEIGHT),)
+    $(warning TARGET_SCREEN_HEIGHT is not set, using default value: 1920)
+    TARGET_SCREEN_HEIGHT := 1920
+endif
+
 define build-bootanimation
-    sh vendor/bliss/bootanimation/generate-bootanimation.sh \
+    $(shell) vendor/bliss/bootanimation/generate-bootanimation.sh \
+    $(PRODUCT_OUT) \
     $(TARGET_SCREEN_WIDTH) \
     $(TARGET_SCREEN_HEIGHT) \
     $(TARGET_BOOTANIMATION_HALF_RES)

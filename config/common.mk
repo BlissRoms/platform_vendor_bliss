@@ -101,7 +101,6 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-bliss.xml:system/etc/permissions/privapp-permissions-bliss.xml \
     vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:system/etc/permissions/privapp-permissions-elgoog.xml
 
-
 # whitelist packages for location providers not in system
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
@@ -127,9 +126,12 @@ endif
 # by default, do not update the recovery with system updates
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.recovery_update=false
 
-ifneq ($(TARGET_BUILD_VARIANT),eng)
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+# Disable ADB authentication
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+else
 # Enable ADB authentication
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 # Charger

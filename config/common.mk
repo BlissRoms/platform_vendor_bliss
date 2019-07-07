@@ -25,21 +25,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Thank you, please drive thru!
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 
-#Chromium libs
-ifeq ($(USE_CHROMIUM), true)
-  ifeq ($(CHROMIUM_X86), true)
-    PRODUCT_COPY_FILES += \
-        vendor/bliss/Chromium/x86/libs/libchrome.so:system/app/Chromium/lib/x86/libchrome.so \
-        vendor/bliss/Chromium/x86/libs/libchromium_android_linker.so:system/app/Chromium/lib/x86/libchromium_android_linker.so
-  else
-    PRODUCT_COPY_FILES += \
-        vendor/bliss/Chromium/arm/libs/libchrome.so:system/app/Chromium/lib/arm/libchrome.so \
-        vendor/bliss/Chromium/arm/libs/libchromium_android_linker.so:system/app/Chromium/lib/arm/libchromium_android_linker.so
-  endif
-    PRODUCT_PACKAGES += \
-        Chromium
-endif
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \

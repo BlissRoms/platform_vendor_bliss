@@ -15,8 +15,9 @@
 #
 LOCAL_PATH := $(my-dir)
 
-include $(CLEAR_VARS)
+ifeq ($(USE_CHROMIUM), true)
 
+include $(CLEAR_VARS)
 LOCAL_MODULE := Chromium
 LOCAL_MODULE_TAGS := eng optional
 LOCAL_MODULE_CLASS := APPS
@@ -32,3 +33,4 @@ LOCAL_BUILT_MODULE_STEM := package.apk
 LOCAL_CERTIFICATE := PRESIGNED
 endif
 include $(BUILD_PREBUILT)
+endif

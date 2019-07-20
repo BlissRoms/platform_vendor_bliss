@@ -140,66 +140,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
-# AOSP packages
-PRODUCT_PACKAGES += \
-    ExactCalculator \
-    Exchange2 \
-    Terminal
-
-# Lineage packages
-PRODUCT_PACKAGES += \
-    AudioFX \
-    Backgrounds \
-    LineageParts \
-    LineageSettingsProvider \
-    LineageSetupWizard \
-    Eleven \
-    Jelly \
-    LockClock \
-    Profiles \
-    TrebuchetQuickStep \
-    Updater \
-    WeatherProvider
-
-# Berry styles
-PRODUCT_PACKAGES += \
-    LineageBlackTheme \
-    LineageDarkTheme \
-    LineageBlackAccent \
-    LineageBlueAccent \
-    LineageBrownAccent \
-    LineageCyanAccent \
-    LineageGreenAccent \
-    LineageOrangeAccent \
-    LineagePinkAccent \
-    LineagePurpleAccent \
-    LineageRedAccent \
-    LineageYellowAccent
-
-# Extra tools in Lineage
-PRODUCT_PACKAGES += \
-    7z \
-    awk \
-    bash \
-    bzip2 \
-    curl \
-    getcap \
-    htop \
-    lib7z \
-    libsepol \
-    pigz \
-    powertop \
-    setcap \
-    unrar \
-    unzip \
-    vim \
-    wget \
-    zip
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -229,4 +169,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
+-include vendor/bliss/config/bliss_packages.mk
+-include vendor/bliss/config/misc_packages.mk
 -include $(WORKSPACE)/build_env/image-auto-bits.mk

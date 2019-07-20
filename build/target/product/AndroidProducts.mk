@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_arm.mk \
-    $(LOCAL_DIR)/lineage_arm64.mk \
-    $(LOCAL_DIR)/lineage_x86.mk
+    $(LOCAL_DIR)/bliss_arm.mk \
+    $(LOCAL_DIR)/bliss_arm64.mk \
+    $(LOCAL_DIR)/bliss_x86.mk

@@ -11,44 +11,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 endif
 
-# Optional packages
-PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
-    PhotoTable
-
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Email \
-    ExactCalculator \
-    Exchange2
-
-# bliss packages
-PRODUCT_PACKAGES += \
-    AudioFX \
-    Backgrounds \
-    Eleven \
-    Etar \
-    Jelly \
-    LockClock \
-    Profiles \
-    TrebuchetQuickStep \
-    WeatherProvider
-
-# Accents
-PRODUCT_PACKAGES += \
-    LineageBlackTheme \
-    LineageDarkTheme \
-    LineageBlackAccent \
-    LineageBlueAccent \
-    LineageBrownAccent \
-    LineageCyanAccent \
-    LineageGreenAccent \
-    LineageOrangeAccent \
-    LineagePinkAccent \
-    LineagePurpleAccent \
-    LineageRedAccent \
-    LineageYellowAccent
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images

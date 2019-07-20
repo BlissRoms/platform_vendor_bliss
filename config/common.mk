@@ -101,77 +101,9 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Terminal
-
-# Lineage packages
-PRODUCT_PACKAGES += \
-    LineageParts \
-    LineageSettingsProvider \
-    LineageSetupWizard \
-    Updater
-
-# Themes
-PRODUCT_PACKAGES += \
-    LineageThemesStub \
-    ThemePicker
-
-# Extra tools in bliss
-PRODUCT_PACKAGES += \
-    7z \
-    awk \
-    bash \
-    bzip2 \
-    curl \
-    getcap \
-    htop \
-    lib7z \
-    libsepol \
-    nano \
-    pigz \
-    powertop \
-    setcap \
-    unrar \
-    unzip \
-    vim \
-    wget \
-    zip
-
-# Filesystems tools
-PRODUCT_PACKAGES += \
-    fsck.exfat \
-    fsck.ntfs \
-    mke2fs \
-    mkfs.exfat \
-    mkfs.ntfs \
-    mount.ntfs
-
-# Openssh
-PRODUCT_PACKAGES += \
-    scp \
-    sftp \
-    ssh \
-    sshd \
-    sshd_config \
-    ssh-keygen \
-    start-ssh
-
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
-
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
-
-# These packages are excluded from user builds
-PRODUCT_PACKAGES_DEBUG += \
-    procmem
 
 # Root
 PRODUCT_PACKAGES += \
@@ -183,13 +115,10 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
-# Dex preopt
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    TrebuchetQuickStep
-
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
+-include vendor/bliss/config/bliss_packages.mk
+-include vendor/bliss/config/misc_packages.mk
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

@@ -158,6 +158,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+# LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher

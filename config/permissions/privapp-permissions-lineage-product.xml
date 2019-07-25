@@ -27,6 +27,7 @@
 
     <privapp-permissions package="com.android.launcher3">
         <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
+        <permission name="android.permission.STATUS_BAR"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.google.android.apps.nexuslauncher">

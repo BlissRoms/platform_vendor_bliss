@@ -2,51 +2,36 @@
 PRODUCT_PACKAGES += \
     7z \
     awk \
-    bzip2 \
     bash \
+    bzip2 \
     curl \
-    fsck.exfat \
-    fsck.ntfs \
-    gdbserver \
+    getcap \
     htop \
-    libemoji \
-    libsepol \
     lib7z \
-    mke2fs \
-    mkfs.exfat \
-    mkfs.ntfs \
-    mount.ntfs \
-    micro_bench \
-    oprofiled \
-    powertop \
+    libsepol \
     pigz \
-    sqlite3 \
-    strace \
+    powertop \
+    setcap \
     unrar \
     unzip \
     vim \
     wget \
     zip
 
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.exfat \
+    mkfs.ntfs \
+    mount.ntfs
+
 # Telephony packages
 PRODUCT_PACKAGES += \
     messaging \
     CellBroadcastReceiver \
     Stk
-
-# Mms depends on SoundRecorder for recorded audio messages
-#PRODUCT_PACKAGES += \
-#    SoundRecorder
-
-# Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    librsjni
-
-# Substratum
-#PRODUCT_PACKAGES += \
-#    SubstratumService
-
 
 # Misc Packages
 PRODUCT_PACKAGES += \

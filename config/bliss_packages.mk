@@ -43,13 +43,6 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     BlissUpdater \
     Lawnchair
-
-# Additional apps
-PRODUCT_PACKAGES += \
-    OmniSwitch \
-    OmniJaws \
-    OmniStyle \
-    OmniChange
     
 # Openssh
 PRODUCT_PACKAGES += \

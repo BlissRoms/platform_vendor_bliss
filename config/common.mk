@@ -166,7 +166,7 @@ PRODUCT_COPY_FILES += \
 -include vendor/bliss/config/bliss_packages.mk
 
 # Bliss Themes
--include vendor/themes/bliss_themes.mk
+#-include vendor/themes/bliss_themes.mk
 
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/apk/prebuilt.mk)

@@ -42,7 +42,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     WallpaperPicker \
     BlissUpdater \
-    Lawnchair
+    Lawnchair \
+    CustomDoze
 
 # Additional apps
 PRODUCT_PACKAGES += \

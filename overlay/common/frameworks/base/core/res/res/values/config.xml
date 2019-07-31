@@ -17,6 +17,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 	
     <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- qcom provider -->
+        <item>com.qualcomm.location</item>
         <!-- The Google provider -->
         <item>com.google.android.gms</item>
         <!-- The standard AOSP fused location provider -->
@@ -36,6 +38,12 @@
         <item>airplane</item>
         <item>silent</item>
     </string-array> -->
+
+    <string-array name="config_nonBlockableNotificationPackages">
+        <item>com.android.dialer</item>
+        <item>com.google.android.dialer</item>
+        <item>com.google.android.deskclock</item>
+    </string-array>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->

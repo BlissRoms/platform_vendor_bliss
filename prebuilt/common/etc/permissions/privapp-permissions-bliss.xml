@@ -32,6 +32,11 @@
         <permission name="com.android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"/>
     </privapp-permissions>
 
+    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
+    <privapp-permissions package="com.custom.ambient.display">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
     <privapp-permissions package="com.google.android.apps.turbo">
         <permission name="android.permission.BATTERY_STATS"/>
         <permission name="android.permission.DUMP"/>
@@ -44,10 +49,6 @@
         <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
         <permission name="android.permission.REBOOT"/>
         <permission name="android.permission.RECOVERY"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="org.omnirom.logcat">
-        <permission name="android.permission.READ_LOGS"/>
     </privapp-permissions>
 
     <privapp-permissions package="org.omnirom.omnistyle">
@@ -63,12 +64,6 @@
         <permission name="android.permission.REAL_GET_TASKS"/>
         <permission name="android.permission.START_TASKS_FROM_RECENTS"/>
         <permission name="android.permission.STOP_APP_SWITCHES"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="org.omnirom.omnibrain">
-        <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
-        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
-        <permission name="android.permission.REAL_GET_TASKS"/>
     </privapp-permissions>
 
 </permissions>

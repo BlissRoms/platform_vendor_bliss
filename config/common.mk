@@ -163,6 +163,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
     vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
 
+# Dialer
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

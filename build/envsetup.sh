@@ -4,11 +4,12 @@ cat <<EOF
 Additional BlissRoms functions:
 - breakfast:       Setup the build environment, but only list
                    devices we support.
-- brunch:          Sets up build environment using breakfast(),
-                   and then comiles using mka() against blissify target.
 - mka:             Builds using SCHED_BATCH on all processors.
-- pushboot:        Push a file from your OUT dir to your phone and
-                   reboots it, using absolute path.
+- blissify:        Sets up build environment using breakfast(),
+                   and then compiles using mka() against blissify target.
+- aospremote:      Add git remote for matching AOSP repository.
+- cafremote:       Add git remote for matching CodeAurora repository.
+- losremote:       Add git remote for matching LineageOS repository.
 EOF
 }
 
@@ -75,29 +76,6 @@ function bliss_add_hmm_entry()
         fi
     done
     bliss_append_hmm "$1" "$2"
-}
-
-function blissremote()
-{
-    local proj pfx project
-
-    if ! git rev-parse &> /dev/null
-    then
-        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
-        return
-    fi
-    git remote rm bliss 2> /dev/null
-
-    proj="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
-
-    if (echo "$proj" | egrep -q 'external|system|build|bionic|art|libcore|prebuilt|dalvik') ; then
-        pfx="platform_"
-    fi
-
-    project="${proj//\//_}"
-
-    git remote add bliss "git@github.com:BlissRoms/$pfx$project"
-    echo "Remote 'bliss' created"
 }
 
 function losremote()
@@ -226,18 +204,6 @@ function mk_timer()
     return $ret
 }
 
-function brunch()
-{
-    breakfast $*
-    if [ $? -eq 0 ]; then
-        time mka blissify
-    else
-        echo "No such item in brunch menu. Try 'breakfast'"
-        return 1
-    fi
-    return $?
-}
-
 function breakfast()
 {
     target=$1
@@ -273,6 +239,18 @@ function breakfast()
 
 alias bib=breakfast
 
+function blissify()
+{
+    breakfast $*
+    if [ $? -eq 0 ]; then
+        time mka blissify
+    else
+        echo "No such item in brunch menu. Try 'breakfast'"
+        return 1
+    fi
+    return $?
+}
+
 function repopick() {
     T=$(gettop)
     $T/vendor/bliss/build/tools/repopick.py $@
@@ -307,21 +285,6 @@ function mka() {
     m -j$jobs "$@"
 }
 
-function pushboot() {
-    if [ ! -f $OUT/$* ]; then
-        echo "File not found: $OUT/$*"
-        return 1
-    fi
-
-    adb root
-    sleep 1
-    adb wait-for-device
-    adb remount
-
-    adb push $OUT/$* /$*
-    adb reboot
-}
-
 # Enable SD-LLVM if available
 if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
     case `uname -s` in
@@ -332,7 +295,7 @@ if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
             export SDCLANG=true
             export SDCLANG_PATH=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
             export SDCLANG_PATH_2=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
-            export SDCLANG_LTO_DEFS=$(gettop)/vendor/lineage/build/core/sdllvm-lto-defs.mk
+            export SDCLANG_LTO_DEFS=$(gettop)/vendor/bliss/build/core/sdllvm-lto-defs.mk
             ;;
     esac
 fi

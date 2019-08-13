@@ -15,6 +15,10 @@
     <privapp-permissions package="com.custom.ambient.display">
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
+
+    <privapp-permissions package="com.android.screenshot">
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+    </privapp-permissions>
 </permissions>
 
 

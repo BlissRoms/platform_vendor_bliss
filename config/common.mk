@@ -178,6 +178,11 @@ $(call inherit-product-if-exists, vendor/bliss/google/Android.mk)
 $(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
+# Substratum Key
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/priv-app/SubstratumKey.apk:system/priv-app/SubstratumKey/SubstratumKey.apk \
+    vendor/bliss/prebuilt/common/priv-app/SubstratumSignature.apk:system/priv-app/SubstratumKey/SubstratumSignature.apk
+
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/vi:system/bin/vi

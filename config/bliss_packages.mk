@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     BlissUpdater \
     Lawnchair \
-    CustomDoze
+    CustomDoze \
+    SubstratumSignature
 
 # Additional apps
 PRODUCT_PACKAGES += \

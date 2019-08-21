@@ -100,4 +100,7 @@
     -->
     <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
 
+    <!-- Colon separated list of package names that should be granted DND access -->
+    <string name="config_defaultDndAccessPackages" translatable="false">com.google.android.gms:com.google.android.GoogleCamera:com.google.intelligence.sense:com.google.android.settings.intelligence</string>
+
 </resources>

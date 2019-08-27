@@ -46,6 +46,10 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     SubstratumSignature
 
+# Long screenshot
+PRODUCT_PACKAGES += \
+    Longshot
+
 # Additional apps
 PRODUCT_PACKAGES += \
     OmniSwitch \

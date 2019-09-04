@@ -40,23 +40,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Terminal \
     Launcher3 \
-    WallpaperPicker \
-    BlissUpdater \
-    Lawnchair \
-    CustomDoze \
-    SubstratumSignature
+    WallpaperPicker
 
-# Long screenshot
-PRODUCT_PACKAGES += \
-    Longshot
-
-# Additional apps
-PRODUCT_PACKAGES += \
-    OmniSwitch \
-    OmniJaws \
-    OmniStyle \
-    OmniChange
-    
 # Openssh
 PRODUCT_PACKAGES += \
     scp \

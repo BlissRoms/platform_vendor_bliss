@@ -146,37 +146,19 @@ endif
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
 # Fonts
-PRODUCT_COPY_FILES += \
-    vendor/bliss/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
-    vendor/bliss/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
-    vendor/bliss/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
-    vendor/bliss/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
-    vendor/bliss/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
-    vendor/bliss/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
-
-# Lawnchair
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
-
-# Dialer
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/bliss/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
+#    vendor/bliss/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
+#    vendor/bliss/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
+#    vendor/bliss/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
+#    vendor/bliss/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
+#    vendor/bliss/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
 
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
-
-# Bliss Themes
--include vendor/themes/bliss_themes.mk
-
-$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/app/Android.mk)
-$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/apk/prebuilt.mk)
-$(call inherit-product-if-exists, vendor/bliss/google/Android.mk)
-$(call inherit-product-if-exists, vendor/bliss/prebuilt/common/privapp/Android.mk)
-$(call inherit-product-if-exists, vendor/extra/product.mk)
 
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \
@@ -190,9 +172,3 @@ PRODUCT_PACKAGES += \
 ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
-
-# Accents
-include vendor/bliss/config/accents.mk
-
-# Themes
-include vendor/bliss/config/themes.mk

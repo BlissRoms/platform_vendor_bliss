@@ -78,6 +78,10 @@ PRODUCT_PACKAGES += \
     StatusBarStockSysUI \
     ImmersiveMode
 
+# PixelSetupWizard overlay
+PRODUCT_PACKAGES += \
+    PixelSetupWizardOverlay
+
 # Snap Camera
 PRODUCT_PACKAGES += \
     Snap

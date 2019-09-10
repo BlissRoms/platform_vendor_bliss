@@ -44,4 +44,7 @@
         Default to true as not all devices support contextual cards.
     -->
     <bool name="config_use_legacy_suggestion">false</bool>
+
+    <string name="config_emergency_intent_action">com.google.android.safetyhub.SAFETY_HUB</string>
+    <string name="config_emergency_package_name">com.google.android.apps.safetyhub</string>
 </resources>

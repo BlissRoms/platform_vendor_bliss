@@ -11,9 +11,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.android.dataroaming=false \
     ro.opa.eligible_device=true
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.build.selinux=1
-
 # Default sounds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Popcorn.ogg \

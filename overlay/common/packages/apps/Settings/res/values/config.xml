@@ -34,5 +34,7 @@
     <string name="config_headlineFontFamilyMedium">google-sans-medium</string>
     <!-- Allows setting custom fontFeatureSettings on specific text. -->
     <string name="config_headlineFontFeatureSettings">ss03</string>
-    
+
+    <bool name="config_show_avatar_in_homepage">true</bool>
+
 </resources>

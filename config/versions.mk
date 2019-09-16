@@ -10,6 +10,8 @@ BLISS_VERSION_MINOR = 9
     VERSION := $(BLISS_VERSION_MAJOR).$(BLISS_VERSION_MINOR)
 #endif
 
+TARGET_PRODUCT_SHORT := $(subst bliss_,,$(BLISS_BUILDTYPE))
+
 # Set BLISS_BUILDTYPE
 ifdef BLISS_NIGHTLY
     BLISS_BUILDTYPE := NIGHTLY
@@ -35,9 +37,11 @@ endif
 
 BLISS_DISPLAY_VERSION := $(VERSION)
 BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
+BLISS_FINGERPRINT := Bliss/$(VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date +%Y%m%d)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bliss.version=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.build.status=$(BLISS_BUILDTYPE) \
   ro.bliss.releasetype=$(BLISS_BUILDTYPE) \
-  ro.bliss.changelog.version=Changelog-$(BLISS_VERSION)
+  ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \
+  ro.bliss.fingerprint=$(BLISS_FINGERPRINT)

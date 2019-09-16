@@ -55,5 +55,6 @@ PRODUCT_PACKAGES_DEBUG += \
 # Bliss Packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    Recorder
+    Recorder \
+    ThemePicker
 

@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LatinIME \
     Terminal \
+    ThemePicker \
     Launcher3 \
     WallpaperPicker
 

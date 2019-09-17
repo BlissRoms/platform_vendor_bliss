@@ -14,12 +14,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.selinux=1
 
-# Default sounds
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg \
-    ro.config.ringtone=Themos.ogg
-
 # Thank you, please drive thru!
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 
@@ -159,6 +153,9 @@ SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
+
+# Google sounds
+-include vendor/bliss/prebuilt/common/sounds/GoogleAudio.mk
 
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \

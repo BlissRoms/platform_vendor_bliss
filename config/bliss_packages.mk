@@ -67,3 +67,17 @@ PRODUCT_PACKAGES += \
     NexusLauncherRelease \
     GalleryGoPrebuilt \
     AboutBliss
+
+# Accents
+PRODUCT_PACKAGES += \
+    AccentColorYellowOverlay \
+    AccentColorVioletOverlay \
+    AccentColorTealOverlay \
+    AccentColorRedOverlay \
+    AccentColorQGreenOverlay \
+    AccentColorPinkOverlay \
+    AccentColorLightPurpleOverlay \
+    AccentColorIndigoOverlay \
+    AccentColorFlatPinkOverlay \
+    AccentColorCyanOverlay \
+    AccentColorBlueGrayOverlay

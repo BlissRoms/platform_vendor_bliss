@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
     Contacts \
     Dialer \
     DeskClock \
-    Launcher3quickstep \
+    Launcher3QuickStep \
     LatinIME
 
 # Openssh

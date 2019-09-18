@@ -15,7 +15,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.selinux=1
 
 # Default sounds
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Popcorn.ogg \
     ro.config.alarm_alert=Bright_morning.ogg \
     ro.config.ringtone=The_big_adventure.ogg

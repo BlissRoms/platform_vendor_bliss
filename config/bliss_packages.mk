@@ -36,13 +36,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveWallpapersPicker \
-    LatinIME \
     Terminal \
     ThemePicker \
     Launcher3 \
     WallpaperPicker \
-    BlissUpdater \
-    Launcher3quickstep
+    BlissUpdater
+
+# AOSP Packages
+PRODUCT_PACKAGES += \
+    Contacts \
+    Dialer \
+    DeskClock \
+    Launcher3quickstep \
+    LatinIME
 
 # Openssh
 PRODUCT_PACKAGES += \

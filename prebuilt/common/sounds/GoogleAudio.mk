@@ -80,8 +80,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ringtones/Schools_out.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Schools_out.ogg \
     $(LOCAL_PATH)/ringtones/The_big_adventure.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/The_big_adventure.ogg \
     $(LOCAL_PATH)/ringtones/Zen_too.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Zen_too.ogg
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-   ro.config.ringtone=The_big_adventure.ogg \
-   ro.config.notification_sound=Duet.ogg \
-   ro.config.alarm_alert=Sunshower.ogg

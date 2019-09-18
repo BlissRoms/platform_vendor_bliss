@@ -41,7 +41,8 @@ PRODUCT_PACKAGES += \
     Terminal \
     ThemePicker \
     Launcher3 \
-    WallpaperPicker
+    WallpaperPicker \
+    BlissUpdater
 
 # Openssh
 PRODUCT_PACKAGES += \

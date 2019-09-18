@@ -56,5 +56,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     LatinIME \
     Recorder \
-    ThemePicker
+    ThemePicker \
+    Launcher3QuickStep
 

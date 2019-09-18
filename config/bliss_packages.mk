@@ -34,7 +34,6 @@ PRODUCT_PACKAGES += \
 
 # Misc Packages
 PRODUCT_PACKAGES += \
-    ExactCalculator \
     LiveWallpapersPicker \
     Terminal \
     ThemePicker \

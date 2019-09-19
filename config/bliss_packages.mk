@@ -58,5 +58,5 @@ PRODUCT_PACKAGES += \
     Recorder \
     ThemePicker \
     Launcher3QuickStep \
-    BlissUpdater
-
+    BlissUpdater \
+    BlissPapers

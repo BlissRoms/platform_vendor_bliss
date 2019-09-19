@@ -40,7 +40,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     WallpaperPicker \
     BlissUpdater \
-    Jelly
+    Jelly \
+    BlissPapers
 
 # AOSP Packages
 PRODUCT_PACKAGES += \

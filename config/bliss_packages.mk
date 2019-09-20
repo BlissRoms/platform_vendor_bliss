@@ -72,6 +72,7 @@ PRODUCT_PACKAGES += \
     Contacts \
     Dialer \
     OmniJaws \
+    WeatherIcons \
     OmniStyle
 
 # Accents

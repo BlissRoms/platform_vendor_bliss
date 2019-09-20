@@ -24,12 +24,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 ifeq ($(USE_CHROMIUM), true)
   ifeq ($(CHROMIUM_X86), true)
     PRODUCT_COPY_FILES += \
-        vendor/bliss/Chromium/x86/libs/libchrome.so:system/app/Chromium/lib/x86/libchrome.so \
-        vendor/bliss/Chromium/x86/libs/libchromium_android_linker.so:system/app/Chromium/lib/x86/libchromium_android_linker.so
+        vendor/bliss/Chromium/x86/libs/libchrome.so:$(TARGET_COPY_OUT_SYSTEM)/app/Chromium/lib/x86/libchrome.so \
+        vendor/bliss/Chromium/x86/libs/libchromium_android_linker.so:$(TARGET_COPY_OUT_SYSTEM)/app/Chromium/lib/x86/libchromium_android_linker.so
   else
     PRODUCT_COPY_FILES += \
-        vendor/bliss/Chromium/arm/libs/libchrome.so:system/app/Chromium/lib/arm/libchrome.so \
-        vendor/bliss/Chromium/arm/libs/libchromium_android_linker.so:system/app/Chromium/lib/arm/libchromium_android_linker.so
+        vendor/bliss/Chromium/arm/libs/libchrome.so:$(TARGET_COPY_OUT_SYSTEM)/app/Chromium/lib/arm/libchrome.so \
+        vendor/bliss/Chromium/arm/libs/libchromium_android_linker.so:$(TARGET_COPY_OUT_SYSTEM)/app/Chromium/lib/arm/libchromium_android_linker.so
   endif
     PRODUCT_PACKAGES += \
         Chromium
@@ -39,43 +39,43 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/bliss/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
-    vendor/bliss/prebuilt/bin/blacklist:system/addon.d/blacklist \
-    vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh
+    vendor/bliss/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/whitelist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/whitelist \
+    vendor/bliss/prebuilt/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/bliss/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/bliss/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/bliss/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/bliss/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/bliss/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/bliss/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/bliss/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
+    vendor/bliss/prebuilt/common/bin/sysinit:$(TARGET_COPY_OUT_SYSTEM)/bin/sysinit \
+    vendor/bliss/prebuilt/common/etc/init.d/00banner:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/00banner
 
 # Copy all Bliss specific init rc files
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
-$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/bliss/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/bliss/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/bliss/prebuilt/common/media/LMprec_508.emd:$(TARGET_COPY_OUT_SYSTEM)/media/LMprec_508.emd \
+    vendor/bliss/prebuilt/common/media/PFFprec_600.emd:$(TARGET_COPY_OUT_SYSTEM)/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
 
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/Vendor_045e_Product_0719.kl
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -91,8 +91,8 @@ PRODUCT_PACKAGES += \
 
 #permissions
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-bliss.xml:system/etc/permissions/privapp-permissions-bliss.xml \
-    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:system/etc/permissions/privapp-permissions-elgoog.xml
+    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-bliss.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-bliss.xml \
+    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 # whitelist packages for location providers not in system
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -100,7 +100,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Selective SPN list for operator number who has the problem.
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/bliss/prebuilt/common/etc/selective-spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/selective-spn-conf.xml
 
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/bliss/overlay/common
@@ -108,12 +108,12 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Proprietary latinime libs needed for Keyboard swyping
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    vendor/bliss/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    vendor/bliss/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so \
+    vendor/bliss/prebuilt/common/lib64/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/bliss/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/bliss/prebuilt/common/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so \
+    vendor/bliss/prebuilt/common/lib/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinimegoogle.so
 endif
 
 # by default, do not update the recovery with system updates
@@ -180,7 +180,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt vi editor
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/vi:system/bin/vi
+    vendor/bliss/prebuilt/common/bin/vi:$(TARGET_COPY_OUT_SYSTEM)/bin/vi
 
 # Boot Animation
 PRODUCT_PACKAGES += \

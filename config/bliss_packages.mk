@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
+    messaging \
     CellBroadcastReceiver \
     Stk
 

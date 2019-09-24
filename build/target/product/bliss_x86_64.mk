@@ -14,9 +14,9 @@
 
 $(call inherit-product, build/target/product/aosp_x86_64.mk)
 
-include vendor/lineage/build/target/product/lineage_generic_target.mk
+include vendor/bliss/build/target/product/bliss_generic_target.mk
 
-PRODUCT_NAME := lineage_x86_64
+PRODUCT_NAME := bliss_x86_64
 
-PRODUCT_SDK_ADDON_NAME := lineage
+PRODUCT_SDK_ADDON_NAME := bliss
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

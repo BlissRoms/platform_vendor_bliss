@@ -1,4 +1,4 @@
-# LineageOS core functionality
+# Bliss core functionality
 on init
     export TERMINFO /system/etc/terminfo
 

@@ -1,16 +1,16 @@
-# Inherit common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common Bliss stuff
+$(call inherit-product, vendor/bliss/config/common.mk)
 
-# Inherit Lineage atv device tree
-$(call inherit-product, device/lineage/atv/lineage_atv.mk)
+# Inherit Bliss atv device tree
+$(call inherit-product, device/bliss/atv/bliss_atv.mk)
 
 # AOSP packages
 PRODUCT_PACKAGES += \
     LeanbackIME
 
-# Lineage packages
+# Bliss packages
 PRODUCT_PACKAGES += \
     AppDrawer \
     LineageCustomizer
 
-DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/tv
+DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/tv

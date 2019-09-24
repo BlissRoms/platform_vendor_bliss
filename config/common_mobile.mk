@@ -1,5 +1,5 @@
-# Inherit common mobile Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common mobile Bliss stuff
+$(call inherit-product, vendor/bliss/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -22,7 +22,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Exchange2
 
-# Lineage packages
+# bliss packages
 PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
@@ -54,11 +54,11 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # Custom off-mode charger
-ifeq ($(WITH_LINEAGE_CHARGER),true)
+ifeq ($(WITH_BLISS_CHARGER),true)
 PRODUCT_PACKAGES += \
-    lineage_charger_res_images \
+    bliss_charger_res_images \
     font_log.png \
-    libhealthd.lineage
+    libhealthd.bliss
 endif
 
 # Customizations

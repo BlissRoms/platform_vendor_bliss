@@ -1,5 +1,7 @@
-c 1 0 part0
-c 0 0 part1
-c 1 0 part2
-c 1 1 part3
-c 1 0 part4
+1080 810 60
+c 0 0 part0
+c 1 0 part1
+c 60 0 part2
+
+
+

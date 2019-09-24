@@ -32,7 +32,6 @@ PRODUCT_PACKAGES += \
     Jelly \
     LockClock \
     TrebuchetQuickStep \
-    Updater \
     WeatherProvider
 
 # Exchange support

@@ -57,6 +57,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Recorder \
     ThemePicker \
-    Launcher3QuickStep \
     BlissUpdater \
-    BlissPapers
+    BlissPapers \
+    Launcher3 \
+    Launcher3QuickStep

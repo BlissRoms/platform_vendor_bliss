@@ -59,5 +59,5 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     BlissUpdater \
     BlissPapers \
-    Launcher3 \
-    Launcher3QuickStep
+    SettingsIntelligenceGooglePrebuilt \
+    NexusLauncherRelease

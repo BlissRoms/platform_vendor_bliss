@@ -197,9 +197,6 @@ PRODUCT_COPY_FILES += \
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
-# Squisher Location
-SQUISHER_SCRIPT := vendor/bliss/tools/squisher
-
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
 

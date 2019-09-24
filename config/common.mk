@@ -167,15 +167,17 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 
-# Squisher Location
-SQUISHER_SCRIPT := vendor/bliss/tools/squisher
-
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
 # Squisher Location
 SQUISHER_SCRIPT := vendor/bliss/tools/squisher
 
+# Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
+
+# Misc Packages
 -include vendor/bliss/config/misc_packages.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
+-include vendor/bliss/config/partner_gms.mk

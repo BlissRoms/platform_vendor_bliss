@@ -59,3 +59,8 @@ PRODUCT_PACKAGES += \
     LineageRedAccent \
     LineageYellowAccent
 
+# AOSP Packages
+PRODUCT_PACKAGES += \
+    Contacts \
+    Dialer \
+    DeskClock

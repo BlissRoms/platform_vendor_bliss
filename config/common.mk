@@ -164,9 +164,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
-# LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
-
 # Google fonts
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/product/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml \

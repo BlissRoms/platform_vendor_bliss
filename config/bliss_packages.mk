@@ -64,4 +64,5 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     BlissPapers \
     SettingsIntelligenceGooglePrebuilt \
-    NexusLauncherRelease
+    NexusLauncherRelease \
+    GalleryGoPrebuilt

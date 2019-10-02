@@ -902,16 +902,16 @@ function oat2dex() {
     local HOST="$(uname)"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$BLISS_ROOT"/vendor/bliss/build/tools/smali/baksmali.jar
-        export SMALIJAR="$BLISS_ROOT"/vendor/bliss/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$BLISS_ROOT"/prebuilts/tools-bliss/common/smali/baksmali.jar
+        export SMALIJAR="$BLISS_ROOT"/prebuilts/tools-bliss/common/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$BLISS_ROOT"/vendor/bliss/build/tools/"$HOST"/vdexExtractor
+        export VDEXEXTRACTOR="$BLISS_ROOT"/prebuilts/tools-bliss/"${HOST,,}"-x86/bin/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$BLISS_ROOT"/vendor/bliss/build/tools/"$HOST"/compact_dex_converter
+        export CDEXCONVERTER="$BLISS_ROOT"/prebuilts/tools-bliss/"${HOST,,}"-x86/bin/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder

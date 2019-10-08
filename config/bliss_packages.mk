@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     vim \
     wget \
     zip
-    
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
@@ -60,4 +60,5 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     BlissPapers \
     Launcher3 \
-    Launcher3QuickStep
+    Launcher3QuickStep \
+    AboutBliss

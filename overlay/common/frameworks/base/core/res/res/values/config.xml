@@ -88,7 +88,7 @@
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
     <!-- Whether or not we should show the option to show battery percentage -->
-    <bool name="config_battery_percentage_setting_available">false</bool>
+    <bool name="config_battery_percentage_setting_available">true</bool>
 
     <!-- When true, the tethering upstream network follows the current default
          Internet network (except when the current default network is mobile,

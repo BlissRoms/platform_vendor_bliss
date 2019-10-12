@@ -67,6 +67,7 @@ PRODUCT_PACKAGES += \
     SettingsIntelligenceGooglePrebuilt \
     NexusLauncherRelease \
     GalleryGoPrebuilt \
+    PixelThemes \
     AboutBliss
 
 # Accents

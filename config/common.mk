@@ -167,9 +167,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
-# Include Google fonts
-include vendor/bliss/config/fonts.mk
-
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

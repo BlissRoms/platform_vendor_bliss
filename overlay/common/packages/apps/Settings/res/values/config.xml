@@ -28,13 +28,6 @@
     <string name="config_wallpaper_picker_package" translatable="false">com.android.wallpaper</string>
     <string name="config_wallpaper_picker_class" translatable="false">com.android.customization.picker.CustomizationPickerActivity</string>
 
-    <!-- Name of a font family to use for headlines. If empty, falls back to platform default -->
-    <string name="config_headlineFontFamily">google-sans</string>
-    <!-- Name of the font family used for system surfaces where the font should use medium weight -->
-    <string name="config_headlineFontFamilyMedium">google-sans-medium</string>
-    <!-- Allows setting custom fontFeatureSettings on specific text. -->
-    <string name="config_headlineFontFeatureSettings">ss03</string>
-
     <bool name="config_show_avatar_in_homepage">true</bool>
 
     <!-- Fully-qualified class name for the styles & wallpaper picker activity. -->

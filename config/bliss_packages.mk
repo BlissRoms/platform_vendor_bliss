@@ -65,7 +65,8 @@ PRODUCT_PACKAGES += \
     NexusLauncherRelease \
     GalleryGoPrebuilt \
     PixelThemes \
-    AboutBliss
+    AboutBliss \
+    BlissStatistics
 
 # Accents
 PRODUCT_PACKAGES += \

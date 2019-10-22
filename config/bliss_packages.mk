@@ -66,6 +66,7 @@ PRODUCT_PACKAGES += \
     GalleryGoPrebuilt \
     PixelThemes \
     AboutBliss \
+    SoundPickerPrebuilt \
     BlissStatistics
 
 # Accents

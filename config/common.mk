@@ -29,11 +29,6 @@ TARGET_DEFAULT_RINGTONE := The_big_adventure.ogg
 TARGET_DEFAULT_NOTIFICATION_SOUND := Popcorn.ogg
 TARGET_DEFAULT_ALARM_ALERT := Bright_morning.ogg
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
-# Thank you, please drive thru!
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
-endif
-
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 # Disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0

@@ -24,10 +24,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-# Default notification/alarm sounds
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
+# Default ringtone/notification/alarm sounds
+TARGET_DEFAULT_RINGTONE := The_big_adventure.ogg
+TARGET_DEFAULT_NOTIFICATION_SOUND := Popcorn.ogg
+TARGET_DEFAULT_ALARM_ALERT := Bright_morning.ogg
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
@@ -98,10 +98,6 @@ PRODUCT_COPY_FILES += \
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
-
-# Default ringtone
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.ringtone=Orion.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)

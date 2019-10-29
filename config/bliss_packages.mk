@@ -61,6 +61,7 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     BlissPapers \
     SettingsIntelligenceGooglePrebuilt \
+    MatchmakerPrebuilt \
     NexusLauncherRelease \
     GalleryGoPrebuilt \
     PixelThemes \

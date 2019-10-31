@@ -26,12 +26,9 @@ PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
     LineageSettingsProvider \
-    LineageSetupWizard \
     Eleven \
-    ExactCalculator \
     Jelly \
     LockClock \
-    TrebuchetQuickStep \
     WeatherProvider
 
 # Exchange support
@@ -52,9 +49,3 @@ PRODUCT_PACKAGES += \
     LineagePurpleAccent \
     LineageRedAccent \
     LineageYellowAccent
-
-# AOSP Packages
-PRODUCT_PACKAGES += \
-    Contacts \
-    Dialer \
-    DeskClock

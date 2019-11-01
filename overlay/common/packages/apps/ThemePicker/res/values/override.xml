@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 
-     Copyright (C) 2019 Havoc-OS
+     Copyright (C) 2018 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,25 @@
      limitations under the License.
 -->
 <resources>
+    <string name="themes_stub_package" translatable="false">org.lineageos.customization</string>
+    <!-- Authority of a provider in System UI that will provide preview info for available clockfaces. -->
+    <string name="clocks_provider_authority" translatable="false">com.android.keyguard.clock</string>
 
-    <string name="themes_stub_package" translatable="false">com.google.android.apps.customization.pixel</string>
+    <!--Name of metadata in the main launcher Activity which values contains the authority
+        corresponding to a ContentProvider in launcher to provide available grids and
+        allow for changing them -->
+    <string name="grid_control_metadata_name" translatable="false">com.android.launcher3.grid.control</string>
 
+    <string name="launcher_overlayable_package" translatable="false">com.android.launcher3</string>
+
+    <!-- List of packages whose icons are used to preview the icon shape for a theme. These are
+        typically GMS apps so they should be available in GMS devices. -->
+    <array name="icon_shape_preview_packages">
+        <item>com.google.android.gm</item>
+        <item>com.google.android.googlequicksearchbox</item>
+        <item>com.google.android.apps.photos</item>
+        <item>com.google.android.apps.docs</item>
+        <item>com.google.android.youtube</item>
+        <item>com.android.vending</item>
+    </array>
 </resources>

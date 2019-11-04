@@ -47,7 +47,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    NexusLauncherReleaseOverlay
+    NexusLauncherReleaseOverlay \
+    PixelDocumentsUIGoogleOverlay
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \

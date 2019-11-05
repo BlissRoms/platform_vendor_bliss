@@ -63,6 +63,7 @@ PRODUCT_PACKAGES += \
     SettingsIntelligenceGooglePrebuilt \
     MatchmakerPrebuilt \
     NexusLauncherRelease \
+    NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
     PixelThemes \
     AboutBliss \

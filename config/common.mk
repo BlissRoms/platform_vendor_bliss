@@ -168,5 +168,8 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
 # Misc Packages
 -include vendor/bliss/config/misc_packages.mk
 
+# Themes and Overlays
+-include vendor/themes/bliss_themes.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

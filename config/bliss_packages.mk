@@ -66,7 +66,9 @@ PRODUCT_PACKAGES += \
     GalleryGoPrebuilt \
     PixelThemes \
     AboutBliss \
-    BlissStatistics
+    BlissStatistics \
+    Contacts \
+    Dialer
 
 # Accents
 PRODUCT_PACKAGES += \

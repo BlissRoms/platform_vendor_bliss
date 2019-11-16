@@ -57,7 +57,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     LatinIME \
     DeskClock \
-    Recorder \
     ThemePicker \
     BlissUpdater \
     BlissPapers \

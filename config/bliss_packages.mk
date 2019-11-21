@@ -68,7 +68,9 @@ PRODUCT_PACKAGES += \
     BlissStatistics \
     Contacts \
     SafetyHubPrebuilt \
-    Dialer
+    Dialer \
+    OmniJaws \
+    OmniStyle
 
 # Accents
 PRODUCT_PACKAGES += \
@@ -83,3 +85,7 @@ PRODUCT_PACKAGES += \
     AccentColorFlatPinkOverlay \
     AccentColorCyanOverlay \
     AccentColorBlueGrayOverlay
+
+# OmniJaws Permission
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/org.omnirom.omnijaws.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.omnirom.omnijaws.xml

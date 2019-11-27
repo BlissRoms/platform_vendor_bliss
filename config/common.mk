@@ -171,5 +171,9 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
 # Themes and Overlays
 -include vendor/themes/bliss_themes.mk
 
+# Fonts
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

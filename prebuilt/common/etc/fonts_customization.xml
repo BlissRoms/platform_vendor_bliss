@@ -1,0 +1,79 @@
+<fonts-modification version="1">
+
+    <family customizationType="new-named-family" name="alpacascarlett">
+        <font weight="400" style="normal">Alpaca_Scarlett_Demo.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="alpacasolidify">
+        <font weight="400" style="normal">Alpaca_Solidify.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="amarante">
+        <font weight="400" style="normal">Amarante.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="anaheimregular">
+        <font weight="400" style="normal">Anaheim-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="anita">
+        <font weight="400" style="normal">Anita.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="arkitech">
+        <font weight="400" style="normal">Arkitech.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="asansrounded">
+        <font weight="400" style="normal">ASansrounded.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="asap">
+        <font weight="400" style="normal">Asap.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="assassin">
+        <font weight="400" style="normal">Assassin.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="atma">
+        <font weight="400" style="normal">Atma.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="audiowide">
+        <font weight="400" style="normal">Audiowide.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="banshee">
+        <font weight="400" style="normal">banshee.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bariollight">
+        <font weight="400" style="normal">Bariol-Light.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bariolregular">
+        <font weight="400" style="normal">Bariol-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="barlow">
+        <font weight="400" style="normal">Barlow.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="batman">
+        <font weight="400" style="normal">batman.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bauhaus">
+        <font weight="400" style="normal">Bauhaus.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bigriver">
+        <font weight="400" style="normal">big_river_sample.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bigriverscript">
+        <font weight="400" style="normal">big_river_script_sample.ttf</font>
+    </family>
+
+</fonts-modification>

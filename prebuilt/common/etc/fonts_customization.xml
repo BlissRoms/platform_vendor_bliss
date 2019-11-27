@@ -1,0 +1,403 @@
+<fonts-modification version="1">
+
+    <family customizationType="new-named-family" name="alpacascarlett">
+        <font weight="400" style="normal">Alpaca_Scarlett_Demo.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="alpacasolidify">
+        <font weight="400" style="normal">Alpaca_Solidify.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="amarante">
+        <font weight="400" style="normal">Amarante.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="anaheimregular">
+        <font weight="400" style="normal">Anaheim-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="anita">
+        <font weight="400" style="normal">Anita.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="arkitech">
+        <font weight="400" style="normal">Arkitech.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="asansrounded">
+        <font weight="400" style="normal">ASansrounded.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="asap">
+        <font weight="400" style="normal">Asap.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="assassin">
+        <font weight="400" style="normal">Assassin.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="atma">
+        <font weight="400" style="normal">Atma.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="audiowide">
+        <font weight="400" style="normal">Audiowide.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="banshee">
+        <font weight="400" style="normal">banshee.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bariollight">
+        <font weight="400" style="normal">Bariol-Light.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bariolregular">
+        <font weight="400" style="normal">Bariol-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="barlow">
+        <font weight="400" style="normal">Barlow.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="batman">
+        <font weight="400" style="normal">batman.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bauhaus">
+        <font weight="400" style="normal">Bauhaus.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bigriver">
+        <font weight="400" style="normal">big_river_sample.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="bigriverscript">
+        <font weight="400" style="normal">big_river_script_sample.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="cagliostrolight">
+        <font weight="400" style="normal">Cagliostro-Light.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="cagliostroregular">
+        <font weight="400" style="normal">Cagliostro-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="calibriregular">
+        <font weight="400" style="normal">Calibri_Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="caviardreamsbolditalic">
+        <font weight="400" style="normal">CaviarDreams_BoldItalic.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="caviardreamsbold">
+        <font weight="400" style="normal">CaviarDreams_Bold.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="caviardreamsitalic">
+        <font weight="400" style="normal">CaviarDreams_Italic.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="caviardreams">
+        <font weight="400" style="normal">CaviarDreams.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="chinrg">
+        <font weight="400" style="normal">chinrg.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="chint">
+        <font weight="400" style="normal">chint.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="chococooky">
+        <font weight="400" style="normal">Chococooky.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="clearsans">
+        <font weight="400" style="normal">Clear_Sans.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="coconthin">
+        <font weight="400" style="normal">CoconThin.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="comfortaaregular">
+        <font weight="400" style="normal">Comfortaa_Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="comicneuesansid">
+        <font weight="400" style="normal">ComicNeueSansID.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="comicsans">
+        <font weight="400" style="normal">Comic_Sans.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="cooljazz">
+        <font weight="400" style="normal">Cooljazz.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="COOLSTORYREGULAR">
+        <font weight="400" style="normal">coolstory_regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="digital">
+        <font weight="400" style="normal">Digital.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="dosisregular">
+        <font weight="400" style="normal">Dosis_Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="fifa2018">
+        <font weight="400" style="normal">Fifa_2018.ttf.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="fifawelcome">
+        <font weight="400" style="normal">fifawelcome.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="filthoficarus">
+        <font weight="400" style="normal">Filth_Of_Icarus.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="foxandcat">
+        <font weight="400" style="normal">FoxAndCat.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="gafata">
+        <font weight="400" style="normal">Gafata.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="ginorasans">
+        <font weight="400" style="normal">GinoraSans.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="googlesansregular">
+        <font weight="400" style="normal">GoogleSans-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="helveticaneue">
+        <font weight="400" style="normal">Helvetica_Neue.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="hycoffee">
+        <font weight="400" style="normal">HYCoffee.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="inkferno">
+        <font weight="400" style="normal">Inkferno.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="kenyancoffeerg">
+        <font weight="400" style="normal">kenyan_coffee_rg.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="kgmisskindergarten">
+        <font weight="400" style="normal">KGMissKindergarten.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="lgsmartgothic">
+        <font weight="400" style="normal">LG_Smart_Gothic.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="liberationserif">
+        <font weight="400" style="normal">Liberation_Serif.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="lifeisabeach">
+        <font weight="400" style="normal">LifeIsABeach.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="lovelyn">
+        <font weight="400" style="normal">Lovelyn_Free_Personal_Use.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="love">
+        <font weight="400" style="normal">love.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="malgungothic">
+        <font weight="400" style="normal">Malgun_Gothic.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="modernserif">
+        <font weight="400" style="normal">ModernSerif.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="montserratalternates">
+        <font weight="400" style="normal">MontserratAlternates.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="museo300">
+        <font weight="400" style="normal">Museo300.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="nk57">
+        <font weight="400" style="normal">NK57.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="noir">
+        <font weight="400" style="normal">Noir.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="nokiapure">
+        <font weight="400" style="normal">Nokia_Pure.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="noteworthy">
+        <font weight="400" style="normal">Noteworthy.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="nunitoregular">
+        <font weight="400" style="normal">Nunito-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="OHD5">
+        <font weight="400" style="normal">OHD5.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="opensanslight">
+        <font weight="400" style="normal">OpenSans_Light.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="oswald">
+        <font weight="400" style="normal">Oswald.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="poppins">
+        <font weight="400" style="normal">Poppins.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="product_sans">
+        <font weight="400" style="normal">Product_Sans.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="qontra">
+        <font weight="400" style="normal">Qontra.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="quick">
+        <font weight="400" style="normal">Quick.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="raleway">
+        <font weight="400" style="normal">Raleway.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="rosemaryregular">
+        <font weight="400" style="normal">Rosemary_Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="rosemaryroman">
+        <font weight="400" style="normal">Rosemary_Roman.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="roundedelegance">
+        <font weight="400" style="normal">Rounded_Elegance.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="samarkan">
+        <font weight="400" style="normal">Samarkan.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="samsungbold">
+        <font weight="400" style="normal">samsung_bold.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="samsungone">
+        <font weight="400" style="normal">SamsungOne.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="samsungreguler">
+        <font weight="400" style="normal">Samsung_reguler.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="sanfranciscopro">
+        <font weight="400" style="normal">San_Francisco_Pro.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="saoregular">
+        <font weight="400" style="normal">SAO-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="screwd">
+        <font weight="400" style="normal">screwd.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="slatefromoplight">
+        <font weight="400" style="normal">SlateFromOP-Light.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="slatefromopregular">
+        <font weight="400" style="normal">SlateFromOP-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="sonysketch">
+        <font weight="400" style="normal">Sony_Sketch.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="squared">
+        <font weight="400" style="normal">Squared.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="storopia">
+        <font weight="400" style="normal">Storopia.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="timeless">
+        <font weight="400" style="normal">Timeless.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="titilliumweb">
+        <font weight="400" style="normal">TitilliumWeb.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="transformers">
+        <font weight="400" style="normal">Transformers.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="typography">
+        <font weight="400" style="normal">Typography.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="ubunturegular">
+        <font weight="400" style="normal">Ubuntu_Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="ubuntutitle">
+        <font weight="400" style="normal">ubuntu-title.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="ubuntutitle">
+        <font weight="400" style="normal">Ubuntu-Title.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="unicorn">
+        <font weight="400" style="normal">Unicorn.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="valentinelove">
+        <font weight="400" style="normal">Valentine_Love.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="voceslight">
+        <font weight="400" style="normal">Voces-Light.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="vocesregular">
+        <font weight="400" style="normal">Voces-Regular.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="walkway">
+        <font weight="400" style="normal">Walkway.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="xperia">
+        <font weight="400" style="normal">Xperia.ttf</font>
+    </family>
+
+</fonts-modification>

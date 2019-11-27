@@ -1,0 +1,11 @@
+<fonts-modification version="1">
+
+    <family customizationType="new-named-family" name="sans-serif">
+        <font weight="400" style="normal">Alpaca_Scarlett_Demo.ttf</font>
+    </family>
+
+    <family customizationType="new-named-family" name="sans-serif">
+        <font weight="400" style="normal">Alpaca_Solidify.ttf</font>
+    </family>
+
+</fonts-modification>

@@ -63,7 +63,6 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     BlissPapers \
     SettingsIntelligenceGooglePrebuilt \
-    MatchmakerPrebuilt \
     NexusLauncherRelease \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \

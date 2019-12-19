@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
     NexusLauncherRelease \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
-    PixelThemes \
+    PixelThemesStub2019 \
     AboutBliss \
     BlissStatistics \
     Contacts \

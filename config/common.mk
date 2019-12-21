@@ -50,6 +50,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.bs_theme=true \
     ro.com.google.ime.theme_id=5
 
+# Gestures
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \

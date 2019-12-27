@@ -49,7 +49,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NexusLauncherReleaseOverlay \
     GooglePermissionControllerOverlay \
-    PixelDocumentsUIGoogleOverlay
+    PixelDocumentsUIGoogleOverlay \
+    NavBarGesturalNoPillOverlay \
+    NavBarGesturalNarrowBackNoPillOverlay \
+    NavBarGesturalWideBackNoPillOverlay \
+    NavBarGesturalExtraWideBackNoPillOverlay
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \

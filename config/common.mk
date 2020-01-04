@@ -102,10 +102,15 @@ PRODUCT_COPY_FILES += \
 
 # Lineage specific permissions
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD
     vendor/bliss/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml \
     vendor/bliss/config/permissions/privapp-permissions-lineage-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lineage.xml \
     vendor/bliss/config/permissions/privapp-permissions-lineage-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineage.xml \
     vendor/bliss/config/permissions/privapp-permissions-cm-legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-cm-legacy.xml
+=======
+   vendor/xtended/config/permissions/privapp-permissions-google_prebuilt.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google_prebuilt.xml \
+   vendor/xtended/config/permissions/privapp-permissions-xtended.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-xtended.xml
+>>>>>>> 17d0d1f7... vendor: Add Google privapp permissions
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \

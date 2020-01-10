@@ -207,5 +207,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Themes and Overlays
 -include vendor/themes/bliss_themes.mk
 
+# Customization
+include vendor/google-customization/config.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

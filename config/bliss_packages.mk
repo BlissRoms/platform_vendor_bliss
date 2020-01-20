@@ -63,7 +63,7 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     BlissPapers \
     SettingsIntelligenceGooglePrebuilt \
-    NexusLauncherRelease \
+    Lawnchair \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
     PixelThemesStub2019 \
@@ -96,3 +96,10 @@ PRODUCT_COPY_FILES += \
 # Bliss System Permission
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/privapp-permissions-bliss-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-bliss-system.xml
+
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+
+

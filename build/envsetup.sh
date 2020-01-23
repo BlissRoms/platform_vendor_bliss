@@ -20,6 +20,8 @@ Additional Bliss functions:
 - repopick:        Utility to fetch changes from Gerrit.
 - installboot:     Installs a boot.img to the connected device.
 - installrecovery: Installs a recovery.img to the connected device.
+- blissify:        Sets up build environment using breakfast(),
+                   and then compiles using mka() against blissify target.
 EOF
 }
 
@@ -50,18 +52,6 @@ function mk_timer()
     echo " ####"
     echo
     return $ret
-}
-
-function brunch()
-{
-    breakfast $*
-    if [ $? -eq 0 ]; then
-        mka bacon
-    else
-        echo "No such item in brunch menu. Try 'breakfast'"
-        return 1
-    fi
-    return $?
 }
 
 function breakfast()
@@ -977,3 +967,15 @@ function fixup_common_out_dir() {
 if [ -n "$JACK_SERVER_VM_ARGUMENTS" ] && [ -z "$ANDROID_JACK_VM_ARGS" ]; then
     export ANDROID_JACK_VM_ARGS=$JACK_SERVER_VM_ARGUMENTS
 fi
+
+function blissify()
+{
+    breakfast $*
+    if [ $? -eq 0 ]; then
+        mka blissify
+    else
+        echo "No such item in brunch menu. Try 'breakfast'"
+        return 1
+    fi
+    return $?
+}

@@ -20,6 +20,8 @@ Additional BlissRoms functions:
 - repopick:        Utility to fetch changes from Gerrit.
 - installboot:     Installs a boot.img to the connected device.
 - installrecovery: Installs a recovery.img to the connected device.
+- blissify:        Sets up build environment using breakfast(),
+                   and then compiles using mka() against blissify target.
 EOF
 }
 
@@ -50,18 +52,6 @@ function mk_timer()
     echo " ####"
     echo
     return $ret
-}
-
-function brunch()
-{
-    breakfast $*
-    if [ $? -eq 0 ]; then
-        mka bacon
-    else
-        echo "No such item in brunch menu. Try 'breakfast'"
-        return 1
-    fi
-    return $?
 }
 
 function breakfast()
@@ -119,7 +109,7 @@ function eat()
 
 function omnom()
 {
-    brunch $*
+    blissify $*
     eat
 }
 
@@ -241,32 +231,32 @@ function blissremote()
     fi
     git remote rm bliss 2> /dev/null
     local REMOTE=$(git config --get remote.github.projectname)
-    local LINEAGE="true"
+    local BLISS="true"
     if [ -z "$REMOTE" ]
     then
         REMOTE=$(git config --get remote.aosp.projectname)
-        LINEAGE="false"
+        BLISS="false"
     fi
     if [ -z "$REMOTE" ]
     then
         REMOTE=$(git config --get remote.caf.projectname)
-        LINEAGE="false"
+        BLISS="false"
     fi
 
-    if [ $LINEAGE = "false" ]
+    if [ $BLISS = "false" ]
     then
         local PROJECT=$(echo $REMOTE | sed -e "s#platform/#android/#g; s#/#_#g")
-        local PFX="LineageOS/"
+        local PFX="BLISS/"
     else
         local PROJECT=$REMOTE
     fi
 
-    local LINEAGE_USER=$(git config --get review.review.blissroms.com.username)
-    if [ -z "$LINEAGE_USER" ]
+    local BLISS_USER=$(git config --get review.review.blissroms.com.username)
+    if [ -z "$BLISS_USER" ]
     then
         git remote add bliss ssh://review.blissroms.com:29418/$PFX$PROJECT
     else
-        git remote add bliss ssh://$LINEAGE_USER@review.blissroms.com:29418/$PFX$PROJECT
+        git remote add bliss ssh://$BLISS_USER@review.blissroms.com:29418/$PFX$PROJECT
     fi
     echo "Remote 'bliss' created"
 }
@@ -928,7 +918,7 @@ function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)
     common_target_out=common-${target_device}
-    if [ ! -z $LINEAGE_FIXUP_COMMON_OUT ]; then
+    if [ ! -z $BLISS_FIXUP_COMMON_OUT ]; then
         if [ -d ${common_out_dir} ] && [ ! -L ${common_out_dir} ]; then
             mv ${common_out_dir} ${common_out_dir}-${target_device}
             ln -s ${common_target_out} ${common_out_dir}
@@ -941,4 +931,16 @@ function fixup_common_out_dir() {
         [ -L ${common_out_dir} ] && rm ${common_out_dir}
         mkdir -p ${common_out_dir}
     fi
+}
+
+function blissify()
+{
+    breakfast $*
+    if [ $? -eq 0 ]; then
+        mka blissify
+    else
+        echo "No such item in brunch menu. Try 'breakfast'"
+        return 1
+    fi
+    return $?
 }

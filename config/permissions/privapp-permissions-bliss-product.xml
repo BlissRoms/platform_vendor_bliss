@@ -35,4 +35,10 @@
         <permission name="android.permission.WRITE_SETTINGS_HOMEPAGE_DATA"/>
     </privapp-permissions>
 
+    <privapp-permissions package="com.google.android.apps.safetyhub">
+        <permission name="android.permission.CALL_PRIVILEGED"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
 </permissions>

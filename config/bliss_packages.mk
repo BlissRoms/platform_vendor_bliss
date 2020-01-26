@@ -96,3 +96,7 @@ PRODUCT_COPY_FILES += \
 # Bliss System Permission
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/privapp-permissions-bliss-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-bliss-system.xml
+    
+# Bliss Product Permission
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/privapp-permissions-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-bliss.xml

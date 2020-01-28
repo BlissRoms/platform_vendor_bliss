@@ -19,7 +19,7 @@ preserve_addon_d() {
     cp -a $S/addon.d/* /tmp/addon.d/
 
     # Discard any scripts that aren't at least our version level
-    for f in /postinstall/tmp/addon.d/*sh; do
+    for f in /tmp/addon.d/*sh; do
       SCRIPT_VERSION=$(grep "^# ADDOND_VERSION=" $f | cut -d= -f2)
       if [ -z "$SCRIPT_VERSION" ]; then
         SCRIPT_VERSION=1
@@ -58,8 +58,7 @@ return 1
 check_blacklist() {
   if [ -f $S/addon.d/blacklist -a -d /$1/addon.d/ ]; then
       ## Discard any known bad backup scripts
-      cd /$1/addon.d/
-      for f in *sh; do
+      for f in /$1/addon.d/*sh; do
           [ -f $f ] || continue
           s=$(md5sum $f | cut -c-32)
           grep -q $s $S/addon.d/blacklist && rm -f $f
@@ -98,11 +97,12 @@ case "$1" in
   backup)
     mkdir -p $C
     if check_prereq; then
-        if check_whitelist system; then
+        if check_whitelist $S; then
+            unmount_system
             exit 127
         fi
     fi
-    check_blacklist system
+    check_blacklist $S
     preserve_addon_d
     run_stage pre-backup
     run_stage backup

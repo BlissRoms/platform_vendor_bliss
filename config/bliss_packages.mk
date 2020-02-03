@@ -90,6 +90,10 @@ PRODUCT_PACKAGES += \
     AccentColorCyanOverlay \
     AccentColorBlueGrayOverlay
 
+# Miui Brightness Overlay
+PRODUCT_PACKAGES += \
+    BrightnessSliderOverlay
+
 # OmniJaws Permission
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/org.omnirom.omnijaws.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.omnirom.omnijaws.xml

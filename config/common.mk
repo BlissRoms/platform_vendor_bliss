@@ -58,8 +58,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bliss/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh \
-    vendor/bliss/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
+    vendor/bliss/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \

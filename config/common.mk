@@ -176,6 +176,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
+PRODUCT_PACKAGES += \
+    BrightnessSliderOverlay
+
 # Google Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
 

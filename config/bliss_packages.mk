@@ -64,6 +64,7 @@ PRODUCT_PACKAGES += \
     SettingsIntelligenceGooglePrebuilt \
     Lawnchair \
     Longshot \
+    OPScreenRecorder \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
     PixelThemesStub2019 \

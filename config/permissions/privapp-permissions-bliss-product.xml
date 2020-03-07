@@ -41,4 +41,12 @@
         <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
     </privapp-permissions>
 
+	<privapp-permissions package="com.google.android.gms">
+		<permission name="android.permission.WRITE_DEVICE_CONFIG" />
+	</privapp-permissions>
+
+    <privapp-permissions package="com.google.android.apps.wellbeing">
+        <permission name="android.permission.LOCATION_HARDWARE"/>
+    </privapp-permissions>
+
 </permissions>

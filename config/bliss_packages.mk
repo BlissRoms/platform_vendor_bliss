@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     LineageSettingsProvider \
     Phonograph \
     Profiles \
-    BlissUpdater
+    BlissUpdater \
+    Seedvault
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \

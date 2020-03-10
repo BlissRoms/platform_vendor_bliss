@@ -1197,11 +1197,11 @@ function oat2dex() {
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$BLISS_ROOT"/prebuilts/tools-bliss/{HOST}-x86/bin/vdexExtractor
+        export VDEXEXTRACTOR="$BLISS_ROOT"/prebuilts/tools-bliss/${HOST}-x86/bin/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$BLISS_ROOT"/prebuilts/tools-bliss/{HOST}-x86/bin/compact_dex_converter
+        export CDEXCONVERTER="$BLISS_ROOT"/prebuilts/tools-bliss/${HOST}-x86/bin/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder

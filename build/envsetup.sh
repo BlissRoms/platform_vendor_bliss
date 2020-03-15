@@ -251,14 +251,14 @@ function blissremote()
         local PROJECT=$REMOTE
     fi
 
-    local BLISS_USER=$(git config --get review.review.lineageos.org.username)
-    if [ -z "$LINEAGE_USER" ]
+    local BLISS_USER=$(git config --get review.review.blissroms.com.username)
+    if [ -z "$BLISS_USER" ]
     then
-        git remote add lineage ssh://review.lineageos.org:29418/$PFX$PROJECT
+        git remote add bliss ssh://review.blissroms.com:29418/$PFX$PROJECT
     else
-        git remote add lineage ssh://$LINEAGE_USER@review.lineageos.org:29418/$PFX$PROJECT
+        git remote add bliss ssh://$BLISS_USER@review.blissroms.com:29418/$PFX$PROJECT
     fi
-    echo "Remote 'lineage' created"
+    echo "Remote 'bliss' created"
 }
 
 function aospremote()
@@ -438,7 +438,7 @@ function blissgerrit() {
         $FUNCNAME help
         return 1
     fi
-    local user=`git config --get review.review.lineageos.org.username`
+    local user=`git config --get review.review.blissroms.com.username`
     local review=`git config --get remote.github.review`
     local project=`git config --get remote.github.projectname`
     local command=$1
@@ -474,7 +474,7 @@ EOF
             case $1 in
                 __cmg_*) echo "For internal use only." ;;
                 changes|for)
-                    if [ "$FUNCNAME" = "lineagegerrit" ]; then
+                    if [ "$FUNCNAME" = "blissgerrit" ]; then
                         echo "'$FUNCNAME $1' is deprecated."
                     fi
                     ;;
@@ -567,7 +567,7 @@ EOF
                 $local_branch:refs/for/$remote_branch || return 1
             ;;
         changes|for)
-            if [ "$FUNCNAME" = "lineagegerrit" ]; then
+            if [ "$FUNCNAME" = "blissgerrit" ]; then
                 echo >&2 "'$FUNCNAME $command' is deprecated."
             fi
             ;;
@@ -673,8 +673,8 @@ function blissrebase() {
     local dir="$(gettop)/$repo"
 
     if [ -z $repo ] || [ -z $refs ]; then
-        echo "LineageOS Gerrit Rebase Usage: "
-        echo "      lineagerebase <path to project> <patch IDs on Gerrit>"
+        echo "BLISSROMS Gerrit Rebase Usage: "
+        echo "      blissrebase <path to project> <patch IDs on Gerrit>"
         echo "      The patch IDs appear on the Gerrit commands that are offered."
         echo "      They consist on a series of numbers and slashes, after the text"
         echo "      refs/changes. For example, the ID in the following command is 26/8126/2"
@@ -695,7 +695,7 @@ function blissrebase() {
     echo "Bringing it up to date..."
     repo sync .
     echo "Fetching change..."
-    git fetch "http://review.lineageos.org/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
+    git fetch "http://review.blissroms.com/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
     if [ "$?" != "0" ]; then
         echo "Error cherry-picking. Not uploading!"
         return

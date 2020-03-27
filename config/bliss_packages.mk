@@ -47,8 +47,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    GooglePermissionControllerOverlay \
-    PixelDocumentsUIGoogleOverlay
+    GooglePermissionControllerOverlay
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \

@@ -24,6 +24,7 @@
     <privapp-permissions package="com.android.systemui">
         <permission name="android.permission.WRITE_APN_SETTINGS"/>
         <permission name="android.permission.FORCE_STOP_PACKAGES" />
+        <permission name="android.permission.CHANGE_CONFIGURATION" />
     </privapp-permissions>
 
     <privapp-permissions package="com.google.android.settings.intelligence">

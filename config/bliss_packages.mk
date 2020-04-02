@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     SoundPickerPrebuilt
 
+# Long Screenshot
+PRODUCT_PACKAGES += \
+    StitchImage
+
 ifeq ($(TARGET_USES_LAWNCHAIR),true)
 PRODUCT_PACKAGES += \
     Lawnchair

@@ -242,4 +242,8 @@
          * The device must be provisioned with HDCP keys (for protected content).
     -->
     <bool name="config_enableWifiDisplay">true</bool>
+    
+    <!-- Enable the RingtonePickerActivity in 'com.android.providers.media'. -->
+    <bool name="config_defaultRingtonePickerEnabled">false</bool>
+
 </resources>

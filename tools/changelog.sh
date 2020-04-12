@@ -45,7 +45,11 @@ else
 fi
 
 # Build a list of all repos
+IFS='
+'
 PROJECTPATHS=$(grep "<project" "${MANIFEST}" | sed -n 's/.*path="\([^"]\+\)".*/\1/p')
+PROJECTPATHS+='
+'
 
 # Add repos in local manifest for DT changelog
 for lManifest in $TOP/.repo/local_manifests/*; do

@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += \
     Contacts \
     Dialer \
     OmniJaws \
+    SoundPickerPrebuilt \
     WeatherIcons \
     OmniStyle
 

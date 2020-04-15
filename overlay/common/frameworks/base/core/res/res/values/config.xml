@@ -112,12 +112,6 @@
     <!-- Sharesheet: define a max number of targets per application for new shortcuts-based direct share introduced in Q -->
     <integer name="config_maxShortcutTargetsPerApp">8</integer>
 
-    <!-- Component name for the activity that will be presenting the Recents UI, which will receive special permissions for API related
-          to fetching and presenting recent tasks. The default configuration uses Launcehr3QuickStep as default launcher and points to
-          the corresponding recents component. When using a different default launcher, change this appropriately or use the default
-          systemui implementation: com.android.systemui/.recents.RecentsActivity -->
-    <string name="config_recentsComponentName" translatable="false">ch.deletescape.lawnchair.ci/com.android.quickstep.RecentsActivity</string>
-
     <!-- Colon separated list of package names that should be granted DND access -->
     <string name="config_defaultDndAccessPackages" translatable="false">com.google.android.gms:com.google.android.GoogleCamera:com.google.intelligence.sense:com.google.android.settings.intelligence</string>
 

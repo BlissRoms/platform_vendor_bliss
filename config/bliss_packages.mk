@@ -61,7 +61,6 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     BlissPapers \
     SettingsIntelligenceGooglePrebuilt \
-    Lawnchair \
     Longshot \
     OPScreenRecorder \
     NexusWallpapersStubPrebuilt2019Static \
@@ -73,6 +72,18 @@ PRODUCT_PACKAGES += \
     Dialer \
     OmniJaws \
     OmniStyle
+
+ifeq ($(TARGET_USES_LAWNCHAIR),true)
+PRODUCT_PACKAGES += \
+    Lawnchair
+
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+else
+PRODUCT_PACKAGES += \
+    TrebuchetQuickStep
+endif
 
 # Accents
 PRODUCT_PACKAGES += \
@@ -104,9 +115,3 @@ PRODUCT_COPY_FILES += \
 # Hidden api whitelisted apps
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/sysconfig/bliss-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/bliss-hiddenapi-package-whitelist.xml
-
-# Lawnchair
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
-

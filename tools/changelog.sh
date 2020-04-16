@@ -13,47 +13,40 @@ export MANIFEST="${TOP}/.repo/manifests/bliss.xml"
 if [ -f "${OUT}/system/etc/${Changelog}" ] # if changelog already generated
 then
 	cp "${OUT}/system/etc/${Changelog}" $Changelog
-	LastDate=`sed '2!d' $Changelog` # get 2nd line of changelog file
+	LastDate=$(sed '2!d' $Changelog) # get 2nd line of changelog file
 	LastDate="$(echo -e "${LastDate}" | tr -d '[:space:]')" # get rid of whitespaces
 	# extract month day and year from string:
 	Month=${LastDate:0:2}
 	Day=${LastDate:3:2}
 	Year=${LastDate:6:4}
-	LastDate=`date -d "${Year}${Month}${Day}" +%s`
-	TimeNow=`date +%s` # current time
+	LastDate=$(date -d "${Year}${Month}${Day}" +%s)
+	TimeNow=$(date +%s) # current time
 	DayDiff=$(( (TimeNow - LastDate) / 86400 )) # n/o days passed
 	if [[ $DayDiff < $PassedDays ]]; then # don't fetch more than max days
 		export PassedDays=$DayDiff
 		mv $Changelog "${Changelog}.bak" # save current changelog for later
 	fi
-	touch $Changelog
-else
-	touch $Changelog
 fi
+
+touch $Changelog
 
 if [[ $PassedDays == 0 ]]; then
 	echo "Already have today"
-	rm $Changelog
-	rm "${Changelog}.bak"
+	rm $Changelog{,.bak}
 	exit 0
 else
 	echo -e "${GREEN}Regenerating log of last ${YELLOW}${PassedDays}${GREEN} days${NC}"
 	if [ -f "${OUT}/system/etc/${Changelog}" ]; then
-		rm "${OUT}/system/etc/${Changelog}"
-		rm "${OUT}/${Changelog}"
+		rm "${OUT}/system/etc/${Changelog}" "${OUT}/${Changelog}"
 	fi
 fi
 
 # Build a list of all repos
-IFS='
-'
 PROJECTPATHS=$(grep "<project" "${MANIFEST}" | sed -n 's/.*path="\([^"]\+\)".*/\1/p')
-PROJECTPATHS+='
-'
 
 # Add repos in local manifest for DT changelog
 for lManifest in $TOP/.repo/local_manifests/*; do
-	PROJECTPATHS+=$(grep "<project" "${lManifest}" | sed -n 's/.*path="\([^"]\+\)".*/\1/p')
+	PROJECTPATHS+=" $(grep "<project" "${lManifest}" | sed -n 's/.*path="\([^"]\+\)".*/\1/p')"
 done
 
 echo -e "${GREEN}Generating changelog...${NC}"
@@ -63,9 +56,8 @@ pDIR=$(echo $PWD)
 
 for i in $(seq $PassedDays);
 do
-export After_Date=`date --date="$i days ago" +%m-%d-%Y`
-k=$(expr $i - 1)
-	export Until_Date=`date --date="$k days ago" +%m-%d-%Y`
+	export After_Date=$(date --date="$i days ago" +%m-%d-%Y)
+	export Until_Date=$(date --date="$(expr $i - 1) days ago" +%m-%d-%Y)
 
 	# Line with after --- until was too long for a small ListView
 	echo '====================' >> $Changelog;
@@ -75,7 +67,8 @@ k=$(expr $i - 1)
 
 	# Cycle through every repo to find commits between 2 dates
 	for PROJECTPATH in ${PROJECTPATHS}; do
-		cd "${TOP}/${PROJECTPATH}"
+		[ ! -d "$TOP/$PROJECTPATH" ] && continue
+		cd "${TOP}/$PROJECTPATH"
 		if ! [[ -z $(git log --after=$After_Date --until=$Until_Date) ]]; then # only echo if there is a change
 			echo "[${PROJECTPATH}]" >> $pDIR/$Changelog
 			git log --format="%s <%ar> [%h]%nby: %an (%ae)" --after=$After_Date --until=$Until_Date >> $pDIR/$Changelog
@@ -91,9 +84,8 @@ sed -i 's/project/   */g' $Changelog
 if [ -f "${Changelog}.bak" ]
 then
 	cat "${Changelog}.bak" >> $Changelog # restore old changelog to the end of current one
-	rm "${Changelog}.bak"
 fi
 
 cp $Changelog $OUT/system/etc/
 cp $Changelog $OUT/
-rm -rf $Changelog
+rm -f $Changelog{,.bak}

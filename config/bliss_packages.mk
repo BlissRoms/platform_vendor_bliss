@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
     Contacts \
     Dialer \
     OmniJaws \
+    WeatherIcons \
     OmniStyle
 
 ifeq ($(TARGET_USES_LAWNCHAIR),true)

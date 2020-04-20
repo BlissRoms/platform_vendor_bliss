@@ -60,7 +60,6 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     BlissUpdater \
     BlissPapers \
-    SettingsIntelligenceGooglePrebuilt \
     Longshot \
     OPScreenRecorder \
     NexusWallpapersStubPrebuilt2019Static \

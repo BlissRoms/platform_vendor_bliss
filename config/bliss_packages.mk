@@ -65,7 +65,6 @@ PRODUCT_PACKAGES += \
     OPScreenRecorder \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
-    PixelThemesStub2019 \
     AboutBliss \
     BlissStatistics \
     Contacts \

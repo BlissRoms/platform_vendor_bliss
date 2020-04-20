@@ -60,12 +60,10 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     BlissUpdater \
     BlissPapers \
-    SettingsIntelligenceGooglePrebuilt \
     Longshot \
     OPScreenRecorder \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
-    PixelThemesStub2019 \
     AboutBliss \
     BlissStatistics \
     Contacts \

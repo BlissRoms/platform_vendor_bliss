@@ -86,20 +86,6 @@ PRODUCT_PACKAGES += \
     TrebuchetQuickStep
 endif
 
-# Accents
-PRODUCT_PACKAGES += \
-    AccentColorYellowOverlay \
-    AccentColorVioletOverlay \
-    AccentColorTealOverlay \
-    AccentColorRedOverlay \
-    AccentColorQGreenOverlay \
-    AccentColorPinkOverlay \
-    AccentColorLightPurpleOverlay \
-    AccentColorIndigoOverlay \
-    AccentColorFlatPinkOverlay \
-    AccentColorCyanOverlay \
-    AccentColorBlueGrayOverlay
-
 # OmniJaws Permission
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/org.omnirom.omnijaws.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.omnirom.omnijaws.xml

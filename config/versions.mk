@@ -39,9 +39,3 @@ BLISS_DISPLAY_VERSION := $(VERSION)
 BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
 BLISS_FINGERPRINT := Bliss/$(VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date +%Y%m%d)
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.bliss.version=$(BLISS_DISPLAY_VERSION) \
-  ro.bliss.build.status=$(BLISS_BUILDTYPE) \
-  ro.bliss.releasetype=$(BLISS_BUILDTYPE) \
-  ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \
-  ro.bliss.fingerprint=$(BLISS_FINGERPRINT)

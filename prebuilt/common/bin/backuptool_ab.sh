@@ -5,7 +5,7 @@
 
 export S=/system
 export C=/postinstall/tmp/backupdir
-export V=12.6
+export V=10.0
 
 export ADDOND_VERSION=2
 
@@ -51,7 +51,7 @@ if [ ! -r /system/build.prop ]; then
   return 1
 fi
 
-if ! grep -q "^ro.bliss.version=$V.*" /system/build.prop; then
+if ! grep -q "^ro.bliss.static.version=$V.*" /system/build.prop; then
   echo "Backup/restore is not possible. Incompatible ROM version: $V"
   return 2
 fi

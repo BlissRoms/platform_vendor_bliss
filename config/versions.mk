@@ -4,6 +4,9 @@ BLISS_VERSION_MAJOR = 12
 BLISS_VERSION_MINOR = 6
 BLISS_VERSION_MAINTENANCE = Stable
 
+# Bliss Android version
+BLISS_VERSION_STATIC = 10.0
+
 #ifdef BLISS_VERSION_MAINTENANCE
 #    VERSION := $(BLISS_VERSION_MAJOR).$(BLISS_VERSION_MINOR)-$(BLISS_VERSION_MAINTENANCE)
 #else
@@ -44,4 +47,5 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bliss.build.status=$(BLISS_BUILDTYPE) \
   ro.bliss.releasetype=$(BLISS_BUILDTYPE) \
   ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \
-  ro.bliss.fingerprint=$(BLISS_FINGERPRINT)
+  ro.bliss.fingerprint=$(BLISS_FINGERPRINT) \
+  ro.bliss.static.version=$(BLISS_VERSION_STATIC)

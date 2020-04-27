@@ -81,7 +81,8 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
 else
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStep
+    Launcher3 \
+    Launcher3QuickStep
 endif
 
 # OmniJaws Permission

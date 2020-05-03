@@ -1,7 +1,3 @@
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # Extra tools in bliss
 PRODUCT_PACKAGES += \
     7z \

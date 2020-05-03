@@ -1,7 +1,3 @@
-# Boot Animation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # Extra tools
 PRODUCT_PACKAGES += \
     7z \

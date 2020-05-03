@@ -185,6 +185,9 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
+# Bliss Bootanimation
+-include vendor/bliss/config/bootanimation.mk
+
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

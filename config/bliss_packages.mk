@@ -21,10 +21,6 @@ PRODUCT_PACKAGES += \
     Profiles \
     WeatherProvider
 
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \

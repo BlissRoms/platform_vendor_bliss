@@ -118,6 +118,9 @@ endif
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
+# Bliss Bootanimation
+-include vendor/bliss/config/bootanimation.mk
+
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 

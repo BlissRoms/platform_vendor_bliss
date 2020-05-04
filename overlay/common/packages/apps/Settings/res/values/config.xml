@@ -36,6 +36,9 @@
     <!--Whether help links are defined. -->
     <bool name="config_has_help">true</bool>
 
+    <!-- Override stock doze with our own CustomDoze package. -->
+    <string name="config_customDozePackage">com.custom.ambient.display/com.custom.ambient.display.DozeSettings</string>
+
     <!-- Help Links -->
     <string name="help_uri_about">intent:#Intent;action=com.google.android.gms.googlehelp.LAUNCH;S.EXTRA_CONTEXT=android_about;end</string>
     <string name="help_uri_about_phone_v2">intent:#Intent;action=com.google.android.gms.googlehelp.LAUNCH;S.EXTRA_CONTEXT=android_about_device;end</string>

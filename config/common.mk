@@ -171,6 +171,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+ifeq ($(TARGET_HAS_FOD),true)
+DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/fod
+endif
 
 # Google Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)

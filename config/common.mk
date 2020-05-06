@@ -102,10 +102,6 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/privapp-permissions-lineage-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineage.xml \
     vendor/bliss/config/permissions/privapp-permissions-cm-legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-cm-legacy.xml
 
-# Hidden API whitelist
-PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/lineage-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/lineage-hiddenapi-package-whitelist.xml
-
 # Power whitelist
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/lineage-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-power-whitelist.xml

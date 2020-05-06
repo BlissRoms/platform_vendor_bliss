@@ -14,7 +14,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhotoTable \
     Terminal
-    
+
 # Required Lineage packages
 PRODUCT_PACKAGES += \
     LineageParts \
@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     LineageSettingsProvider \
     Eleven \
+    Etar \
     Jelly \
     LockClock \
     WeatherProvider

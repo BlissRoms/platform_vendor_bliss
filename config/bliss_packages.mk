@@ -41,10 +41,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
-# Overlays
-PRODUCT_PACKAGES += \
-    GooglePermissionControllerOverlay
-
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
     procmem

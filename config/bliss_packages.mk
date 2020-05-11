@@ -63,7 +63,8 @@ PRODUCT_PACKAGES += \
     Dialer \
     OmniJaws \
     WeatherIcons \
-    OmniStyle
+    OmniStyle \
+    SoundPickerPrebuilt
 
 ifeq ($(TARGET_USES_LAWNCHAIR),true)
 PRODUCT_PACKAGES += \

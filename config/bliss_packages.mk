@@ -53,7 +53,6 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     BlissUpdater \
     BlissPapers \
-    Longshot \
     OPScreenRecorder \
     NexusWallpapersStubPrebuilt2019Static \
     GalleryGoPrebuilt \
@@ -91,7 +90,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/privapp-permissions-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-bliss.xml \
     vendor/bliss/config/permissions/privapp-permissions-google_prebuilt.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google_prebuilt.xml
-
-# Hidden api whitelisted apps
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/sysconfig/bliss-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/bliss-hiddenapi-package-whitelist.xml

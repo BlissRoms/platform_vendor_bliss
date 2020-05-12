@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     SoundPickerPrebuilt
 
+# Snap Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Long Screenshot
 PRODUCT_PACKAGES += \
     StitchImage

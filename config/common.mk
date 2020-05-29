@@ -153,10 +153,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
+# Root
 PRODUCT_PACKAGES += \
     adb_root
-endif
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay

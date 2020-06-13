@@ -215,3 +215,4 @@ include vendor/google-customization/config.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk
+-include packages/apps/Plugins/plugins.mk

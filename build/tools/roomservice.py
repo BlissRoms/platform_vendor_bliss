@@ -219,8 +219,8 @@ def add_to_manifest(repositories, fallback_branch = None):
             project = ElementTree.Element("project", attrib = { "path": repo_target,
                 "remote": "github", "name": "BlissRoms-Devices/%s" % repo_name })
 
-        if 'branch' in repository:
-            project.set('revision',repository['branch'])
+        if 'revision' in repository:
+            project.set('revision',repository['revision'])
         elif fallback_branch:
             print("Using fallback branch %s for %s" % (fallback_branch, repo_name))
             project.set('revision', fallback_branch)

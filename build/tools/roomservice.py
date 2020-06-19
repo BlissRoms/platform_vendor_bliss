@@ -144,6 +144,18 @@ def get_from_manifest(devicename):
 
     return None
 
+def project_is_removed_device(projectpath):
+    try:
+        lm = ElementTree.parse(".repo/manifests/bliss.xml")
+        lm = lm.getroot()
+    except:
+        lm = ElementTree.Element("manifest")
+    for localpath in lm.findall("remove-project"):
+        if localpath.get("name") == projectpath:
+            print("Warning: project was removed from AOSP manifest")
+            return True
+
+
 def is_in_manifest(projectpath):
     try:
         lm = ElementTree.parse(".repo/local_manifests/roomservice.xml")
@@ -164,6 +176,9 @@ def is_in_manifest(projectpath):
 
     for localpath in lm.findall("project"):
         if localpath.get("path") == projectpath:
+            # Detect whether proejctpath is a device or not
+            if project_is_removed_device(projectpath):
+                return False
             return True
 
     # ... and don't forget the bliss snippet

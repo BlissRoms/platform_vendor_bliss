@@ -38,9 +38,9 @@ except ImportError:
 # set this to the default remote to use in repo
 default_rem = "github"
 # set this to the default revision to use (branch/tag name)
-default_rev = "q"
+default_rev = "p9.0"
 # set this to the remote that you use for projects from your team repos
-# example fetch="https://github.com/BlissRoms-Devices"
+# example fetch="https://github.com/omnirom"
 default_team_rem = "github"
 # this shouldn't change unless google makes changes
 local_manifest_dir = ".repo/local_manifests"

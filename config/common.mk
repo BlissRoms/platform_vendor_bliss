@@ -145,6 +145,9 @@ ifeq ($(BLISS_BUILD_VARIANT), gapps)
 $(call inherit-product, vendor/gapps/gapps.mk)
 endif
 
+# Plugins
+include packages/apps/Plugins/plugins.mk
+
 # FOD Animations
 ifeq ($(TARGET_WANTS_FOD_ANIMATIONS),true)
 PRODUCT_PACKAGES += \

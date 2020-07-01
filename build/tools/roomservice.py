@@ -214,10 +214,10 @@ def add_to_manifest(repositories, fallback_branch = None):
         # Check if repository name contains organization
         if "/" in repo_name:
             project = ElementTree.Element("project", attrib = { "path": repo_target,
-                "remote": "github", "name": "%s" % repo_name })
+                "remote": repository['remote'], "name": "%s" % repo_name })
         else:
             project = ElementTree.Element("project", attrib = { "path": repo_target,
-                "remote": "github", "name": "BlissRoms-Devices/%s" % repo_name })
+                "remote": repository['remote'], "name": "BlissRoms-Devices/%s" % repo_name })
 
         if 'revision' in repository:
             project.set('revision',repository['revision'])

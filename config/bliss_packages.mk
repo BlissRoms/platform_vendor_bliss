@@ -74,7 +74,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     HideCutout \
     StatusBarStock \
-    StatusBarStockSysUI
+    StatusBarStockSysUI \
+    ImmersiveMode
 
 # Snap Camera
 PRODUCT_PACKAGES += \

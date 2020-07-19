@@ -73,7 +73,9 @@ PRODUCT_PACKAGES += \
 # Cutout control overlays
 PRODUCT_PACKAGES += \
     HideCutout \
-    StatusBarStock
+    StatusBarStock \
+    StatusBarStockSysUI \
+    ImmersiveMode
 
 # Snap Camera
 PRODUCT_PACKAGES += \

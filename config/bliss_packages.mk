@@ -68,7 +68,8 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     WeatherIcons \
     OmniStyle \
-    SoundPickerPrebuilt
+    SoundPickerPrebuilt \
+    SettingsIntelligenceGooglePrebuilt
 
 # Cutout control overlays
 PRODUCT_PACKAGES += \

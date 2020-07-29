@@ -104,10 +104,6 @@ PRODUCT_PACKAGES += \
     Launcher3QuickStep
 endif
 
-# OmniJaws Permission
-PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/org.omnirom.omnijaws.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.omnirom.omnijaws.xml
-
 # Bliss System Permission
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/privapp-permissions-bliss-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-bliss-system.xml

@@ -3,6 +3,11 @@
 PRODUCT_PACKAGES += \
     apns-conf.xml
 
+# AOSP packages
+PRODUCT_PACKAGES += \
+    Email \
+    ExactCalculator
+
 # Telephony packages
 PRODUCT_PACKAGES += \
     messaging \

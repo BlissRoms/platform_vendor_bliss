@@ -126,6 +126,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
+# Include AOSP audio files
+include vendor/bliss/config/aosp_audio.mk
+
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
 include vendor/bliss/config/lineage_sdk_common.mk

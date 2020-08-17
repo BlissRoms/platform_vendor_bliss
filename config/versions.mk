@@ -1,7 +1,7 @@
 # Versioning System For Bliss
 # Bliss RELEASE VERSION
 BLISS_VERSION_MAJOR = 12
-BLISS_VERSION_MINOR = 10
+BLISS_VERSION_MINOR = 11
 BLISS_VERSION_MAINTENANCE = Stable
 
 # Bliss Android version

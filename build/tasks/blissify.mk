@@ -15,10 +15,12 @@
 # Bliss Target Zip
 BLISS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BLISS_VERSION).zip
 
+MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+
 .PHONY: blissify
 blissify: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLISS_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(BLISS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLISS_TARGET_PACKAGE).md5
+	$(hide) $(MD5) $(BLISS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLISS_TARGET_PACKAGE).md5
 	@echo -e ${CL_CYN}""${CL_CYN}
 	@echo -e ${CL_CYN}"      ___           ___                   ___           ___      "${CL_CYN}
 	@echo -e ${CL_CYN}"     /\  \         /\__\      ___        /\  \         /\  \     "${CL_CYN}

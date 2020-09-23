@@ -1,6 +1,8 @@
 #!/bin/sh
 
-export Changelog=Changelog.txt
+Changelog=Changelog.txt
+
+DEVICE=$(echo $TARGET_PRODUCT | cut -d "_" -f2)
 
 if [ -f $Changelog ];
 then
@@ -22,7 +24,6 @@ k=$(expr $i - 1)
 	echo '====================' >> $Changelog;
 	echo  "     "$Until_Date       >> $Changelog;
 	echo '===================='	>> $Changelog;
-	echo >> $Changelog;
 
 while read path;
 do
@@ -32,11 +33,8 @@ do
     fi
 done < ./.repo/project.list;
 
-echo "" >> $Changelog;
 done
-
 sed -i 's/project/   */g' $Changelog
 
-cp $Changelog $OUT/system/etc/
-cp $Changelog $OUT/
-rm $Changelog
+cp $Changelog ./out/target/product/$DEVICE/system/etc/
+mv $Changelog ./out/target/product/$DEVICE/

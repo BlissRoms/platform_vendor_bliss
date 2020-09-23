@@ -1,6 +1,8 @@
 #!/bin/sh
 
-export Changelog=Changelog.txt
+Changelog=Changelog.txt
+
+DEVICE=$(echo $TARGET_PRODUCT | cut -d "_" -f2)
 
 if [ -f $Changelog ];
 then
@@ -14,15 +16,14 @@ echo ${bldppl}"Generating changelog..."${txtrst}
 
 for i in $(seq 15);
 do
-export After_Date=`date --date="$i days ago" +%m-%d-%Y`
+After_Date=`date --date="$i days ago" +%m-%d-%Y`
 k=$(expr $i - 1)
-	export Until_Date=`date --date="$k days ago" +%m-%d-%Y`
+	Until_Date=`date --date="$k days ago" +%m-%d-%Y`
 
 	# Line with after --- until was too long for a small ListView
 	echo '====================' >> $Changelog;
 	echo  "     "$Until_Date       >> $Changelog;
 	echo '===================='	>> $Changelog;
-	echo >> $Changelog;
 
 while read path;
 do
@@ -32,11 +33,8 @@ do
     fi
 done < ./.repo/project.list;
 
-echo "" >> $Changelog;
 done
-
 sed -i 's/project/   */g' $Changelog
 
-cp $Changelog $OUT/system/etc/
-cp $Changelog $OUT/
-rm $Changelog
+cp $Changelog ./out/target/product/$DEVICE/system/etc/
+mv $Changelog ./out/target/product/$DEVICE/

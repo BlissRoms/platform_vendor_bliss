@@ -15,7 +15,7 @@
 # Bliss Target Zip
 BLISS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BLISS_BUILD_ZIP).zip
 
-SHA256 := prebuilts/build-tools/path/$(HOST_OS)-x86/sha256sum
+SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: blissify
 blissify: $(INTERNAL_OTA_PACKAGE_TARGET)

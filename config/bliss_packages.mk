@@ -79,3 +79,11 @@ PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver
 
+# AOSP packages
+PRODUCT_PACKAGES += \
+    Terminal
+
+# Themes
+PRODUCT_PACKAGES += \
+    LineageThemesStub \
+    ThemePicker

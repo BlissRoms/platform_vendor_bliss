@@ -18,6 +18,10 @@ TARGET_BOOT_ANIMATION_RES ?= undefined
 
 ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
      PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/720.zip:system/media/bootanimation.zip
+else ifeq ($(TARGET_BOOT_ANIMATION_RES),768)
+     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/768.zip:system/media/bootanimation.zip
+else ifeq ($(TARGET_BOOT_ANIMATION_RES),800)
+     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
      PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/1080.zip:system/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1200)

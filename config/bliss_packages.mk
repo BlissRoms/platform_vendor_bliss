@@ -49,7 +49,10 @@ PRODUCT_PACKAGES_DEBUG += \
 # Bliss Packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    Recorder
+    Recorder \
+    Launcher3 \
+    Launcher3QuickStep \
+    BlissUpdater
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \

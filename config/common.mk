@@ -124,6 +124,13 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
+# Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
+
+# Gapps
+ifeq ($(BLISS_BUILD_VARIANT), gapps)
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

@@ -38,6 +38,9 @@ else
     BLISS_VERSION := Bliss-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)-$(shell date +%Y%m%d)
 endif
 
+# Set Bliss Build Variant
+BLISS_BUILD_VARIANT ?= gapps
+
 BLISS_DISPLAY_VERSION := $(VERSION)
 BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
 BLISS_FINGERPRINT := Bliss/$(VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date +%Y%m%d)

@@ -3,13 +3,19 @@ PRODUCT_PACKAGES += \
     apns-conf.xml
 
 # AOSP packages
+ifeq ($(BLISS_BUILD_VARIANT), vanilla)
 PRODUCT_PACKAGES += \
+    Calendar \
+    DeskClock \
     Email \
     ExactCalculator \
     Exchange2 \
+    Gallery2 \
     LiveWallpapersPicker \
     messaging \
-    PhotoTable
+    PhotoTable \
+    WallpaperPicker
+endif
 
 # Bliss Packages
 PRODUCT_PACKAGES += \

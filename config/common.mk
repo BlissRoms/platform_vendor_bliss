@@ -125,5 +125,13 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 -include vendor/bliss/config/versions.mk
 
 -include vendor/bliss/config/bliss_packages.mk
+<<<<<<< HEAD
+=======
+
+# Gapps
+ifeq ($(BLISS_BUILD_VARIANT), gapps)
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+endif
+>>>>>>> ee98e850... bliss: Add support for Gapps and Vanilla variant builds
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

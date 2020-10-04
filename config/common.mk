@@ -124,7 +124,8 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # Bliss Versioning System
 -include vendor/bliss/config/versions.mk
 
+# Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
--include vendor/bliss/config/misc_packages.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

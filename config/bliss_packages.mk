@@ -1,3 +1,27 @@
+# World APN list
+PRODUCT_PACKAGES += \
+    apns-conf.xml
+
+# AOSP packages
+PRODUCT_PACKAGES += \
+    Contacts \
+    Dialer \
+    DeskClock
+
+# Bliss Packages
+PRODUCT_PACKAGES += \
+    LatinIME \
+    Recorder \
+    Launcher3 \
+    Launcher3QuickStep \
+    BlissUpdater \
+    Terminal
+
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    TrebuchetQuickStep
+
 # Extra tools in bliss
 PRODUCT_PACKAGES += \
     7z \
@@ -46,22 +70,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     procmem
 
-# Bliss Packages
+# Telephony packages
 PRODUCT_PACKAGES += \
-    LatinIME \
-    Recorder \
-    Launcher3 \
-    Launcher3QuickStep \
-    BlissUpdater
-
-# Dex preopt
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    TrebuchetQuickStep
-
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Terminal
+    Stk \
+    CellBroadcastReceiver
 
 # Themes
 PRODUCT_PACKAGES += \

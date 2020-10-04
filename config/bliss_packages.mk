@@ -3,10 +3,17 @@ PRODUCT_PACKAGES += \
     apns-conf.xml
 
 # AOSP packages
+ifeq ($(BLISS_BUILD_VARIANT), vanilla)
 PRODUCT_PACKAGES += \
+    Calendar \
     Contacts \
+    DeskClock \
     Dialer \
-    DeskClock
+    Email \
+    Gallery2 \
+    messaging \
+    WallpaperPicker
+endif
 
 # Bliss Packages
 PRODUCT_PACKAGES += \

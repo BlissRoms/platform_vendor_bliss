@@ -8,7 +8,7 @@ NC="\033[0m"
 
 export Changelog=Changelog.txt
 export PassedDays=7 # change this to limit max changelog days
-export MANIFEST="${TOP}/.repo/manifests/bliss.xml"
+export MANIFEST="./repo/manifests/bliss.xml"
 
 if [ -f "${OUT}/system/etc/${Changelog}" ] # if changelog already generated
 then

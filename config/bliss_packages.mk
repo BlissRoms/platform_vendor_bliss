@@ -14,6 +14,8 @@ PRODUCT_PACKAGES += \
     Exchange2 \
     LiveWallpapersPicker \
     messaging \
+    Phonograph \
+    SimpleGalleryPro \
     WallpaperPicker2
 endif
 

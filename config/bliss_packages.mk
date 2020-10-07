@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
     Exchange2 \
     LiveWallpapersPicker \
     messaging \
+    SimpleGalleryPro \
     WallpaperPicker2
 endif
 
@@ -24,6 +25,7 @@ PRODUCT_PACKAGES += \
     LineageParts \
     LineageSettingsProvider \
     LockClock \
+    Phonograph \
     Profiles \
     WeatherProvider \
     BlissUpdater

@@ -8,18 +8,18 @@ PRODUCT_PACKAGES += \
     Contacts \
     Calendar \
     DeskClock \
-    Dialer \
     Email \
     ExactCalculator \
     Exchange2 \
     LiveWallpapersPicker \
-    messaging \
     SimpleGalleryPro \
     WallpaperPicker2
 endif
 
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    Dialer \
+    messaging \
     LatinIME \
     Recorder \
     LineageParts \

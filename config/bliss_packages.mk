@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     LineageParts \
     LineageSettingsProvider \
     LockClock \
+    PixelThemesStub2020_midyear \
     Phonograph \
     Profiles \
     WeatherProvider \

@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     PixelThemesStub \
     Phonograph \
     Profiles \
+    SettingsIntelligenceGooglePrebuilt \
     WeatherProvider \
     BlissUpdater
 

@@ -27,7 +27,8 @@ PRODUCT_PACKAGES += \
     BlissUpdater \
     Seedvault \
     WallpaperPicker2 \
-    LiveWallpapersPicker
+    LiveWallpapersPicker \
+    SettingsIntelligenceGooglePrebuilt
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \

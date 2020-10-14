@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     PixelThemesStub2020_midyear \
     Phonograph \
     Profiles \
+    WallpapersBReel2020a \
     WeatherProvider \
     BlissUpdater
 

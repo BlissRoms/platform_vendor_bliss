@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     LineageParts \
     LineageSettingsProvider \
     LockClock \
+    PixelThemesStub \
     Phonograph \
     Profiles \
     WeatherProvider \
@@ -94,6 +95,5 @@ PRODUCT_PACKAGES += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    LineageThemesStub \
     LineageBlackTheme \
     ThemePicker

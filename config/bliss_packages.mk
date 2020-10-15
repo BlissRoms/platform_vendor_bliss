@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += \
     LineageSettingsProvider \
     LockClock \
     PixelThemesStub \
+    PixelWallpapers2020 \
     Phonograph \
     Profiles \
     SettingsIntelligenceGooglePrebuilt \

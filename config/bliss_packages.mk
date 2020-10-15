@@ -31,12 +31,12 @@ PRODUCT_PACKAGES += \
     Profiles \
     SettingsIntelligenceGooglePrebuilt \
     WeatherProvider \
+    NexusLauncherRelease \
     BlissUpdater
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    TrebuchetQuickStep
+    SystemUI
 
 # Extra tools in bliss
 PRODUCT_PACKAGES += \

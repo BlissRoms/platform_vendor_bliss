@@ -28,4 +28,7 @@
          does not work well, particularly with noisy touchscreens. Note that disabling it may
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+
+    <!-- Launcher package name for overlaying icons. -->
+    <string name="launcher_overlayable_package">com.google.android.apps.nexuslauncher</string>
 </resources>

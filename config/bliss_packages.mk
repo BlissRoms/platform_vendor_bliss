@@ -20,6 +20,7 @@ endif
 
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    DevicePersonalizationPrebuiltPixel2020 \
     LatinIME \
     Recorder \
     LineageParts \

@@ -27,7 +27,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     Phonograph \
     Profiles \
-    WeatherProvider \
     BlissUpdater
 
 # Dex preopt

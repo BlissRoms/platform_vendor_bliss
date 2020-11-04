@@ -28,6 +28,10 @@ PRODUCT_PACKAGES += \
     Seedvault \
     WallpaperPicker2
 
+# Config
+PRODUCT_PACKAGES += \
+    SimpleDeviceConfig
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \

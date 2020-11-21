@@ -127,6 +127,9 @@ DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
 
+# Bliss Overlays
+-include vendor/overlays/bliss_overlays.mk
+
 # Gapps
 ifeq ($(BLISS_BUILD_VARIANT), gapps)
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)

@@ -8,6 +8,7 @@ PRODUCT_PACKAGES += \
     Contacts \
     Dialer \
     Email \
+    Etar \
     ExactCalculator \
     Exchange2 \
     LiveWallpapersPicker \

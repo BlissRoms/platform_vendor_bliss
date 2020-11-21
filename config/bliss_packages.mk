@@ -6,8 +6,6 @@ PRODUCT_PACKAGES += \
 ifeq ($(BLISS_BUILD_VARIANT), vanilla)
 PRODUCT_PACKAGES += \
     Contacts \
-    Calendar \
-    DeskClock \
     Dialer \
     Email \
     ExactCalculator \
@@ -20,6 +18,7 @@ endif
 
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    DeskClock \
     LatinIME \
     Recorder \
     LineageParts \

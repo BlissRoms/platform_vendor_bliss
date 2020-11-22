@@ -11,10 +11,8 @@ PRODUCT_PACKAGES += \
     Etar \
     ExactCalculator \
     Exchange2 \
-    LiveWallpapersPicker \
     messaging \
     SimpleGalleryPro \
-    WallpaperPicker2
 endif
 
 # Bliss Packages
@@ -27,7 +25,9 @@ PRODUCT_PACKAGES += \
     Phonograph \
     Profiles \
     BlissUpdater \
-    Seedvault
+    Seedvault \
+    WallpaperPicker2 \
+    LiveWallpapersPicker
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \

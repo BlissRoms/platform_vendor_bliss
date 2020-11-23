@@ -10,7 +10,6 @@ PRODUCT_PACKAGES += \
 
 # Bliss packages
 PRODUCT_PACKAGES += \
-    AppDrawer \
     LineageCustomizer
 
 DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay/tv

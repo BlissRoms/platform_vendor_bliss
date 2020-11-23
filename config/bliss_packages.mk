@@ -47,10 +47,8 @@ PRODUCT_PACKAGES += \
     libsepol \
     nano \
     pigz \
-    powertop \
     setcap \
     unrar \
-    unzip \
     vim \
     wget \
     zip
@@ -84,8 +82,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
-    Stk \
-    CellBroadcastReceiver
+    Stk
 
 # AOSP packages
 PRODUCT_PACKAGES += \

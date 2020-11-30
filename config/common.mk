@@ -141,5 +141,11 @@ ifeq ($(BLISS_BUILD_VARIANT), gapps)
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)
 endif
 
+# FOD Animations
+ifeq ($(TARGET_WANTS_FOD_ANIMATIONS),true)
+PRODUCT_PACKAGES += \
+    FodAnimationResources
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

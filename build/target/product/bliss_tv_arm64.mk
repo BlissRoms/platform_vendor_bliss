@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2018-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,24 +11,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bliss_arm.mk \
-    $(LOCAL_DIR)/bliss_arm64.mk \
-    $(LOCAL_DIR)/bliss_x86.mk \
-    $(LOCAL_DIR)/bliss_x86_64.mk \
-    $(LOCAL_DIR)/bliss_tv_arm.mk \
-    $(LOCAL_DIR)/bliss_tv_arm64.mk \
-    $(LOCAL_DIR)/bliss_tv_x86.mk \
-    $(LOCAL_DIR)/bliss_tv_x86_64.mk
+$(call inherit-product, device/google/atv/products/aosp_tv_arm64.mk)
 
-COMMON_LUNCH_CHOICES := \
-    bliss_arm-userdebug \
-    bliss_arm64-userdebug \
-    bliss_x86-userdebug \
-    bliss_x86_64-userdebug \
-    bliss_tv_arm-userdebug \
-    bliss_tv_arm64-userdebug \
-    bliss_tv_x86-userdebug \
-    bliss_tv_x86_64-userdebug
+include vendor/bliss/build/target/product/bliss_generic_tv_target.mk
+
+TARGET_NO_KERNEL_OVERRIDE := true
+
+PRODUCT_NAME := bliss_tv_arm64
+
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=

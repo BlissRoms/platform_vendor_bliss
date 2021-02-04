@@ -52,6 +52,8 @@ else
 KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 endif
 
+TARGET_KERNEL_HEADERS ?= $(TARGET_KERNEL_SOURCE)
+
 CLANG_PREBUILTS := $(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang-r383902b
 GCC_PREBUILTS := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86
 # arm64 toolchain

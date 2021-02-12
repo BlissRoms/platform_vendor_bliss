@@ -93,10 +93,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Stk
 
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Terminal
-
 # Themes
 PRODUCT_PACKAGES += \
     LineageThemesStub \

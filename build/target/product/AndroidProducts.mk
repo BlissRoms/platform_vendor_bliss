@@ -19,6 +19,10 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/bliss_arm64.mk \
     $(LOCAL_DIR)/bliss_x86.mk \
     $(LOCAL_DIR)/bliss_x86_64.mk \
+    $(LOCAL_DIR)/bliss_arm_ab.mk \
+    $(LOCAL_DIR)/bliss_arm64_ab.mk \
+    $(LOCAL_DIR)/bliss_x86_ab.mk \
+    $(LOCAL_DIR)/bliss_x86_64_ab.mk \
     $(LOCAL_DIR)/bliss_tv_arm.mk \
     $(LOCAL_DIR)/bliss_tv_arm64.mk \
     $(LOCAL_DIR)/bliss_tv_x86.mk \
@@ -29,6 +33,10 @@ COMMON_LUNCH_CHOICES := \
     bliss_arm64-userdebug \
     bliss_x86-userdebug \
     bliss_x86_64-userdebug \
+    bliss_arm_ab-userdebug \
+    bliss_arm64_ab-userdebug \
+    bliss_x86_ab-userdebug \
+    bliss_x86_64_ab-userdebug \
     bliss_tv_arm-userdebug \
     bliss_tv_arm64-userdebug \
     bliss_tv_x86-userdebug \

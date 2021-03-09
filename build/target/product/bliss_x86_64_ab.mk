@@ -18,5 +18,4 @@ include vendor/bliss/build/target/product/bliss_generic_target.mk
 
 PRODUCT_NAME := bliss_x86_64_ab
 
-PRODUCT_SDK_ADDON_NAME := bliss
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

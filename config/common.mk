@@ -158,5 +158,15 @@ PRODUCT_PACKAGES += \
     FodAnimationResources
 endif
 
+# FOSS Apps
+ifeq ($(BLISS_BUILD_VARIANT), foss)
+$(call inherit-product, vendor/foss/foss.mk)
+endif
+
+# Go-gapps
+ifeq ($(BLISS_BUILD_VARIANT), goapps)
+$(call inherit-product, vendor/gapps-go/gapps-go.mk)
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

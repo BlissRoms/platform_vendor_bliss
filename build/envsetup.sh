@@ -935,6 +935,103 @@ function fixup_common_out_dir() {
 
 function blissify()
 {
+	abt="$ANDROID_BUILD_TOP"
+	cd $abt
+	clean="n"
+	deviceclean="n"
+	export BLISS_BUILD_VARIANT=vanilla
+	while test $# -gt 0
+	do
+	  case $1 in
+
+	  # Normal option processing
+		-h | --help)
+		  echo "Usage: $0 options buildVariant "
+		  echo "options: -h | --help: Shows this dialog"
+		  echo "         -c | --clean: Clean up before running the build"
+		  echo "         -d | --devclean: Clean up device tree before running the build"
+		  echo "         -v | --vanilla: Build with no added app store solution **default option** "
+		  echo "         -g | --gapps: Build with Google Play Services added"
+		  echo "         -f | --fossa: build with FOSS (arm64-v8a) app store solutions added"
+		  echo "         -F | --fossx: build with FOSS (x86_64) app store solutions added"
+		  echo ""
+		  echo "buildVariant: "
+		  echo "your device codename, without the 'bliss_' in front"
+		  echo ""
+		  ;;
+		-c | --clean)
+		  clean="y";
+		  echo "Cleaning build and device tree selected."
+		  ;;
+		-d | --devclean)
+		  deviceclean="y";
+		  echo "Cleaning device tree selected."
+		  ;;
+		-v | --vanilla)
+		  echo "Building as stock (no gapps) **DEFAULT**"
+		  export BLISS_BUILD_VARIANT=vanilla
+		  ;;
+		-g | --gapps)
+		  echo "Building with gapps"
+		  export BLISS_BUILD_VARIANT=gapps
+		  ;;
+		-f | --fossa)
+		  echo "Building with FOSS apps for arm64-v8a support"
+		  export BLISS_BUILD_VARIANT=foss
+		  cd vendor/foss
+		  bash update.sh 2
+		  cd $abt
+		  ;;
+		-F | --fossx)
+		  echo "Building with FOSS apps for x86_64 support"
+		  export BLISS_BUILD_VARIANT=foss
+		  cd vendor/foss
+		  bash update.sh 1
+		  cd $abt
+		  ;;
+		
+	  # ...
+
+	  # Special cases
+		--)
+		  break
+		  ;;
+		--*)
+		  # error unknown (long) option $1
+		  ;;
+		-?)
+		  # error unknown (short) option $1
+		  ;;
+
+	  # FUN STUFF HERE:
+	  # Split apart combined short options
+		-*)
+		  split=$1
+		  shift
+		  set -- $(echo "$split" | cut -c 2- | sed 's/./-& /g') "$@"
+		  continue
+		  ;;
+
+	  # Done with options
+		*)
+		  break
+		  ;;
+	  esac
+
+	  # for testing purposes:
+	  shift
+	done
+	
+	if [ $clean == "y" ];then
+		echo "Cleaning up a bit"
+		make clean && make clobber
+	fi
+	
+	if [ $deviceclean == "y" ];then
+		echo "Doing some device cleanup"
+		make deviceclean
+	fi
+	
     breakfast $*
     if [ $? -eq 0 ]; then
         mka blissify

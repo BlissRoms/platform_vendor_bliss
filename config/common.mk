@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-sysconfig.xml
 
+# Font service Permissions
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/privapp-permissions-bliss-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-bliss-system_ext.xml \
+
 # Copy all Lineage-specific init rc files
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))

@@ -989,6 +989,19 @@ function blissify()
 		  bash update.sh 1
 		  cd $abt
 		  ;;
+		-u | --userdebug)
+		  echo "Building userdebug variant"
+		  TARGET_BUILD_VARIANT=userdebug
+		  ;;
+		-U | --user)
+		  echo "Building user variant"
+		  TARGET_BUILD_VARIANT=user
+		  ;;
+		-e | --eng)
+		  echo "Building eng variant"
+		  TARGET_BUILD_VARIANT=eng
+		  ;;
+		
 		
 	  # ...
 
@@ -1042,7 +1055,15 @@ function blissify()
 		return 0
 	fi
 	
-    breakfast $*
+	# Breakfast extension	
+	if [ $TARGET_BUILD_VARIANT == "user" ];then
+		breakfast $* user
+	elif [ $TARGET_BUILD_VARIANT == "eng" ];then
+		breakfast $* eng
+	else
+    	breakfast $*
+	fi
+	
     if [ $? -eq 0 ]; then
         mka blissify
     else

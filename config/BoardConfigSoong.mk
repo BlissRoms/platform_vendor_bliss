@@ -70,6 +70,7 @@ SOONG_CONFIG_blissGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POST
 SOONG_CONFIG_blissGlobalVars_has_legacy_camera_hal1 := $(TARGET_HAS_LEGACY_CAMERA_HAL1)
 SOONG_CONFIG_blissGlobalVars_has_memfd_backport := $(TARGET_HAS_MEMFD_BACKPORT)
 SOONG_CONFIG_blissGlobalVars_ignores_ftp_pptp_conntrack_failure := $(TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE)
+SOONG_CONFIG_blissGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 SOONG_CONFIG_blissGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
 SOONG_CONFIG_blissGlobalVars_target_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 SOONG_CONFIG_blissNvidiaVars_uses_nv_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)

@@ -47,9 +47,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Extra tools in bliss
 PRODUCT_PACKAGES += \
     7z \
-    awk \
     bash \
-    bzip2 \
     curl \
     getcap \
     htop \

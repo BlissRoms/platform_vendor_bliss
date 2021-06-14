@@ -210,7 +210,7 @@ legacy_hw_disk_encryption {
 soong_config_module_type {
     name: "target_camera_needs_client_info",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blissGlobalVars",
     bool_variables: ["target_camera_needs_client_info"],
     properties: ["cppflags"],
 }

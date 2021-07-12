@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     Profiles \
     BlissUpdater \
     Seedvault \
-    WallpaperPicker2
+    WallpaperPicker2 \
+    OmniStyle
 
 # Config
 PRODUCT_PACKAGES += \

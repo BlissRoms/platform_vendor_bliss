@@ -154,11 +154,11 @@ def fetch_query(remote_url, query):
 
 if __name__ == '__main__':
     # Default to BlissRoms Gerrit
-    default_gerrit = 'https://review.blissroms.com'
+    default_gerrit = 'https://review.blissroms.org'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
-        patches from BlissRoms's Gerrit instance (or any gerrit instance of your choosing)
+        patches from BlissRoms Gerrit instance (or any gerrit instance of your choosing)
 
         Given a list of change numbers, repopick will cd into the project path
         and cherry pick the latest patch available.
@@ -437,9 +437,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit github', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit BlissRoms', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch github', item['fetch'][method]['ref']]
+                cmd = ['git fetch BlissRoms', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:
@@ -454,7 +454,7 @@ if __name__ == '__main__':
             # If not using the default gerrit or github failed, fetch from gerrit.
             if args.verbose:
                 if args.gerrit == default_gerrit:
-                    print('Fetching from GitHub didn\'t work, trying to fetch the change from Gerrit')
+                    print('Fetching from BlissRoms didn\'t work, trying to fetch the change from Gerrit')
                 else:
                     print('Fetching from {0}'.format(args.gerrit))
 
@@ -495,3 +495,4 @@ if __name__ == '__main__':
                     sys.exit(result)
         if not args.quiet:
             print('')
+

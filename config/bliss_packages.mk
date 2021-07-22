@@ -35,7 +35,6 @@ PRODUCT_PACKAGES += \
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
-    TrebuchetQuickStep
 
 # Extra tools in bliss
 PRODUCT_PACKAGES += \
@@ -96,3 +95,11 @@ PRODUCT_PACKAGES += \
     LineageThemesStub \
     LineageBlackTheme \
     ThemePicker
+
+ifeq ($(PRODUCT_TYPE), go)
+PRODUCT_PACKAGES += \
+    Launcher3QuickStepGo
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStepGo
+endif

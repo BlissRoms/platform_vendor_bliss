@@ -96,3 +96,9 @@ PRODUCT_PACKAGES += \
     LineageThemesStub \
     LineageBlackTheme \
     ThemePicker
+
+# GAPPS provides its own setupwizard, but vanilla and foss builds still need one.
+ifeq ($(filter gapps goapps,$(BLISS_BUILD_VARIANT)),)
+    PRODUCT_PACKAGES += \
+        SetupWizard
+endif

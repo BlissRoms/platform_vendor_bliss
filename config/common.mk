@@ -74,9 +74,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
-# Include AOSP audio files
-include vendor/bliss/config/aosp_audio.mk
-
 # Include Bliss audio files
 include vendor/bliss/config/bliss_audio.mk
 

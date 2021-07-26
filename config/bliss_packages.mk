@@ -11,8 +11,7 @@ PRODUCT_PACKAGES += \
     Etar \
     ExactCalculator \
     Exchange2 \
-    messaging \
-    SimpleGalleryPro
+    messaging
 endif
 
 # Bliss Packages
@@ -22,7 +21,6 @@ PRODUCT_PACKAGES += \
     Recorder \
     LineageParts \
     LineageSettingsProvider \
-    Phonograph \
     Profiles \
     BlissUpdater \
     Seedvault \

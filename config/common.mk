@@ -149,6 +149,9 @@ endif
 # Plugins
 include packages/apps/Plugins/plugins.mk
 
+# Bliss Prebuilt apps
+-include vendor/prebuilts/prebuilts.mk
+
 # FOD Animations
 ifeq ($(TARGET_WANTS_FOD_ANIMATIONS),true)
 PRODUCT_PACKAGES += \

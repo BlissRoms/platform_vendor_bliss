@@ -86,3 +86,9 @@ PRODUCT_COPY_FILES += \
     $(UI_PATH)/camera_focus.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/camera_focus.ogg \
     $(UI_PATH)/reverse_charging_end.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/reverse_charging_end.ogg \
     $(UI_PATH)/reverse_charging_start.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/reverse_charging_start.ogg
+
+# Set default ringtone/alarm/notification
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.ringtone=material_minimal.ogg \
+    ro.config.alarm_alert=material_gentle.ogg \
+    ro.config.notification_sound=material_simple_1.ogg

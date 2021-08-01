@@ -208,3 +208,5 @@ ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
 endif
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/bliss/config/device_framework_matrix.xml

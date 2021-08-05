@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     Flipendo \
     OmniStyle \
-    AboutBliss
+    AboutBliss \
+    OmniJaws
 
 # Config
 PRODUCT_PACKAGES += \

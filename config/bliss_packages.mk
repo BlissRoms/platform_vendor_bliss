@@ -28,7 +28,8 @@ PRODUCT_PACKAGES += \
     Seedvault \
     WallpaperPicker2 \
     Flipendo \
-    OmniStyle
+    OmniStyle \
+    AboutBliss
 
 # Config
 PRODUCT_PACKAGES += \

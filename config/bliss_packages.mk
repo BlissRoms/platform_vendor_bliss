@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     AboutBliss \
     SoftAPManager \
+    GamingMode \
     OmniJaws
 
 # Config

@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     Flipendo \
     OmniStyle \
     AboutBliss \
+    SoftAPManager \
     OmniJaws
 
 # Config

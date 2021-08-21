@@ -100,3 +100,10 @@ PRODUCT_PACKAGES += \
     LineageThemesStub \
     LineageBlackTheme \
     ThemePicker
+
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    VisualizationWallpapers \
+    librs_jni

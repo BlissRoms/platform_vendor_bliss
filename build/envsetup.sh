@@ -1039,17 +1039,6 @@ function blissify()
 	  # for testing purposes:
 	  shift
 	done
-	
-	if [ $clean == "y" ];then
-		echo "Cleaning up a bit"
-		make clean && make clobber
-	fi
-	
-	if [ $deviceclean == "y" ];then
-		echo "Doing some device cleanup"
-		make deviceclean
-	fi
-	
 	if [ "$1" == "" ]; then
 		echo "No device name specified. Please use --help to verify correct usage"
 		return 0
@@ -1063,7 +1052,17 @@ function blissify()
 	else
     	breakfast $*
 	fi
-	
+
+        if [ $clean == "y" ];then
+                echo "Cleaning up a bit"
+                make clean && make clobber
+        fi
+
+        if [ $deviceclean == "y" ];then
+                echo "Doing some device cleanup"
+                make deviceclean
+        fi
+
     if [ $? -eq 0 ]; then
         mka blissify
     else

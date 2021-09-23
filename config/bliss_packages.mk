@@ -109,3 +109,9 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     VisualizationWallpapers \
     librs_jni
+
+# GAPPS provides its own setupwizard, but vanilla and foss builds still need one.
+ifeq ($(filter gapps goapps,$(BLISS_BUILD_VARIANT)),)
+    PRODUCT_PACKAGES += \
+        SetupWizard
+endif

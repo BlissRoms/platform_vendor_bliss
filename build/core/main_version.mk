@@ -1,10 +1,10 @@
 # Build fingerprint
 ifneq ($(BUILD_FINGERPRINT),)
-ADDITIONAL_BUILD_PROPERTIES += \
+ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-ADDITIONAL_BUILD_PROPERTIES += \
+ADDITIONAL_SYSTEM_PROPERTIES += \
   ro.bliss.version=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.build.status=$(BLISS_BUILDTYPE) \
   ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \

@@ -149,7 +149,7 @@ $(call inherit-product, vendor/gapps/gapps.mk)
 endif
 
 # Plugins
-include packages/apps/Plugins/plugins.mk
+#include packages/apps/Plugins/plugins.mk
 
 # FOD Animations
 ifeq ($(TARGET_WANTS_FOD_ANIMATIONS),true)

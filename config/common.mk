@@ -85,11 +85,6 @@ ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 include vendor/bliss/config/lineage_sdk_common.mk
 endif
 
-# TWRP
-ifeq ($(WITH_TWRP),true)
-include vendor/bliss/config/twrp.mk
-endif
-
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 

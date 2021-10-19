@@ -173,3 +173,6 @@ endif
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk
+
+# System
+persist.sys.binary_xml=false

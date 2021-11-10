@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Bliss Target Zip
-BLISS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BLISS_VERSION).zip
+BLISS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BLISS_BUILD_ZIP).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
 

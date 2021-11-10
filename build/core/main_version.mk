@@ -5,6 +5,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
 endif
 
 ADDITIONAL_SYSTEM_PROPERTIES += \
+  ro.bliss.codename=$(BLISS_CODENAME) \
   ro.bliss.version=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.build.status=$(BLISS_BUILDTYPE) \
   ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \

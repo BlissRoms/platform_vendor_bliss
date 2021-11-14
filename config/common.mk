@@ -54,9 +54,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/privapp-permissions-bliss-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-bliss-system_ext.xml \
 
-# Copy all Lineage-specific init rc files
-$(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+# Bliss-specific init rc file
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/etc/init/init.bliss-system.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.bliss-system.rc \
+    vendor/bliss/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc \
+    vendor/bliss/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \

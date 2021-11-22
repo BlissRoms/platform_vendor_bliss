@@ -13,7 +13,8 @@ PRODUCT_PACKAGES += \
     Exchange2 \
     messaging \
     SimpleGalleryPro \
-	SimpleCalculator
+    SimpleCalculator \
+    SimpleCalendar
 endif
 
 # Bliss Packages

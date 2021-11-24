@@ -135,6 +135,10 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
 
+# Omadm
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/privapp-permissions-omadm.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-omadm.xml
+
 # Bliss Bootanimation
 -include vendor/bliss/config/bootanimation.mk
 

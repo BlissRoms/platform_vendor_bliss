@@ -1043,6 +1043,19 @@ function blissify()
 		echo "No device name specified. Please use --help to verify correct usage"
 		return 0
 	fi
+
+codenames=$(curl -s 'https://api.blissroms.org/api/maintainers')
+    for row in $(echo "${codenames}" | jq -r '.[] | @base64'); do
+        _jq() {
+         echo ${row} | base64 --decode | jq -r ${1}
+        }
+            if [ "$(_jq '.codename')" == "$1" ]; then
+		           export BLISS_BUILDTYPE=OFFICIAL
+                exit 1
+            else
+		           export BLISS_BUILDTYPE=UNOFFICIAL
+	        fi
+    done
 	
 	# Breakfast extension	
 	if [ $TARGET_BUILD_VARIANT == "user" ];then

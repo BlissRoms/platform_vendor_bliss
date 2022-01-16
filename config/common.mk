@@ -160,9 +160,9 @@ endif
 #include packages/apps/Plugins/plugins.mk
 
 # FOD Animations
-ifeq ($(TARGET_WANTS_FOD_ANIMATIONS),true)
+ifeq ($(EXTRA_UDFPS_ANIMATIONS),true)
 PRODUCT_PACKAGES += \
-    FodAnimationResources
+    UdfpsResources
 endif
 
 # FOSS Apps

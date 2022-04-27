@@ -57,6 +57,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init/init.bliss-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-system_ext.rc \
     vendor/bliss/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc \
+    vendor/bliss/prebuilt/common/etc/init/smartcharge-init.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/smartcharge-init.rc \
     vendor/bliss/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
 # Enable Android Beam on all targets

@@ -1,2 +1,11 @@
 on post-fs-data
+<<<<<<< HEAD
     chown system system /sys/class/power_supply/battery/input_suspend
+=======
+    chown system system /sys/class/power_supply/battery/battery_charging_enabled
+    chmod 0666 /sys/class/power_supply/battery/battery_charging_enabled
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chmod 0666 /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+>>>>>>> 7d8c3174... vendor_spark: Smart Charging

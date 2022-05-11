@@ -15,12 +15,12 @@
 # Bliss Target Zip
 BLISS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BLISS_BUILD_ZIP).zip
 
-MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+SHA256 := prebuilts/build-tools/path/$(HOST_OS)-x86/sha256sum
 
 .PHONY: blissify
 blissify: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLISS_TARGET_PACKAGE)
-	$(hide) $(MD5) $(BLISS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLISS_TARGET_PACKAGE).md5
+	$(hide) $(SHA256) $(BLISS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLISS_TARGET_PACKAGE).sha256
 	@echo -e ${CL_CYN}""${CL_CYN}
 	@echo -e ${CL_CYN}"      ___           ___                   ___           ___      "${CL_CYN}
 	@echo -e ${CL_CYN}"     /\  \         /\__\      ___        /\  \         /\  \     "${CL_CYN}
@@ -36,7 +36,7 @@ blissify: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_CYN}""${CL_CYN}
 	@echo -e ${CL_CYN}"===========-Bliss Package Complete-==========="${CL_RST}
 	@echo -e ${CL_CYN}"Zip: "${CL_MAG} $(BLISS_TARGET_PACKAGE)${CL_RST}
-	@echo -e ${CL_CYN}"MD5: "${CL_MAG}" `cat $(BLISS_TARGET_PACKAGE).md5 | cut -d ' ' -f 1`"${CL_RST}
+	@echo -e ${CL_CYN}"SHA256: "${CL_MAG}" `cat $(BLISS_TARGET_PACKAGE).sha256 | cut -d ' ' -f 1`"${CL_RST}
 	@echo -e ${CL_CYN}"Size:"${CL_MAG}" `ls -lah $(BLISS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 	@echo -e ${CL_CYN}"==============================================="${CL_RST}
 	@echo -e ${CL_CYN}"Have A Truly Blissful Experience"${CL_RST}

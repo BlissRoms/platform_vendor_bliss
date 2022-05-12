@@ -25,7 +25,8 @@ PRODUCT_PACKAGES += \
     Recorder \
     Seedvault \
     ThemesStub \
-    WallpaperPicker2
+    WallpaperPicker2 \
+    WeatherIcons
 
 # Config
 PRODUCT_PACKAGES += \

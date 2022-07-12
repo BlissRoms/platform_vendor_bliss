@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     OmniStyle \
     AboutBliss \
-    SoftAPManager \
     GameSpace \
     OmniJaws
 

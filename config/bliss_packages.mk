@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     AboutBliss \
     SoftAPManager \
-    GamingMode \
+    GameSpace \
     OmniJaws
 
 # Config

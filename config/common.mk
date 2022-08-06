@@ -190,6 +190,10 @@ endif
 # System
 persist.sys.binary_xml=false
 
+# TouchGestures
+PRODUCT_PACKAGES += \
+    TouchGestures
+
 # Quick Tap
 ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
 PRODUCT_COPY_FILES += \

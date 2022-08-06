@@ -87,3 +87,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     VisualizationWallpapers \
     librs_jni
+
+# TouchGestures
+PRODUCT_PACKAGES += \
+    TouchGestures

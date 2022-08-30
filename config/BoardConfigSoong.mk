@@ -30,7 +30,6 @@ SOONG_CONFIG_NAMESPACES += blissGlobalVars
 SOONG_CONFIG_blissGlobalVars += \
     additional_gralloc_10_usage_bits \
     bootloader_message_offset \
-    disable_postrender_cleanup \
     camera_needs_client_info \
     target_init_vendor_lib \
     target_inputdispatcher_skip_event_key \
@@ -60,7 +59,6 @@ SOONG_CONFIG_blissQcomVars += \
 endif
 
 # Soong bool variables
-SOONG_CONFIG_blissGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POSTRENDER_CLEANUP)
 SOONG_CONFIG_blissGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 SOONG_CONFIG_blissNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)

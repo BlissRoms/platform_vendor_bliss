@@ -13,4 +13,5 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
   ro.bliss.static.version=$(BLISS_VERSION_STATIC) \
   ro.bliss.build.variant=$(BLISS_BUILD_VARIANT) \
   ro.bliss.build.timestamp=$(BLISS_BUILD_TIMESTAMP) \
-  ro.bliss.build=$(BLISS_BUILD_ZIP)
+  ro.bliss.build=$(BLISS_BUILD_ZIP) \
+  ro.bliss.security_patch_level=$(BLISS_SECURITY_PATCH)

@@ -42,7 +42,8 @@ SOONG_CONFIG_blissGlobalVars += \
     target_process_sdk_version_override \
     target_surfaceflinger_udfps_lib \
     uses_camera_parameter_lib \
-    uses_egl_display_array
+    uses_egl_display_array \
+    gralloc_handle_has_reserved_size \
 
 SOONG_CONFIG_NAMESPACES += blissNvidiaVars
 SOONG_CONFIG_blissNvidiaVars += \
@@ -79,11 +80,13 @@ SOONG_CONFIG_blissQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_
 SOONG_CONFIG_blissQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
 SOONG_CONFIG_blissQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGACY)
 SOONG_CONFIG_blissQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
+SOONG_CONFIG_blissGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE)
 SOONG_CONFIG_blissQcomVars_needs_camera_boottime_timestamp := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
+TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE ?= false
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY ?= 0
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY ?= libcamera_parameters

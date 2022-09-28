@@ -174,12 +174,6 @@ endif
 # Plugins
 #include packages/apps/Plugins/plugins.mk
 
-# FOD Animations
-ifeq ($(EXTRA_UDFPS_ANIMATIONS),true)
-PRODUCT_PACKAGES += \
-    UdfpsResources
-endif
-
 # FOSS Apps
 ifeq ($(BLISS_BUILD_VARIANT), foss)
 $(call inherit-product, vendor/foss/foss.mk)

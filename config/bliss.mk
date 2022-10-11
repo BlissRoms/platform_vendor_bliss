@@ -1,5 +1,6 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    BatteryStatsViewer \
     OmniJaws
 
 # Cloned app exemption

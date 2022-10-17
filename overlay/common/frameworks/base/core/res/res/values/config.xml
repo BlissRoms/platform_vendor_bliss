@@ -57,6 +57,8 @@
         <item>com.android.networkstack.tethering</item>
         <!-- GMS location history -->
         <item>com.google.android.gms.location.history</item>
+        <!-- OmniJaws -->
+        <item>org.omnirom.omnijaws</item>
     </string-array>
 
     <!-- Disable stock components if installed -->

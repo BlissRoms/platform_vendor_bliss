@@ -51,6 +51,8 @@
         <item>com.shannon.imsservice</item>
         <!-- MediaTek ImsService -->
         <item>com.mediatek.ims</item>
+        <!-- SystemUI -->
+        <item>com.android.systemui</item>
     </string-array>
 
     <!-- Disable stock components if installed -->

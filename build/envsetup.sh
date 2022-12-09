@@ -772,7 +772,7 @@ function repodiff() {
 # Return success if adb is up and not in recovery
 function _adb_connected {
     {
-        if [[ "$(adb get-state)" == device ]]
+        if [[ "$(adb get-state)" == "device" ]]
         then
             return 0
         fi
@@ -1070,20 +1070,20 @@ function blissify()
 	checkofficial $1
 
 	# Breakfast extension	
-	if [ $TARGET_BUILD_VARIANT == "user" ];then
+	if [ "$TARGET_BUILD_VARIANT" == "user" ];then
 		breakfast $* user
-	elif [ $TARGET_BUILD_VARIANT == "eng" ];then
+	elif [ "$TARGET_BUILD_VARIANT" == "eng" ];then
 		breakfast $* eng
 	else
     	breakfast $*
 	fi
 
-        if [ $clean == "y" ];then
+        if [ "$clean" == "y" ];then
                 echo "Cleaning up a bit"
                 make clean && make clobber
         fi
 
-        if [ $deviceclean == "y" ];then
+        if [ "$deviceclean" == "y" ];then
                 echo "Doing some device cleanup"
                 make deviceclean
         fi

@@ -102,3 +102,7 @@ endif
 # TouchGestures
 PRODUCT_PACKAGES += \
     TouchGestures
+
+# Aperture
+PRODUCT_PACKAGES += \
+    Aperture

@@ -28,7 +28,8 @@ PRODUCT_PACKAGES += \
     Seedvault \
     WallpaperPicker2 \
     AboutBliss \
-    GameSpace
+    GameSpace \
+    ParallelSpace
 
 # Config
 PRODUCT_PACKAGES += \

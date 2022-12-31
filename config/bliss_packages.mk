@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     AboutBliss \
     GameSpace \
-    ParallelSpace
+    ParallelSpace \
+    OmniJaws
 
 # Config
 PRODUCT_PACKAGES += \

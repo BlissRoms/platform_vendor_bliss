@@ -1,144 +1,89 @@
-#!/usr/bin/env python2
-
-# Copyright (C) 2013 Cybojenix <anthonydking@gmail.com>
-# Copyright (C) 2013 The OmniROM Project
-# Copyright (C) 2015 BlissRoms Project
+#!/usr/bin/env python
+# Copyright (C) 2012-2013, The CyanogenMod Project
+# Copyright (C) 2012-2015, SlimRoms Project
+# Copyright (C) 2016-2017, AOSiP
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 from __future__ import print_function
+
+import base64
 import json
-import sys
+import netrc
 import os
-import re
-from xml.etree import ElementTree as ES
-# Use the urllib importer from the Cyanogenmod roomservice
+import sys
+
+from xml.etree import ElementTree
+
 try:
     # For python3
+    import urllib.error
+    import urllib.parse
     import urllib.request
 except ImportError:
     # For python2
     import imp
     import urllib2
+    import urlparse
     urllib = imp.new_module('urllib')
+    urllib.error = urllib2
+    urllib.parse = urlparse
     urllib.request = urllib2
 
-# Config
-# set this to the default remote to use in repo
-default_rem = "github"
-# set this to the default revision to use (branch/tag name)
-default_rev = "typhoon"
-# set this to the remote that you use for projects from your team repos
-# example fetch="https://github.com/BlissRoms-Devices"
-default_team_rem = "github"
-# this shouldn't change unless google makes changes
-local_manifest_dir = ".repo/local_manifests"
-# change this to your name on github (or equivalent hosting)
-android_team = "BlissRoms-Devices"
+DEBUG = False
+
+custom_local_manifest = ".repo/local_manifests/roomservice.xml"
+custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'typhoon')
+custom_dependencies = "bliss.dependencies"
+org_manifest = "BlissRoms-Devices"  # leave empty if org is provided in manifest
+org_display = "BlissRoms-Devices"  # needed for displaying
+
+github_auth = None
 
 
-def check_repo_exists(git_data):
-    if not int(git_data.get('total_count', 0)):
-        raise Exception("{} not found in {} Github, exiting "
-                        "roomservice".format(device, android_team))
+local_manifests = '.repo/local_manifests'
+if not os.path.exists(local_manifests):
+    os.makedirs(local_manifests)
 
 
-# Note that this can only be done 5 times per minute
-def search_github_for_device(device):
-    git_device = '+'.join(re.findall('[a-z]+|[\d]+',  device))
-    git_search_url = "https://api.github.com/search/repositories" \
-                     "?q=%40{}+android_device+{}+fork:true".format(android_team, git_device)
-    git_req = urllib.request.Request(git_search_url)
-    try:
-        response = urllib.request.urlopen(git_req)
-    except urllib.request.HTTPError:
-        raise Exception("There was an issue connecting to github."
-                        " Please try again in a minute")
-    git_data = json.load(response)
-    check_repo_exists(git_data)
-    print("found the {} device repo".format(device))
-    return git_data
+def debug(*args, **kwargs):
+    if DEBUG:
+        print(*args, **kwargs)
 
 
-def get_device_url(git_data):
-    device_url = ""
-    for item in git_data['items']:
-        temp_url = item.get('html_url')
-        if "{}/android_device".format(android_team) in temp_url:
-            try:
-                temp_url = temp_url[temp_url.index("android_device"):]
-            except ValueError:
-                pass
-            else:
-                if temp_url.endswith(device):
-                    device_url = temp_url
-                    break
-
-    if device_url:
-        return device_url
-    raise Exception("{} not found in {} Github, exiting "
-                    "roomservice".format(device, android_team))
-
-
-def parse_device_directory(device_url,device):
-    to_strip = "android_device"
-    repo_name = device_url[device_url.index(to_strip) + len(to_strip):]
-    repo_name = repo_name[:repo_name.index(device)]
-    repo_dir = repo_name.replace("_", "/")
-    repo_dir = repo_dir + device
-    return "device{}".format(repo_dir)
-
-
-# Thank you RaYmAn
-def iterate_manifests(check_all):
-    files = []
-    if check_all:
-        for file in os.listdir(local_manifest_dir):
-            if file.endswith('.xml'):
-                files.append(os.path.join(local_manifest_dir, file))
-    files.append('.repo/manifest.xml')
-    for file in files:
+def add_auth(g_req):
+    global github_auth
+    if github_auth is None:
         try:
-            man = ES.parse(file)
-            man = man.getroot()
-        except IOError, ES.ParseError:
-            print("WARNING: error while parsing %s" % file)
+            auth = netrc.netrc().authenticators("api.github.com")
+        except (netrc.NetrcParseError, IOError):
+            auth = None
+        if auth:
+            github_auth = base64.b64encode(
+                ('%s:%s' % (auth[0], auth[2])).encode()
+            )
         else:
-            for project in man.findall("project"):
-                yield project
+            github_auth = ""
+    if github_auth:
+        g_req.add_header("Authorization", "Basic %s" % github_auth)
 
 
-def check_project_exists(url):
-    for project in iterate_manifests(True):
-        if project.get("name") == url:
-            return True
-    return False
-
-
-def check_dup_path(directory):
-    for project in iterate_manifests(False):
-        if project.get("path") == directory:
-            print ("Duplicate path %s found! Removing" % directory)
-            return project.get("name")
-    return None
-
-# Use the indent function from http://stackoverflow.com/a/4590052
 def indent(elem, level=0):
-    i = ''.join(["\n", level*"  "])
+    # in-place prettyprint formatter
+    i = "\n" + "  " * level
     if len(elem):
         if not elem.text or not elem.text.strip():
-            elem.text = ''.join([i, "  "])
+            elem.text = i + "  "
         if not elem.tail or not elem.tail.strip():
             elem.tail = i
         for elem in elem:
@@ -149,169 +94,224 @@ def indent(elem, level=0):
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
 
-
-def create_manifest_project(url, directory,
-                            remote=default_rem,
-                            revision=default_rev):
-    project_exists = check_project_exists(url)
-
-    if project_exists:
-        return None
-
-    dup_path = check_dup_path(directory)
-    if not dup_path is None:
-            write_to_manifest(
-                append_to_manifest(
-                    create_manifest_remove(dup_path)))
-
-    project = ES.Element("project",
-                         attrib={
-                             "path": directory,
-                             "name": url,
-                             "remote": remote,
-                             "revision": revision
-                         })
-    return project
-
-
-def create_manifest_remove(url):
-    remove = ES.Element("remove-project", attrib={"name": url})
-    return remove
-
-
-def append_to_manifest(project):
+def load_manifest(manifest):
     try:
-        lm = ES.parse('/'.join([local_manifest_dir, "roomservice.xml"]))
-        lm = lm.getroot()
-    except IOError, ES.ParseError:
-        lm = ES.Element("manifest")
-    lm.append(project)
-    return lm
+        man = ElementTree.parse(manifest).getroot()
+    except (IOError, ElementTree.ParseError):
+        man = ElementTree.Element("manifest")
+    return man
 
-
-def write_to_manifest(manifest):
-    indent(manifest)
-    raw_xml = ES.tostring(manifest).decode()
-    raw_xml = ''.join(['<?xml version="1.0" encoding="UTF-8"?>\n'
-                       '<!--Please do not manually edit this file-->\n',
-                       raw_xml])
-
-    with open('/'.join([local_manifest_dir, "roomservice.xml"]), 'w') as f:
-        f.write(raw_xml)
-    print("wrote the new roomservice manifest")
-
-def parse_device_from_manifest(device):
-    for project in iterate_manifests(True):
-        name = project.get('name')
-        if name.startswith("android_device_") and name.endswith(device):
-            return project.get('path')
+def get_from_manifest(device_name):
+    if os.path.exists(custom_local_manifest):
+        man = load_manifest(custom_local_manifest)
+        for local_path in man.findall("project"):
+            lp = local_path.get("path").strip('/')
+            if lp.startswith("device/") and lp.endswith("/" + device_name):
+                return lp
     return None
 
 
-def parse_device_from_folder(device):
-    search = []
-    for sub_folder in os.listdir("device"):
-        if os.path.isdir("device/%s/%s" % (sub_folder, device)):
-            search.append("device/%s/%s" % (sub_folder, device))
-    if len(search) > 1:
-        print("multiple devices under the name %s. "
-              "defaulting to checking the manifest" % device)
-        location = parse_device_from_manifest(device)
-    elif len(search) == 1:
-        location = search[0]
-    else:
-        print("your device can't be found in device sources..")
-        location = parse_device_from_manifest(device)
-    return location
+def is_in_manifest(project_path):
+    man = load_manifest(custom_local_manifest)
+    for local_path in man.findall("project"):
+        if local_path.get("path") == project_path:
+            return True
+    return False
 
 
-def parse_dependency_file(location):
-    dep_file = "bliss.dependencies"
-    dep_location = '/'.join([location, dep_file])
-    if not os.path.isfile(dep_location):
-        print("WARNING: %s file not found" % dep_location)
-        sys.exit()
-    try:
-        with open(dep_location, 'r') as f:
-            dependencies = json.loads(f.read())
-    except ValueError:
-        raise Exception("ERROR: malformed dependency file")
-    return dependencies
+def add_to_manifest(repos, fallback_branch=None):
+    lm = load_manifest(custom_local_manifest)
+
+    for repo in repos:
+        repo_name = repo['repository']
+        repo_path = repo['target_path']
+        if 'branch' in repo:
+            repo_branch=repo['branch']
+        else:
+            repo_branch=custom_default_revision
+        if 'remote' in repo:
+            repo_remote=repo['remote']
+        elif "/" not in repo_name:
+            repo_remote=org_manifest
+        elif "/" in repo_name:
+            repo_remote="github"
+
+        if is_in_manifest(repo_path):
+            print('already exists: %s' % repo_path)
+            continue
+
+        print('Adding dependency:\nRepository: %s\nBranch: %s\nRemote: %s\nPath: %s\n' % (repo_name, repo_branch,repo_remote, repo_path))
+
+        project = ElementTree.Element(
+            "project",
+            attrib={"path": repo_path,
+                    "remote": repo_remote,
+                    "name": "%s" % repo_name}
+        )
+
+        clone_depth = os.getenv('ROOMSERVICE_CLONE_DEPTH')
+        if clone_depth:
+            project.set('clone-depth', clone_depth)
+
+        if repo_branch is not None:
+            project.set('revision', repo_branch)
+        elif fallback_branch:
+            print("Using branch %s for %s" %
+                  (fallback_branch, repo_name))
+            project.set('revision', fallback_branch)
+        else:
+            print("Using default branch for %s" % repo_name)
+        if 'clone-depth' in repo:
+            print("Setting clone-depth to %s for %s" % (repo['clone-depth'], repo_name))
+            project.set('clone-depth', repo['clone-depth'])
+        lm.append(project)
+
+    indent(lm)
+    raw_xml = "\n".join(('<?xml version="1.0" encoding="UTF-8"?>',
+                         ElementTree.tostring(lm).decode()))
+
+    f = open(custom_local_manifest, 'w')
+    f.write(raw_xml)
+    f.close()
+
+_fetch_dep_cache = []
 
 
-def create_dependency_manifest(dependencies):
-    projects = []
-    for dependency in dependencies:
-        repository = dependency.get("repository")
-        target_path = dependency.get("target_path")
-        revision = dependency.get("revision", default_rev)
-        remote = dependency.get("remote", default_rem)
-
-        # not adding an organization should default to android_team
-        # only apply this to github
-        if remote == "github":
-            if not "/" in repository:
-                repository = '/'.join([android_team, repository])
-        project = create_manifest_project(repository,
-                                          target_path,
-                                          remote=remote,
-                                          revision=revision)
-        if not project is None:
-            manifest = append_to_manifest(project)
-            write_to_manifest(manifest)
-            projects.append(target_path)
-    if len(projects) > 0:
-        os.system("repo sync --force-sync %s" % " ".join(projects))
-
-
-def fetch_dependencies(device):
-    location = parse_device_from_folder(device)
-    if location is None or not os.path.isdir(location):
-        raise Exception("ERROR: could not find your device "
-                        "folder location, bailing out")
-    dependencies = parse_dependency_file(location)
-    create_dependency_manifest(dependencies)
-
-
-def check_device_exists(device):
-    location = parse_device_from_folder(device)
-    if location is None:
-        return False
-    return os.path.isdir(location)
-
-
-def fetch_device(device):
-    if check_device_exists(device):
-        print("WARNING: Trying to fetch a device that's already there")
+def fetch_dependencies(repo_path, fallback_branch=None):
+    global _fetch_dep_cache
+    if repo_path in _fetch_dep_cache:
         return
-    git_data = search_github_for_device(device)
-    device_url = android_team+"/"+get_device_url(git_data)
-    device_dir = parse_device_directory(device_url,device)
-    project = create_manifest_project(device_url,
-                                      device_dir,
-                                      remote=default_team_rem)
-    if not project is None:
-        manifest = append_to_manifest(project)
-        write_to_manifest(manifest)
-        print("syncing the device config")
-        os.system('repo sync --force-sync %s' % device_dir)
+    _fetch_dep_cache.append(repo_path)
+
+    print('Looking for dependencies')
+
+    dep_p = '/'.join((repo_path, custom_dependencies))
+    if os.path.exists(dep_p):
+        with open(dep_p) as dep_f:
+            dependencies = json.load(dep_f)
+    else:
+        dependencies = {}
+        print('%s has no additional dependencies.' % repo_path)
+
+    fetch_list = []
+    syncable_repos = []
+
+    for dependency in dependencies:
+        if not is_in_manifest(dependency['target_path']):
+            if not dependency.get('branch'):
+                dependency['branch'] = custom_default_revision
+
+            fetch_list.append(dependency)
+            syncable_repos.append(dependency['target_path'])
+        else:
+            print("Dependency already present in manifest: %s => %s" % (dependency['repository'], dependency['target_path']))
+
+    if fetch_list:
+        print('Adding dependencies to manifest\n')
+        add_to_manifest(fetch_list, fallback_branch)
+
+    if syncable_repos:
+        print('Syncing dependencies')
+        os.system('repo sync --force-sync --no-tags --current-branch --no-clone-bundle %s' % ' '.join(syncable_repos))
+
+    for deprepo in syncable_repos:
+        fetch_dependencies(deprepo)
 
 
-if __name__ == '__main__':
-    if not os.path.isdir(local_manifest_dir):
-        os.mkdir(local_manifest_dir)
+def has_branch(branches, revision):
+    return revision in (branch['name'] for branch in branches)
+
+
+def detect_revision(repo):
+    """
+    returns None if using the default revision, else return
+    the branch name if using a different revision
+    """
+    print("Checking branch info")
+    githubreq = urllib.request.Request(
+        repo['branches_url'].replace('{/branch}', ''))
+    add_auth(githubreq)
+    result = json.loads(urllib.request.urlopen(githubreq).read().decode())
+
+    print("Calculated revision: %s" % custom_default_revision)
+
+    if has_branch(result, custom_default_revision):
+        return custom_default_revision
+
+    print("Branch %s not found" % custom_default_revision)
+    sys.exit()
+
+
+def main():
+    global DEBUG
+    try:
+        depsonly = bool(sys.argv[2] in ['true', 1])
+    except IndexError:
+        depsonly = False
+
+    if os.getenv('ROOMSERVICE_DEBUG'):
+        DEBUG = True
 
     product = sys.argv[1]
+    device = product[product.find("_") + 1:] or product
+
+    if depsonly:
+        repo_path = get_from_manifest(device)
+        if repo_path:
+            fetch_dependencies(repo_path)
+        else:
+            print("Trying dependencies-only mode on a "
+                  "non-existing device tree?")
+        sys.exit()
+
+    print("Device {0} not found. Attempting to retrieve device repository from "
+          "{1} Github (http://github.com/{1}).".format(device, org_display))
+
+    githubreq = urllib.request.Request(
+        "https://api.github.com/search/repositories?"
+        "q={0}+user:{1}+in:name+fork:true".format(device, org_display))
+    add_auth(githubreq)
+
+    repositories = []
+
     try:
-        device = product[product.index("_") + 1:]
+        result = json.loads(urllib.request.urlopen(githubreq).read().decode())
+    except urllib.error.URLError:
+        print("Failed to search GitHub")
+        sys.exit(1)
     except ValueError:
-        device = product
+        print("Failed to parse return data from GitHub")
+        sys.exit(1)
+    for res in result.get('items', []):
+        repositories.append(res)
 
-    if len(sys.argv) > 2:
-        deps_only = sys.argv[2]
-    else:
-        deps_only = False
+    for repository in repositories:
+        repo_name = repository['name']
 
-    if not deps_only:
-        fetch_device(device)
-    fetch_dependencies(device)
+        if not (repo_name.startswith("device") and
+                repo_name.endswith("_" + device)):
+            continue
+        print("Found repository: %s" % repository['name'])
+
+        fallback_branch = detect_revision(repository)
+        manufacturer = repo_name[7:-(len(device)+1)]
+        repo_path = "device/%s/%s" % (manufacturer, device)
+        adding = [{'repository': repo_name, 'target_path': repo_path}]
+
+        add_to_manifest(adding, fallback_branch)
+
+        print("Syncing repository to retrieve project.")
+        os.system('repo sync --force-sync --no-tags --current-branch --no-clone-bundle %s' % repo_path)
+        print("Repository synced!")
+
+        fetch_dependencies(repo_path, fallback_branch)
+        print("Done")
+        sys.exit()
+
+    print("Repository for %s not found in the %s Github repository list."
+          % (device, org_display))
+    print("If this is in error, you may need to manually add it to your "
+          "%s" % custom_local_manifest)
+
+if __name__ == "__main__":
+    main()

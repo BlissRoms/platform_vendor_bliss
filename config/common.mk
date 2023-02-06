@@ -176,6 +176,9 @@ PRODUCT_COPY_FILES += \
 # Bliss Packages
 -include vendor/bliss/config/bliss_packages.mk
 
+# Bliss Prebuilts
+-include vendor/prebuilts/bliss_prebuilts.mk
+
 # Bliss Overlays
 -include vendor/overlays/bliss_overlays.mk
 

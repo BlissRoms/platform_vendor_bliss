@@ -11,10 +11,7 @@ PRODUCT_PACKAGES += \
     Etar \
     ExactCalculator \
     Exchange2 \
-    messaging \
-    SimpleGalleryPro \
-    SimpleCalculator \
-    SimpleCalendar
+    messaging
 endif
 
 # Bliss Packages

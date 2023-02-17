@@ -19,12 +19,10 @@ PRODUCT_PACKAGES += \
     DeskClock \
     LatinIME \
     Recorder \
-    Phonograph \
     Profiles \
     BlissUpdater \
     Seedvault \
     WallpaperPicker2 \
-    AboutBliss \
     GameSpace \
     ParallelSpace \
     OmniJaws

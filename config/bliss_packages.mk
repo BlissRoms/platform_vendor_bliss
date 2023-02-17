@@ -24,13 +24,11 @@ PRODUCT_PACKAGES += \
     Recorder \
     LineageParts \
     LineageSettingsProvider \
-    Phonograph \
     Profiles \
     BlissUpdater \
     Seedvault \
     WallpaperPicker2 \
     OmniStyle \
-    AboutBliss \
     GameSpace \
     OmniJaws
 

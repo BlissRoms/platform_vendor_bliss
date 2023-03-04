@@ -16,6 +16,7 @@ endif
 
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    Aperture \
     DeskClock \
     LatinIME \
     Recorder \

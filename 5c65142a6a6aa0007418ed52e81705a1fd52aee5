@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3979e7ae_3b9078de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000142
+      },
+      "writtenOn": "2023-03-04T10:05:34Z",
+      "side": 1,
+      "message": "This commit can be abandoned as its a copy of previous one done by ayan",
+      "revId": "5c65142a6a6aa0007418ed52e81705a1fd52aee5",
+      "serverId": "b7386340-edb3-408c-9cac-98e148952b30"
+    }
+  ]
+}

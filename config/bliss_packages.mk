@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     GameSpace \
     ParallelSpace \
-    OmniJaws
+    OmniJaws \
+    ThemesStub
 
 # Config
 PRODUCT_PACKAGES += \

@@ -36,7 +36,8 @@ SOONG_CONFIG_blissGlobalVars += \
     target_surfaceflinger_udfps_lib \
     uses_egl_display_array \
     gralloc_handle_has_reserved_size \
-    uses_oplus_camera
+    uses_oplus_camera \
+    uses_nothing_camera
 
 SOONG_CONFIG_NAMESPACES += blissNvidiaVars
 SOONG_CONFIG_blissNvidiaVars += \
@@ -69,6 +70,7 @@ SOONG_CONFIG_blissQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DE
 SOONG_CONFIG_blissGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE)
 SOONG_CONFIG_blissQcomVars_needs_camera_boottime_timestamp := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 SOONG_CONFIG_blissGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
+SOONG_CONFIG_blissGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
 
 # Set default values
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0

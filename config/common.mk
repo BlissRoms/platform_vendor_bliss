@@ -187,6 +187,11 @@ ifeq ($(BLISS_BUILD_VARIANT), gapps)
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 endif
 
+# PixelGapps
+ifeq ($(BLISS_BUILD_VARIANT), pixelgapps)
+$(call inherit-product, vendor/gms/products/gms.mk)
+endif
+
 # Plugins
 #include packages/apps/Plugins/plugins.mk
 

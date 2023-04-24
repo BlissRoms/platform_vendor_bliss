@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Exchange2 \
     GameSpace \
+    Jelly \
     LatinIME \
     messaging \
     OmniJaws \

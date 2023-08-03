@@ -205,6 +205,11 @@ ifeq ($(BLISS_BUILD_VARIANT), goapps)
 $(call inherit-product, vendor/gapps-go/gapps-go.mk)
 endif
 
+# MicroG
+ifeq ($(BLISS_BUILD_VARIANT), microg)
+$(call inherit-product, vendor/microg/products/gms.mk)
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk
 

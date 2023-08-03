@@ -978,6 +978,7 @@ function blissify()
                   echo "         -p | --pixelgapps: Build with Google Pixel Gapps added"
 		  echo "         -f | --fossa: build with FOSS (arm64-v8a) app store solutions added"
 		  echo "         -F | --fossx: build with FOSS (x86_64) app store solutions added"
+                  echo "         -m | --microg: Build with MicroG added"
 		  echo ""
 		  echo "deviceCodename: "
 		  echo "your device codename, without the 'bliss_' in front"
@@ -1017,6 +1018,10 @@ function blissify()
 		  bash update.sh 1
 		  cd $abt
 		  ;;
+                -m | --microg)
+                  echo "Building with MicroG"
+                  export BLISS_BUILD_VARIANT=microg
+                  ;;
 		-u | --userdebug)
 		  echo "Building userdebug variant"
 		  TARGET_BUILD_VARIANT=userdebug

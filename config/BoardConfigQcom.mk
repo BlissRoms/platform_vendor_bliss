@@ -9,6 +9,7 @@ ATOLL := atoll #SM6250
 LAHAINA := lahaina #SM8350
 HOLI := holi #SM4350
 TARO := taro #SM8450
+KALAMA := kalama #SM8550
 
 UM_3_18_FAMILY := msm8996
 UM_4_4_FAMILY := msm8998
@@ -17,6 +18,7 @@ UM_4_14_FAMILY := $(MSMNILE) $(MSMSTEPPE) $(TRINKET) $(ATOLL)
 UM_4_19_FAMILY := $(KONA) $(LITO) $(BENGAL)
 UM_5_4_FAMILY := $(LAHAINA) $(HOLI)
 UM_5_10_FAMILY := $(TARO)
+UM_5_15_FAMILY := $(KALAMA)
 
 ifeq ($(TARGET_USES_UM_4_19),true)
     QSSI_SUPPORTED_PLATFORMS += $(TARGET_BOARD_PLATFORM)
@@ -39,7 +41,8 @@ UM_PLATFORMS := \
     $(UM_4_14_FAMILY) \
     $(UM_4_19_FAMILY) \
     $(UM_5_4_FAMILY) \
-    $(UM_5_10_FAMILY)
+    $(UM_5_10_FAMILY) \
+    $(UM_5_15_FAMILY)
 
 LEGACY_UM_PLATFORMS := \
     msm8937 msm8953 msm8996 \
@@ -56,7 +59,8 @@ QSSI_SUPPORTED_PLATFORMS := \
     $(UM_4_14_FAMILY) \
     $(UM_4_19_FAMILY) \
     $(UM_5_4_FAMILY) \
-    $(UM_5_10_FAMILY)
+    $(UM_5_10_FAMILY) \
+    $(UM_5_15_FAMILY)
 
 BOARD_USES_ADRENO := true
 
@@ -88,6 +92,16 @@ SOONG_CONFIG_qtidisplay_var1 ?= false
 SOONG_CONFIG_qtidisplay_var2 ?= false
 SOONG_CONFIG_qtidisplay_var3 ?= false
 
+# Add rmnetctl to soong config namespaces
+SOONG_CONFIG_NAMESPACES += rmnetctl
+
+# Add supported variables to rmnetctl config
+SOONG_CONFIG_rmnetctl += \
+    old_rmnet_data
+
+# Set default values for rmnetctl config
+SOONG_CONFIG_rmnetctl_old_rmnet_data ?= false
+
 # Tell HALs that we're compiling an AOSP build with an in-line kernel
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
@@ -101,17 +115,18 @@ TARGET_USES_QCOM_MM_AUDIO := true
 TARGET_USES_COLOR_METADATA := true
 
 # Enable DRM PP driver on UM platforms that support it
-ifneq ($(filter $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY) $(UM_5_10_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY) $(UM_5_10_FAMILY) $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     SOONG_CONFIG_qtidisplay_drmpp := true
     TARGET_USES_DRM_PP := true
 endif
 
 # Enable Gralloc4 on UM platforms that support it
-ifneq ($(filter $(UM_5_4_FAMILY) $(UM_5_10_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(UM_5_4_FAMILY) $(UM_5_10_FAMILY) $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     SOONG_CONFIG_qtidisplay_gralloc4 := true
 endif
 
-ifneq ($(filter $(UM_5_10_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+# Select AR variant of A-HAL dependencies
+ifneq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     TARGET_USES_QCOM_AUDIO_AR ?= true
 endif
 
@@ -129,12 +144,23 @@ TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 13)
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 21)
 
 # Mark GRALLOC_USAGE_PRIVATE_HEIF_VIDEO as valid gralloc bit on UM platforms that support it
-ifneq ($(filter $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY) $(UM_5_10_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY) $(UM_5_10_FAMILY) $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 27)
 endif
 
 # List of targets that use master side content protection
 MASTER_SIDE_CP_TARGET_LIST := msm8996 $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)
+
+# Opt-in for old rmnet_data driver
+ifeq ($(filter $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+    SOONG_CONFIG_rmnetctl_old_rmnet_data := true
+endif
+
+# Use full QTI gralloc struct for GKI 2.0 targets
+ifneq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+    TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE ?= true
+    TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE ?= true
+endif
 
 ifneq ($(filter $(UM_3_18_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     MSM_VIDC_TARGET_LIST := $(UM_3_18_FAMILY)
@@ -161,6 +187,8 @@ else ifneq ($(filter $(UM_5_4_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     QCOM_HARDWARE_VARIANT := sm8350
 else ifneq ($(filter $(UM_5_10_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     QCOM_HARDWARE_VARIANT := sm8450
+else ifneq ($(filter $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+    QCOM_HARDWARE_VARIANT := sm8550
 else
     MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
     QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
@@ -176,7 +204,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/display \
     vendor/qcom/opensource/commonsys-intf/display
 
-ifeq ($(filter $(UM_5_10_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+ifeq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/display
 endif

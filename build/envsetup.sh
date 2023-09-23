@@ -26,22 +26,6 @@ Additional BlissRoms functions:
 EOF
 }
 
-function checkofficial()
-{
- codenames=$(curl -s 'https://api.blissroms.org/api/maintainers')
-    for row in $(echo "${codenames}" | jq -r '.[] | @base64'); do
-        _jq() {
-         echo ${row} | base64 --decode | jq -r ${1}
-        }
-            if [ "$(_jq '.codename')" == "$1" ]; then
-		           export BLISS_BUILDTYPE=OFFICIAL
-                break
-            else
-		           export BLISS_BUILDTYPE=UNOFFICIAL
-	        fi
-    done
-}
-
 function mk_timer()
 {
     local start_time=$(date +"%s")
@@ -75,8 +59,7 @@ function breakfast()
 {
     target=$1
     local variant=$2
-    
-    checkofficial $target
+
     if [ $# -eq 0 ]; then
         # No arguments, so let's have the full menu
         lunch
@@ -1076,8 +1059,6 @@ function blissify()
 		echo "No device name specified. Please use --help to verify correct usage"
 		return 0
 	fi
-
-	checkofficial $1
 
 	# Breakfast extension	
 	if [ $TARGET_BUILD_VARIANT == "user" ];then

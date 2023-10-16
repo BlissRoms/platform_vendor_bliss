@@ -52,8 +52,6 @@ SOONG_CONFIG_blissNvidiaVars += \
 
 SOONG_CONFIG_NAMESPACES += blissQcomVars
 SOONG_CONFIG_blissQcomVars += \
-    qti_vibrator_effect_lib \
-    qti_vibrator_use_effect_stream \
     supports_audio_accessory \
     supports_debug_accessory \
     supports_extended_compress_format \
@@ -70,7 +68,6 @@ endif
 SOONG_CONFIG_blissGlobalVars_gralloc_handle_has_ubwcp_format := $(TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT)
 SOONG_CONFIG_blissGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
-SOONG_CONFIG_blissQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM)
 SOONG_CONFIG_blissNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_blissQcomVars_supports_audio_accessory := $(TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY)
 SOONG_CONFIG_blissQcomVars_supports_debug_accessory := $(TARGET_QTI_USB_SUPPORTS_DEBUG_ACCESSORY)
@@ -95,7 +92,6 @@ TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE ?= false
 TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT ?= false
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY ?= 0
-TARGET_QTI_VIBRATOR_EFFECT_LIB ?= libqtivibratoreffect
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 
 # Soong value variables
@@ -112,7 +108,6 @@ SOONG_CONFIG_blissQcomVars_qcom_display_headers_namespace := vendor/qcom/opensou
 else
 SOONG_CONFIG_blissQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
 endif
-SOONG_CONFIG_blissQcomVars_qti_vibrator_effect_lib := $(TARGET_QTI_VIBRATOR_EFFECT_LIB)
 
 ifneq ($(TARGET_USES_NQ_NFC),true)
 PRODUCT_SOONG_NAMESPACES += hardware/nxp

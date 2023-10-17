@@ -35,6 +35,7 @@ SOONG_CONFIG_lineageGlobalVars += \
     gralloc_handle_has_reserved_size \
     gralloc_handle_has_ubwcp_format \
     spoof_first_api_level_32 \
+    target_camera_package_name \
     target_health_charging_control_charging_enabled \
     target_health_charging_control_charging_disabled \
     target_health_charging_control_deadline_path \
@@ -111,6 +112,7 @@ TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
 # Soong value variables
 SOONG_CONFIG_lineageGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
 SOONG_CONFIG_lineageGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
+SOONG_CONFIG_lineageGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
 ifneq ($(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH),)
 SOONG_CONFIG_lineageGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
 endif

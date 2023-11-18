@@ -36,4 +36,7 @@
     <string name="config_styles_and_wallpaper_picker_class" translatable="false">com.android.customization.picker.CustomizationPickerActivity</string>
     <!-- Action name for the styles & wallpaper picker activity. -->
     <string name="config_styles_and_wallpaper_picker_action" translatable="false">android.intent.action.SET_WALLPAPER</string>
+
+    <!-- Whether to display Cloned Apps page in Settings (Settings > Apps > Cloned Apps).-->
+    <bool name="config_cloned_apps_page_enabled">true</bool>
 </resources>

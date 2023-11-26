@@ -1,3 +1,7 @@
+# Bliss Packages
+PRODUCT_PACKAGES += \
+    OmniJaws
+
 # Keys
 ifeq ($(BLISS_BUILD_TYPE),OFFICIAL)
 include vendor/bliss-priv/keys/keys.mk

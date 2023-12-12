@@ -100,3 +100,7 @@ endif
 # TouchGestures
 PRODUCT_PACKAGES += \
     TouchGestures
+
+# Bliss specific permissions
+PRODUCT_COPY_FILES += \
+    vendor/bliss/config/permissions/privapp-permissions-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-bliss-product.xml

@@ -1,20 +1,5 @@
 # Pixel 4
 
-# Usage: ${firmware_partitions[@]}
-readonly firmware_partitions=(
-  abl
-  aop
-  devcfg
-  hyp
-  keymaster
-  qupfw
-  tz
-  uefisecapp
-  xbl
-  xbl_config
-  modem
-)
-
 # Usage: ${device_repos[@]}
 device_repos=(
   # common repos in coral
@@ -22,23 +7,21 @@ device_repos=(
 
 # Updated semi-manually via pixel/update-any-var.sh
 
-readonly prev_build_id="SQ3A.220705.003.A1"
-readonly build_id="TP1A.220624.014"
+readonly build_id="TP1A.221005.002.B2"
 
 # Updated automatically via pixel/update-device-vars.sh
 
-readonly prev_aosp_tag="android-12.1.0_r11"
-readonly aosp_tag="android-13.0.0_r1"
+readonly prev_aosp_tag="android-13.0.0_r7"
+readonly aosp_tag="android-13.0.0_r31"
 
-readonly prev_build_number="8672226"
-readonly build_number="8819323"
+readonly build_number="9382335"
 
-readonly image_url="https://dl.google.com/dl/android/aosp/flame-tp1a.220624.014-factory-7b8f6f73.zip"
-readonly image_sha256="7b8f6f73aeee25aff2e641feff41d826cfb99f2ad7d186b6843b5dfaddcdedb4"
+readonly image_url="https://dl.google.com/dl/android/aosp/flame-tp1a.221005.002.b2-factory-38e4f49a.zip"
+readonly image_sha256="38e4f49a8f72a8f9522f86874187de47add539372fa8c951d11ebde4f9c21103"
 
-readonly flash_url="https://flash.android.com/build/8819323?target=flame-user&signed"
+readonly flash_url="https://flash.android.com/build/9382335?target=flame-user&signed"
 
-readonly ota_url="https://dl.google.com/dl/android/aosp/flame-ota-tp1a.220624.014-9ac24d3e.zip"
-readonly ota_sha256="9ac24d3eb3670d7f89c552b73945726d1183e2e94d4b6c3a260c00154cd4a1c1"
+readonly ota_url="https://dl.google.com/dl/android/aosp/flame-ota-tp1a.221005.002.b2-4d76895a.zip"
+readonly ota_sha256="4d76895aac34a8bb816a338439ee62ca0794628228cf4c1330b4e40a5c8cb4af"
 
-readonly security_patch="2022-08-05"
+readonly security_patch="2022-10-05"

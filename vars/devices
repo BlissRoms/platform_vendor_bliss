@@ -1,6 +1,11 @@
 # All supported devices
 # Usage: ${devices[@]}
 readonly devices=(
+  felix
+  tangorpro
+  lynx
+  cheetah
+  panther
   bluejay
   raven
   oriole
@@ -8,6 +13,4 @@ readonly devices=(
   redfin
   bramble
   sunfish
-  coral
-  flame
 )

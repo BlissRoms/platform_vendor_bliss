@@ -1,11 +1,15 @@
 # Entire file updated manually
-readonly prev_os_branch=lineage-19.1
-readonly os_branch=lineage-20.0
+readonly android_version=14 # For update-build-desc-fingerprint.sh
+readonly aosp_tag_match=android-14.0 # For update-device-vars.sh
 
-readonly prev_common_aosp_tag=android-12.1.0_r11 # Jul 2022, Pixels 4 - 5, and 6 VZW
-readonly common_aosp_tag=android-13.0.0_r3 # Aug 2022, Pixel 6a
+readonly os_branch=udc-p
+readonly device_branch=udc
 
-readonly prev_common_aosp_build_id=SQ3A.220705.003.A1 # Jul 2022, Pixels 4 - 5, and 6 VZW
-readonly common_aosp_build_id=TP1A.220624.021.A1 # Aug 2022, Pixel 6a
+readonly prev_common_aosp_tag=android-14.0.0_r14 # Nov 2023, Pixel 6 - 7a
+readonly common_aosp_tag=android-14.0.0_r17 # Dec 2023, Pixel 6 - 8
 
-readonly topic=T_asb_2022-08
+readonly common_aosp_build_id=UQ1A.231205.015 # Dec 2023, Pixel 6 - 8
+
+readonly topic=U_asb_2023-12
+
+readonly merge_method="merge"

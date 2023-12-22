@@ -1,46 +1,28 @@
 # Pixel 5a
 
-# Usage: ${firmware_partitions[@]}
-readonly firmware_partitions=(
-  abl
-  aop
-  devcfg
-  hyp
-  keymaster
-  qupfw
-  tz
-  uefisecapp
-  xbl
-  xbl_config
-  featenabler
-  modem
-)
-
 # Usage: ${device_repos[@]}
 device_repos=(
-  # common repos in redfin
+  device/google/redbull
   device/google/barbet
 )
 
 # Updated semi-manually via pixel/update-any-var.sh
 
-readonly prev_build_id="SQ3A.220705.003.A1"
-readonly build_id="TP1A.220624.014"
+readonly build_id="UQ1A.231205.014"
 
 # Updated automatically via pixel/update-device-vars.sh
 
-readonly prev_aosp_tag="android-12.1.0_r11"
-readonly aosp_tag="android-13.0.0_r1"
+readonly prev_aosp_tag="android-14.0.0_r13"
+readonly aosp_tag="android-14.0.0_r16"
 
-readonly prev_build_number="8819323"
-readonly build_number="8819323"
+readonly build_number="11049176"
 
-readonly image_url="https://dl.google.com/dl/android/aosp/barbet-tp1a.220624.014-factory-af1f224f.zip"
-readonly image_sha256="af1f224fccb523213b1e0a55596d9e32ed2b10bc3e37d092bdde643b48757209"
+readonly image_url="https://dl.google.com/dl/android/aosp/barbet-uq1a.231205.014-factory-0297d8d7.zip"
+readonly image_sha256="0297d8d7eecc7a6180b5e54a3cd3014ff72fc181ba60eeec805e6d596467066d"
 
-readonly flash_url="https://flash.android.com/build/8819323?target=barbet-user&signed"
+readonly flash_url="https://flash.android.com/build/11049176?target=barbet-user&signed"
 
-readonly ota_url="https://dl.google.com/dl/android/aosp/barbet-ota-tp1a.220624.014-502b35c0.zip"
-readonly ota_sha256="502b35c0d15d194c14a414d6a8d4606bc8e1867cbfd26d289d184e0317f1e8a5"
+readonly ota_url="https://dl.google.com/dl/android/aosp/barbet-ota-uq1a.231205.014-27adb3f8.zip"
+readonly ota_sha256="27adb3f8efc5ea37e5111b5bb1557ae7cac9749d5d1401f5a288c9ed24cb2e57"
 
-readonly security_patch="2022-08-05"
+readonly security_patch="2023-12-05"

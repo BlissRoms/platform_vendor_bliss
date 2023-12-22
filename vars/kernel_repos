@@ -1,7 +1,5 @@
 # Usage: ${kernel_repos[@]}
 readonly kernel_repos=(
-  bluejay
-  raviole
-  redbull
-  msm-4.14
+  kernel/google/gs201/private/gs-google
+  kernel/google/redbull
 )

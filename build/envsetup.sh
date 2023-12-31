@@ -1042,7 +1042,7 @@ alias cmkap='dopush cmka'
 
 function repopick() {
     T=$(gettop)
-    $T/vendor/bliss/build/tools/repopick.py $@
+    $T/vendor/bliss/build/tools/repopick.py "$@"
 }
 
 function sort-blobs-list() {

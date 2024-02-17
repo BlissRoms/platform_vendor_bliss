@@ -9,3 +9,5 @@ PRODUCT_PACKAGES += \
 
 # Include Bliss LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
+
+$(call inherit-product, vendor/bliss/config/wifionly.mk)

@@ -53,7 +53,11 @@ SOONG_CONFIG_blissGlobalVars += \
     target_health_charging_control_supports_toggle \
     camera_needs_client_info_lib \
     camera_needs_client_info_lib_oplus \
-    needs_camera_boottime
+    needs_camera_boottime \
+    uses_nothing_camera \
+    uses_oplus_camera \
+    uses_oppo_camera
+
 
 SOONG_CONFIG_NAMESPACES += blissNvidiaVars
 SOONG_CONFIG_blissNvidiaVars += \
@@ -80,6 +84,9 @@ SOONG_CONFIG_blissGlobalVars_gralloc_handle_has_ubwcp_format := $(TARGET_GRALLOC
 SOONG_CONFIG_blissGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 SOONG_CONFIG_blissQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM)
+SOONG_CONFIG_blissNvidiaVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
+SOONG_CONFIG_blissNvidiaVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
+SOONG_CONFIG_blissNvidiaVars_uses_oppo_camera := $(TARGET_USES_OPPO_CAMERA)
 SOONG_CONFIG_blissNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_blissQcomVars_supports_audio_accessory := $(TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY)
 SOONG_CONFIG_blissQcomVars_supports_debug_accessory := $(TARGET_QTI_USB_SUPPORTS_DEBUG_ACCESSORY)

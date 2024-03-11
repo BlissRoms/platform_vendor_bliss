@@ -53,8 +53,7 @@ SOONG_CONFIG_blissGlobalVars += \
     target_health_charging_control_supports_toggle \
     camera_needs_client_info_lib \
     camera_needs_client_info_lib_oplus \
-    needs_camera_boottime \
-    uses_oplus_camera
+    needs_camera_boottime
 
 SOONG_CONFIG_NAMESPACES += blissNvidiaVars
 SOONG_CONFIG_blissNvidiaVars += \
@@ -94,7 +93,6 @@ SOONG_CONFIG_blissGlobalVars_sdmcore_has_is_display_hw_available_func := $(TARGE
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
 SOONG_CONFIG_blissGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
-SOONG_CONFIG_blissGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0

@@ -16,6 +16,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Exchange2 \
     GameSpace \
+    Glimpse \
     Jelly \
     LatinIME \
     messaging \

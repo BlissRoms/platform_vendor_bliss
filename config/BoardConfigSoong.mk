@@ -55,6 +55,7 @@ SOONG_CONFIG_blissGlobalVars += \
     camera_needs_client_info_lib \
     camera_needs_client_info_lib_oplus \
     needs_camera_boottime \
+    include_miui_camera \
     uses_miui_camera \
     uses_nothing_camera \
     uses_oplus_camera \
@@ -99,6 +100,7 @@ SOONG_CONFIG_blissGlobalVars_sdmcore_has_is_display_hw_available_func := $(TARGE
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_blissGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
 SOONG_CONFIG_blissGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
+SOONG_CONFIG_blissGlobalVars_include_miui_camera := $(TARGET_INCLUDES_MIUI_CAMERA)
 SOONG_CONFIG_blissGlobalVars_uses_miui_camera := $(TARGET_USES_MIUI_CAMERA)
 SOONG_CONFIG_blissGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
 SOONG_CONFIG_blissGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)

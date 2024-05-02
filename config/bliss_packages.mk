@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
     BlissSystemUI \
     Contacts \
     Covers \
+    Datura \
     DeskClock \
     Dialer \
     Email \

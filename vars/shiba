@@ -9,21 +9,21 @@ readonly fbpk_version="v2"
 
 # Updated semi-manually via pixel/update-any-var.sh
 
-readonly build_id="AP1A.240405.002"
+readonly build_id="AP1A.240505.005"
 
 # Updated automatically via pixel/update-device-vars.sh
 
-readonly prev_aosp_tag="android-14.0.0_r29"
-readonly aosp_tag="android-14.0.0_r30"
+readonly prev_aosp_tag="android-14.0.0_r33"
+readonly aosp_tag="android-14.0.0_r35"
 
-readonly build_number="11480754"
+readonly build_number="11677807"
 
-readonly image_url="https://dl.google.com/dl/android/aosp/shiba-ap1a.240405.002-factory-ed0ea957.zip"
-readonly image_sha256="ed0ea9571c072e10e0d9f2745309e90626c83eb9ab94c81c7e6f23b93348f4da"
+readonly image_url="https://dl.google.com/dl/android/aosp/shiba-ap1a.240505.005-factory-d0adedea.zip"
+readonly image_sha256="d0adedeaf20b1f11e92cf89c15524a2646bd72ad96cc85fc3ceab4acb10a8923"
 
-readonly flash_url="https://flash.android.com/build/11480754?target=shiba-user&signed"
+readonly flash_url="https://flash.android.com/build/11677807?target=shiba-user&signed"
 
-readonly ota_url="https://dl.google.com/dl/android/aosp/shiba-ota-ap1a.240405.002-89147563.zip"
-readonly ota_sha256="891475630f0fef0166f5afccb29b5fbec36fd10ccec88a2a753cf8c50aa19f75"
+readonly ota_url="https://dl.google.com/dl/android/aosp/shiba-ota-ap1a.240505.005-1ab58b6a.zip"
+readonly ota_sha256="1ab58b6a5926eb8782379b0a436b4835bf6416e12bcdeb91cc07224e4fed0171"
 
-readonly security_patch="2024-04-05"
+readonly security_patch="2024-05-05"

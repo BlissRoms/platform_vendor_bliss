@@ -74,7 +74,7 @@ function breakfast()
                 variant="userdebug"
             fi
 
-            lunch bliss_$target-ap1a-$variant
+            lunch bliss_$target-ap2a-$variant
         fi
     fi
     return $?

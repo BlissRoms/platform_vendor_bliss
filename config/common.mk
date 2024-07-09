@@ -231,3 +231,5 @@ endif
 # Certification
 $(call inherit-product-if-exists, vendor/certification/config.mk)
 
+# Inline Signing
+$(call inherit-product-if-exists, vendor/bliss-priv/keys/keys.mk)

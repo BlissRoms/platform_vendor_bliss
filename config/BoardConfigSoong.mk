@@ -61,8 +61,8 @@ SOONG_CONFIG_blissGlobalVars += \
     uses_nothing_camera \
     uses_oplus_camera \
     uses_oppo_camera \
-    target_power_libperfmgr_mode_extension_lib
-
+    target_power_libperfmgr_mode_extension_lib \
+    spoof_first_api_level_32 \
 
 SOONG_CONFIG_NAMESPACES += blissNvidiaVars
 SOONG_CONFIG_blissNvidiaVars += \
@@ -150,6 +150,7 @@ SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB
 SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
 SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
 SOONG_CONFIG_blissGlobalVars_target_inputdispatcher_skip_event_key := $(TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY)
+SOONG_CONFIG_blissGlobalVars_spoof_first_api_level_32 := $(SPOOF_FIRST_API_LEVEL_32)
 
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_blissQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display

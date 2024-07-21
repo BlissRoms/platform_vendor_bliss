@@ -1,5 +1,5 @@
-# Inherit mini common Bliss stuff
-$(call inherit-product, vendor/bliss/config/common_mini.mk)
+# Inherit mobile mini common Bliss stuff
+$(call inherit-product, vendor/bliss/config/common_mobile_mini.mk)
 
 # Required packages
 PRODUCT_PACKAGES += \

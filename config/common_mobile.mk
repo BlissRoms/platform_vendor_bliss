@@ -6,6 +6,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=Argon.ogg \
     ro.config.alarm_alert=Hassium.ogg
 
+# Apps
+PRODUCT_PACKAGES += \
+    LatinIME
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images

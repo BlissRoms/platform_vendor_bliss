@@ -99,6 +99,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
+# DesktopMode
+PRODUCT_PACKAGES += \
+    DesktopMode
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.freeform_window_management.xml
+
+$(call inherit-product-if-exists, packages/services/VncFlinger/product.mk)
+
 # TouchGestures
 PRODUCT_PACKAGES += \
     TouchGestures

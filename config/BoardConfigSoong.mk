@@ -63,6 +63,9 @@ SOONG_CONFIG_blissGlobalVars += \
     uses_oppo_camera \
     target_power_libperfmgr_mode_extension_lib \
     spoof_first_api_level_32 \
+    target_powershare_path \
+    target_powershare_enabled \
+    target_powershare_disabled 
 
 SOONG_CONFIG_NAMESPACES += blissNvidiaVars
 SOONG_CONFIG_blissNvidiaVars += \
@@ -123,6 +126,8 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE ?= true
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY ?= 0
 TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB ?= libperfmgr-ext
+TARGET_POWERSHARE_ENABLED ?= 1
+TARGET_POWERSHARE_DISABLED ?= 0
 TARGET_QTI_VIBRATOR_EFFECT_LIB ?= libqtivibratoreffect
 TARGET_SDMCORE_HAS_IS_DISPLAY_HW_AVAILABLE_FUNC ?= true
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
@@ -145,6 +150,9 @@ SOONG_CONFIG_blissGlobalVars_target_health_charging_control_supports_toggle := $
 SOONG_CONFIG_blissGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 SOONG_CONFIG_blissGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
 SOONG_CONFIG_blissGlobalVars_target_power_libperfmgr_mode_extension_lib := $(TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB)
+SOONG_CONFIG_blissGlobalVars_target_powershare_path := $(TARGET_POWERSHARE_PATH)
+SOONG_CONFIG_blissGlobalVars_target_powershare_enabled := $(TARGET_POWERSHARE_ENABLED)
+SOONG_CONFIG_blissGlobalVars_target_powershare_disabled := $(TARGET_POWERSHARE_DISABLED)
 SOONG_CONFIG_blissGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
 SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
 SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)

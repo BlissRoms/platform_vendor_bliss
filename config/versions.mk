@@ -52,3 +52,20 @@ BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
 BLISS_FINGERPRINT := Bliss/$(VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date +%Y%m%d)
 BLISS_BUILD_TIMESTAMP := $(shell date +%Y%m%d)
 BLISS_BUILD_VERSION := $(BLISS_BUILD_ZIP)
+
+# Build fingerprint
+ifneq ($(BUILD_FINGERPRINT),)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+endif
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+  ro.bliss.codename=$(BLISS_CODENAME) \
+  ro.bliss.version=$(BLISS_VERSION) \
+  ro.bliss.build.status=$(BLISS_BUILDTYPE) \
+  ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \
+  ro.bliss.fingerprint=$(BLISS_FINGERPRINT) \
+  ro.bliss.static.version=$(BLISS_VERSION_STATIC) \
+  ro.bliss.build.variant=$(BLISS_BUILD_VARIANT) \
+  ro.bliss.build.timestamp=$(BLISS_BUILD_TIMESTAMP) \
+  ro.bliss.build=$(BLISS_BUILD_ZIP)

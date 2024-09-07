@@ -61,6 +61,7 @@ endif
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bliss.codename=$(BLISS_CODENAME) \
+  ro.bliss.device=$(BLISS_DEVICE) \
   ro.bliss.version=$(BLISS_VERSION) \
   ro.bliss.build.status=$(BLISS_BUILDTYPE) \
   ro.bliss.changelog.version=Changelog-$(BLISS_VERSION) \

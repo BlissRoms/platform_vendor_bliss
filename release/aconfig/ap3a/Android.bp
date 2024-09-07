@@ -16,7 +16,6 @@
 aconfig_value_set {
     name: "aconfig_value_set-bliss-ap3a",
     values: [
-        "aconfig-values-ap3a-com.android.systemui.flags-all",
         "aconfig-values-ap3a-com.android.input.flags-all",
     ],
 }

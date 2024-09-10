@@ -12,10 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_arm64.mk)
+$(call inherit-product, build/target/product/gsi_release.mk)
+$(call inherit-product, device/google/atv/products/aosp_tv_arm64.mk)
 
-include vendor/bliss/build/target/product/bliss_generic_target.mk
+include vendor/bliss/build/target/product/bliss_generic_tv_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 
-PRODUCT_NAME := bliss_arm64
+PRODUCT_NAME := bliss_gsi_tv_arm64
+
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=

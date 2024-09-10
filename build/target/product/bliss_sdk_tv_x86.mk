@@ -1,4 +1,4 @@
-# Copyright (C) 2019-2020 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/google/atv/products/atv_base.mk)
-$(call inherit-product, vendor/bliss/config/common_full_tv.mk)
+include vendor/bliss/build/target/product/bliss_generic_tv_target.mk
 
-# Allow building otatools
-TARGET_FORCE_OTA_PACKAGE := true
+$(call inherit-product, device/google/atv/products/sdk_atv_x86.mk)
+
+TARGET_NO_KERNEL_OVERRIDE := true
+
+# Enable mainline checking
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
+
+# Overrides
+PRODUCT_NAME := bliss_sdk_tv_x86
+PRODUCT_MODEL := Bliss Android TV SDK built for x86
+
+PRODUCT_SDK_ADDON_NAME := bliss
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

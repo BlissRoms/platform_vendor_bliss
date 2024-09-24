@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "786180d0_a38ea7a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000209
+      },
+      "writtenOn": "2024-09-24T16:17:34Z",
+      "side": 1,
+      "message": "macro v18",
+      "revId": "a0f7df030560a558ab5280a30fea19f849bdb870",
+      "serverId": "b7386340-edb3-408c-9cac-98e148952b30"
+    }
+  ]
+}

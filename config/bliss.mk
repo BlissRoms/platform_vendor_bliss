@@ -2,6 +2,8 @@
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
     GameSpace \
+    LMOFreeform \
+    LMOFreeformSidebar \
     OmniJaws
 
 # Cloned app exemption

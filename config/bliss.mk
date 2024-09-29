@@ -1,6 +1,8 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
     GameSpace \
+    LMOFreeform \
+    LMOFreeformSidebar \
     OmniJaws
 
 # PIF values

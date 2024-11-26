@@ -3927,7 +3927,7 @@
   <apn carrier="G TT MMS" mcc="738" mnc="020" apn="mms.cellinkgy.com" proxy="" port="" mmsproxy="10.0.1.99" mmsport="8080" mmsc="http://10.0.1.88/mms/wapenc" user="cellink" password="cellink" type="mms" />
   <apn carrier="Movistar INTERNET" mcc="740" mnc="00" apn="internet.movistar.com.ec" user="movistar" password="movistar" type="default,supl" />
   <apn carrier="Movistar MMS" mcc="740" mnc="00" apn="mms.movistar.com.ec" proxy="" port="" mmsproxy="10.3.5.50" mmsport="9001" mmsc="http://mms.movistar.com.ec:8088/mms/" user="movistar" password="movistar" type="mms" />
-  <apn carrier="Banda Acha M??vil" mcc="740" mnc="01" apn="ba.amx" user="" password="" type="default,supl" />
+  <apn carrier="Claro EC" mcc="740" mnc="01" apn="internet.claro.com.ec" user="" password="" type="default,supl" protocol="IPV4V6" roaming_protocol="IPV4V6" />
   <apn carrier="MMS Claro" mcc="740" mnc="01" apn="mms.claro.com.ec" user="" password="" type="mms" />
   <apn carrier="Movistar INTERNET" mcc="740" mnc="02" apn="internet.movistar.com.ec" user="movistar" password="movistar" authtype="3" type="default,supl" />
   <apn carrier="Movistar MMS" mcc="740" mnc="02" apn="mms.movistar.com.ec" proxy="" port="" mmsproxy="10.3.5.50" mmsport="9001" mmsc="http://mms.movistar.com.ec:8088/mms/" user="movistar" password="movistar" authtype="3" type="mms" />

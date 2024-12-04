@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     BlissSystemUI \
     Contacts \
     Covers \
+    CustomDoze \
     Datura \
     DeskClock \
     Dialer \

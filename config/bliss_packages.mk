@@ -112,6 +112,10 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product-if-exists, packages/services/VncFlinger/product.mk)
 
+# Disable default frame rate limit for games
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.graphics.game_default_frame_rate.disabled=true
+
 # TouchGestures
 PRODUCT_PACKAGES += \
     TouchGestures

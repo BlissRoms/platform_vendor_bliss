@@ -745,6 +745,7 @@
   <apn carrier="Bahnhof AB MMS" mcc="240" mnc="01" apn="bahnhofab.tmhmms" proxy="" port="" user="" password="" mmsc="http://mmss/" mmsproxy="193.209.134.132" mmsport="80" type="mms" />
   <apn carrier="Bahnhof LDA Internet" mcc="240" mnc="01" apn="bahnhoflda.tmhgprs" proxy="" port="" user="" password="" mmsc="" type="default,supl" />
   <apn carrier="Bahnhof LDA MMS" mcc="240" mnc="01" apn="bahnhoflda.tmhmms" proxy="" port="" user="" password="" mmsc="http://mmss/" mmsproxy="193.209.134.132" mmsport="80" type="mms" />
+  <apn carrier="Bait Internet" mcc="334" mnc="140" apn="internet.wm.com" proxy="" port="" user="" password="" server="" mmsc="" mmsproxy="" mmsport="" authtype="1" type="default,supl" protocol="IPV4V6" roaming_protocol="IPV4V6" />
   <apn carrier="Bixia internet" mcc="240" mnc="01" apn="abbla.telia.se" proxy="" port="" user="" password="" mmsc="" type="default,supl" />
   <apn carrier="Bixia MMS" mcc="240" mnc="01" apn="abblamms.telia.se" proxy="" port="" user="" password="" mmsc="http://mmss/" mmsproxy="193.209.134.132" mmsport="80" type="mms" />
   <apn carrier="DGC internet" mcc="240" mnc="01" apn="dgc.tmhgprs" proxy="" port="" user="" password="" mmsc="" type="default,supl" />

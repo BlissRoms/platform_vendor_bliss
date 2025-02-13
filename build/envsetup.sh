@@ -957,8 +957,7 @@ function blissify()
 		  echo "         -c | --clean: Clean up before running the build"
 		  echo "         -d | --devclean: Clean up device tree before running the build"
 		  echo "         -v | --vanilla: Build with no added app store solution **default option** "
-		  echo "         -g | --gapps: Build with Minimal Google Play Services added"
-                  echo "         -p | --pixelgapps: Build with Google Pixel Gapps added"
+		  echo "         -g | --gapps: Build with Google Play Services added"
 		  echo "         -f | --fossa: build with FOSS (arm64-v8a) app store solutions added"
 		  echo "         -F | --fossx: build with FOSS (x86_64) app store solutions added"
                   echo "         -m | --microg: Build with MicroG added"
@@ -980,13 +979,9 @@ function blissify()
 		  export BLISS_BUILD_VARIANT=vanilla
 		  ;;
 		-g | --gapps)
-		  echo "Building with Minimal Gapps"
+		  echo "Building with gapps"
 		  export BLISS_BUILD_VARIANT=gapps
 		  ;;
-                -p | --pixelgapps)
-                  echo "Building with Pixel Gapps"
-                  export BLISS_BUILD_VARIANT=pixelgapps
-                  ;;
 		-f | --fossa)
 		  echo "Building with FOSS apps for arm64-v8a support"
 		  export BLISS_BUILD_VARIANT=foss

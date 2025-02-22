@@ -3965,4 +3965,7 @@
   <apn carrier="Claro UY MMS" mcc="748" mnc="10" apn="mms.ctimovil.com.uy" user="ctimms" password="ctimms999" mmsc="http://mms.ctimovil.com.uy" mmsproxy="170.051.255.240" mmsport="9201" type="mms" />
   <apn carrier="BSNL NET" mcc="404" mnc="58" apn="bsnlnet" type="default,supl" protocol="IPV4V6" roaming_protocol="IPV4V6" />
   <apn carrier="BSNL IMS" mcc="404" mnc="58" apn="bsnlnet" type="ims" protocol="IPV4V6" roaming_protocol="IPV4V6" />
+  <apn carrier="YemenMobile" carrier_id="2349" mcc="421" mnc="03" apn="ymobile" user="ymobile" password="ymobile" authtype="3" type="default,supl" />
+  <apn carrier="YemenMobile" carrier_id="2349" mcc="421" mnc="03" apn="ymdata" type="default,supl,fota,cbs,dun" protocol="IPV4V6" />
+  <apn carrier="YemenMobile" carrier_id="2349" mcc="421" mnc="03" apn="ymims" type="ims" protocol="IPV4V6" />
 </apns>

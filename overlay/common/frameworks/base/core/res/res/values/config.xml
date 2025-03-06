@@ -345,6 +345,10 @@
         <item>device_personalization_services/EchoSmartspace__smartspace_enable_tomorrow_forecast=true</item>
         <item>device_personalization_services/EchoSmartspace__strava_check_stop_action=true</item>
 
+        <!-- Nearby -->
+	<item>nearby/nearby_enable_presence_broadcast_legacy=false</item>
+	<item>nearby/nearby_support_test_app=false</item>
+
         <!-- Notification Assistant (DPS) -->
         <item>notification_assistant/generate_actions=true</item>
         <item>notification_assistant/generate_replies=true</item>

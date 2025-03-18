@@ -1,45 +1,53 @@
-PRODUCT_VERSION_MAJOR = 23
-PRODUCT_VERSION_MINOR = 2
+BLISS_VERSION_MAJOR := 19
+BLISS_VERSION_MINOR := 3
+BLISS_CODENAME = Waterlily
 
-ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
-    LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
+# Bliss Android Version
+BLISS_VERSION_STATIC = 16.0
+
+# Set Bliss Build Variant
+BLISS_BUILD_VARIANT ?= vanilla
+
+TARGET_PRODUCT_SHORT := $(subst bliss_,,$(BLISS_BUILDTYPE))
+
+VERSION := $(BLISS_VERSION_MAJOR).$(BLISS_VERSION_MINOR)
+
+# Set to Unofficial if no buildtype is set (Build Types should be only set by Bliss Devs!)
+ifdef BLISS_BUILDTYPE
 else
-    LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d)
+    BLISS_BUILDTYPE ?= UNOFFICIAL
 endif
 
-# Set LINEAGE_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
-
-ifndef LINEAGE_BUILDTYPE
-    ifdef RELEASE_TYPE
-        # Starting with "LINEAGE_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^LINEAGE_||g')
-        LINEAGE_BUILDTYPE := $(RELEASE_TYPE)
-    endif
+# Set BLISS version
+ifdef BLISS_RELEASE
+    BLISS_BUILD_ZIP := Bliss-v$(VERSION)
+else
+    BLISS_BUILD_ZIP := Bliss-v$(VERSION)-$(LINEAGE_BUILD)-$(BLISS_BUILDTYPE)-$(BLISS_BUILD_VARIANT)-$(shell date +%Y%m%d)
 endif
 
-# Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(LINEAGE_BUILDTYPE)),)
-    LINEAGE_BUILDTYPE := UNOFFICIAL
-    LINEAGE_EXTRAVERSION :=
+BLISS_DEVICE := $(LINEAGE_BUILD)
+BLISS_VERSION := $(VERSION)
+BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
+BLISS_FINGERPRINT := Bliss/$(VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date +%Y%m%d)
+BLISS_BUILD_TIMESTAMP := $(shell date +%Y%m%d)
+BLISS_BUILD_VERSION := $(BLISS_BUILD_ZIP)
+
+TARGET_PRODUCT_SHORT := $(subst bliss_,,$(BLISS_BUILDTYPE))
+
+# Build fingerprint
+ifneq ($(BUILD_FINGERPRINT),)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
-    ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        LINEAGE_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
-    endif
-endif
-
-LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
-
-# Internal version
-LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_VERSION_SUFFIX)
-
-# Display version
-LINEAGE_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR)-$(LINEAGE_VERSION_SUFFIX)
-
-# LineageOS version properties
+# Bliss version properties
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
+    ro.bliss.codename=$(BLISS_CODENAME) \
+    ro.bliss.device=$(BLISS_DEVICE) \
+    ro.bliss.version=$(BLISS_VERSION) \
+    ro.bliss.build.status=$(BLISS_BUILDTYPE) \
+    ro.bliss.fingerprint=$(BLISS_FINGERPRINT) \
+    ro.bliss.static.version=$(BLISS_VERSION_STATIC) \
+    ro.bliss.build.variant=$(BLISS_BUILD_VARIANT) \
+    ro.bliss.build.timestamp=$(BLISS_BUILD_TIMESTAMP) \
+    ro.bliss.build=$(BLISS_BUILD_ZIP)

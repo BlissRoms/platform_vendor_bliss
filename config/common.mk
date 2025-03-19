@@ -128,13 +128,6 @@ ifneq ($(TARGET_DISABLE_EPPE),true)
 $(call enforce-product-packages-exist-internal,$(lastword $(_include_stack)),product_manifest.xml rild Calendar android.hidl.memory@1.0-impl.vendor vndk_apex_snapshot_package)
 endif
 
-# Bootanimation
-TARGET_SCREEN_WIDTH ?= 1080
-TARGET_SCREEN_HEIGHT ?= 1920
-PRODUCT_PACKAGES += \
-    bootanimation.zip \
-    bootanimation-dark.zip
-
 # Lineage interfaces
 PRODUCT_PACKAGES += \
     framework_compatibility_matrix.lineage.xml
@@ -286,6 +279,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/lineage/build/target/product/security/lineage
+
+# Bliss Bootanimation
+-include vendor/lineage/config/bootanimation.mk
 
 include vendor/lineage/config/version.mk
 

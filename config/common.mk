@@ -1,6 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product, vendor/lineage/config/bliss.mk)
+$(call inherit-product, vendor/extras/bliss_packages.mk)
 
 PRODUCT_BRAND ?= Bliss
 

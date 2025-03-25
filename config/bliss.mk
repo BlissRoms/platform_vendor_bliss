@@ -1,3 +1,7 @@
+# Bliss Packages
+PRODUCT_PACKAGES += \
+    OmniJaws
+
 # PIF values
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.pihooks_MANUFACTURER?=Google \

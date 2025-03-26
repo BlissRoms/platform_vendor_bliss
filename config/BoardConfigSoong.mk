@@ -63,10 +63,6 @@ SOONG_CONFIG_lineageGlobalVars += \
     target_health_charging_control_charging_path
 endif
 
-SOONG_CONFIG_NAMESPACES += lineageNvidiaVars
-SOONG_CONFIG_lineageNvidiaVars += \
-    uses_nvidia_enhancements
-
 # Soong bool variables
 SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
@@ -77,7 +73,6 @@ SOONG_CONFIG_lineageGlobalVars_gralloc_handle_has_ubwcp_format := $(TARGET_GRALL
 SOONG_CONFIG_lineageGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
 SOONG_CONFIG_lineageGlobalVars_uses_miui_camera := $(TARGET_USES_MIUI_CAMERA)
 SOONG_CONFIG_lineageGlobalVars_spoof_first_api_level_32 := $(SPOOF_FIRST_API_LEVEL_32)
-SOONG_CONFIG_lineageNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0

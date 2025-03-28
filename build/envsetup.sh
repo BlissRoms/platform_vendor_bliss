@@ -1058,6 +1058,13 @@ function fixup_common_out_dir() {
     fi
 }
 
-# Override host metadata to make builds more reproducible and avoid leaking info
-export BUILD_USERNAME=android-build
-export BUILD_HOSTNAME=r-0123456789abcdef-acab
+function generate_host_overrides() {
+    export BUILD_USERNAME=android-build
+    HEX=$(openssl rand -hex 8)
+    ALPHA=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+    export BUILD_HOSTNAME="r-${HEX}-${ALPHA}"
+    echo "BUILD_USERNAME=$BUILD_USERNAME"
+    echo "BUILD_HOSTNAME=$BUILD_HOSTNAME"
+}
+
+generate_host_overrides

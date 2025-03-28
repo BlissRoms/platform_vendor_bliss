@@ -1,5 +1,6 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
+    GameSpace \
     OmniJaws
 
 # PIF values

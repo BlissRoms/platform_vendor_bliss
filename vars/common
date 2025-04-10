@@ -5,11 +5,11 @@ readonly aosp_tag_match=android-15.0 # For update-device-vars.sh
 readonly os_branch=lineage-22.2
 readonly device_branch=lineage-22.2
 
-readonly prev_common_aosp_tag=android-15.0.0_r21 # Mar 2025, Pixel 9
-readonly common_aosp_tag=android-15.0.0_r23 # Mar 2025, Pixel Tablet
+readonly prev_common_aosp_tag=android-15.0.0_r23 # Mar 2025, Pixel Tablet
+readonly common_aosp_tag=android-15.0.0_r26 # Apr 2025, Pixel 6, Tablet, 9
 
-readonly common_aosp_build_id=BP1A.250305.020.T2 # Mar 2025, Pixel Tablet
+readonly common_aosp_build_id=BP1A.250505.007 # Apr 2025, Pixel 6, Tablet, 9
 
-readonly topic=V_asb_2025-03
+readonly topic=V_asb_2025-04
 
 readonly merge_method="merge"

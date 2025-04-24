@@ -120,23 +120,6 @@ camera_needs_client_info_lib_oplus {
 }
 
 soong_config_module_type {
-    name: "gralloc_10_usage_bits",
-    module_type: "cc_defaults",
-    config_namespace: "lineageGlobalVars",
-    value_variables: ["additional_gralloc_10_usage_bits"],
-    properties: ["cppflags"],
-}
-
-gralloc_10_usage_bits {
-    name: "gralloc_10_usage_bits_defaults",
-    soong_config_variables: {
-        additional_gralloc_10_usage_bits: {
-            cppflags: ["-DADDNL_GRALLOC_10_USAGE_BITS=%s"],
-        },
-    },
-}
-
-soong_config_module_type {
     name: "trust_usb_control",
     module_type: "cc_defaults",
     config_namespace: "lineageGlobalVars",

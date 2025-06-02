@@ -52,7 +52,7 @@ class DeviceTreeInfo(object):
 		self.board_id = board
 		self.pmic_id = pmic
 		self.miboard_id = miboard
-                self.extra_ids = extra_ids or {}
+		self.extra_ids = extra_ids or {}
 
 	def __str__(self):
 		s = ""

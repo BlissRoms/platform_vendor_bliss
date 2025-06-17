@@ -6,8 +6,8 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "lineage-component-overrides.xml",
+    name: "bliss-component-overrides.xml",
     product_specific: true,
-    src: "etc/lineage-component-overrides.xml",
+    src: "etc/bliss-component-overrides.xml",
     sub_dir: "sysconfig",
 }

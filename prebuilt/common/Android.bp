@@ -6,13 +6,13 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "lineage-component-overrides.xml",
+    name: "bliss-component-overrides.xml",
     product_specific: true,
-    src: "etc/lineage-component-overrides.xml",
+    src: "etc/bliss-component-overrides.xml",
     sub_dir: "sysconfig",
 }
 
 prebuilt_addon_d {
-    name: "50-lineage.sh",
-    src: "bin/50-lineage.sh",
+    name: "50-bliss.sh",
+    src: "bin/50-bliss.sh",
 }

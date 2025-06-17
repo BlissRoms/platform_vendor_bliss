@@ -46,7 +46,7 @@
 #
 #   USE_CCACHE                         = Enable ccache (global Android flag)
 
-include vendor/lineage/build/core/utils.mk
+include vendor/bliss/build/core/utils.mk
 
 BUILD_TOP := $(abspath .)
 

@@ -12,19 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/lineage/build/target/product/lineage_generic_tv_target.mk
+$(call inherit-product, device/generic/car/gsi_car_arm64.mk)
 
-$(call inherit-product, device/google/atv/products/sdk_atv_x86.mk)
+include vendor/bliss/build/target/product/bliss_generic_car_target.mk
 
-TARGET_KERNEL_USE := 6.1
+PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
+
 TARGET_NO_KERNEL_OVERRIDE := true
 
-# Enable mainline checking
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
 
-# Overrides
-PRODUCT_NAME := lineage_sdk_tv_x86
-PRODUCT_MODEL := LineageOS Android TV SDK built for x86
-
-PRODUCT_SDK_ADDON_NAME := lineage
-PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
+PRODUCT_NAME := bliss_gsi_car_arm64

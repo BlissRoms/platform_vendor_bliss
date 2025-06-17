@@ -13,7 +13,7 @@
 // limitations under the License.
 
 aconfig_values {
-  name: "aconfig-values-lineage-cp2a-com.android.systemui-all",
+  name: "aconfig-values-bliss-cp2a-com.android.systemui-all",
   package: "com.android.systemui",
   srcs: [
     "*_flag_values.textproto",

@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2020 The LineageOS Project
+# Copyright (C) 2019-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,15 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/google/atv/products/aosp_tv_x86_64.mk)
+$(call inherit-product, vendor/bliss/config/common_car.mk)
 
-include vendor/lineage/build/target/product/lineage_generic_tv_target.mk
+EMULATOR_VENDOR_NO_SENSORS := true
+EMULATOR_VENDOR_NO_SOUND := true
 
-TARGET_SUPPORTS_64_BIT_APPS := true
+# Allow building otatools
+TARGET_FORCE_OTA_PACKAGE := true
 
-PRODUCT_NAME := lineage_gsi_tv_x86_64
+# Disable soong defined system image for now
+USE_SOONG_DEFINED_SYSTEM_IMAGE := false
 
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=
-
-PRODUCT_SDK_ADDON_NAME := lineage
-PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/app/Home/Home.apk \
+    system/etc/permissions/android.software.credentials.xml

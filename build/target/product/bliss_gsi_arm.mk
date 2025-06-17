@@ -12,17 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/generic/common/gsi_arm64.mk)
+$(call inherit-product, device/generic/common/gsi_arm.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-include vendor/lineage/build/target/product/lineage_generic_target.mk
+include vendor/bliss/build/target/product/bliss_generic_target.mk
 
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
 TARGET_NO_KERNEL_OVERRIDE := true
 
-PRODUCT_NAME := lineage_gsi_arm64
-PRODUCT_DEVICE := generic_arm64
+PRODUCT_NAME := bliss_gsi_arm
 
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=

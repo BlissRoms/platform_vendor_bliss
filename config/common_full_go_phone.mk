@@ -1,5 +1,5 @@
-# Set Lineage specific identifier for Android Go enabled products
+# Set Bliss specific identifier for Android Go enabled products
 PRODUCT_TYPE := go
 
-# Inherit full common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit full common Bliss stuff
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)

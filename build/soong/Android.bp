@@ -1,8 +1,8 @@
-// LineageOS soong configs
+// Bliss soong configs
 
 bootstrap_go_package {
-    name: "soong-lineage-generator",
-    pkgPath: "lineage/soong/generator",
+    name: "soong-bliss-generator",
+    pkgPath: "bliss/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -17,11 +17,11 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-lineage_generator {
+bliss_generator {
     name: "generated_kernel_includes",
 
     // The headers make command
-    cmd: "$(PATH_OVERRIDE_SOONG) $(KERNEL_MAKE_CMD) $(KERNEL_MAKE_FLAGS) -C $(TARGET_KERNEL_SOURCE) O=$(KERNEL_BUILD_OUT_PREFIX)$(genDir) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) headers_install && vendor/lineage/tools/clean_headers.sh $(KERNEL_BUILD_OUT_PREFIX)$(genDir)",
+    cmd: "$(PATH_OVERRIDE_SOONG) $(KERNEL_MAKE_CMD) $(KERNEL_MAKE_FLAGS) -C $(TARGET_KERNEL_SOURCE) O=$(KERNEL_BUILD_OUT_PREFIX)$(genDir) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) headers_install && vendor/bliss/tools/clean_headers.sh $(KERNEL_BUILD_OUT_PREFIX)$(genDir)",
 
     // Directories that can be imported by a cc_* module generated_headers property
     export_include_dirs: [
@@ -42,11 +42,11 @@ lineage_generator {
     ],
 }
 
-lineage_generator {
+bliss_generator {
     name: "prebuilt_kernel_includes",
 
     // The headers extract command
-    cmd: "mkdir -p $(KERNEL_BUILD_OUT_PREFIX)$(genDir) && gzip -d < $(TARGET_PREBUILT_KERNEL_HEADERS) | tar -x -C $(KERNEL_BUILD_OUT_PREFIX)$(genDir) && vendor/lineage/tools/clean_headers.sh $(KERNEL_BUILD_OUT_PREFIX)$(genDir)",
+    cmd: "mkdir -p $(KERNEL_BUILD_OUT_PREFIX)$(genDir) && gzip -d < $(TARGET_PREBUILT_KERNEL_HEADERS) | tar -x -C $(KERNEL_BUILD_OUT_PREFIX)$(genDir) && vendor/bliss/tools/clean_headers.sh $(KERNEL_BUILD_OUT_PREFIX)$(genDir)",
 
     // Directories that can be imported by a cc_* module generated_headers property
     export_include_dirs: [
@@ -59,8 +59,8 @@ lineage_generator {
 }
 
 bootstrap_go_package {
-    name: "soong-lineage-mkdir",
-    pkgPath: "lineage/soong/mkdir",
+    name: "soong-bliss-mkdir",
+    pkgPath: "bliss/soong/mkdir",
     deps: [
         "blueprint",
         "blueprint-pathtools",

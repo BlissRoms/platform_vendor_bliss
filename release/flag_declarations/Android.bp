@@ -13,7 +13,7 @@
 // limitations under the License.
 
 build_flag_declarations {
-    name: "build_flags-build-release-lineage",
+    name: "build_flags-build-release-bliss",
     srcs: [
         "RELEASE_*.textproto",
     ],

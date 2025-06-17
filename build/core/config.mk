@@ -14,4 +14,4 @@
 # limitations under the License.
 
 # Rules for QCOM targets
-include $(TOPDIR)vendor/lineage/build/core/qcom_target.mk
+include $(TOPDIR)vendor/bliss/build/core/qcom_target.mk

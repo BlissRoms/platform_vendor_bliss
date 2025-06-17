@@ -13,9 +13,9 @@
 # limitations under the License.
 
 $(call inherit-product, device/generic/goldfish/64bitonly/product/sdk_phone64_arm64.mk)
-$(call inherit-product, vendor/lineage/build/target/product/lineage_sdk_phone_arm64_board.mk)
+$(call inherit-product, vendor/bliss/build/target/product/bliss_sdk_phone_arm64_board.mk)
 
-include vendor/lineage/build/target/product/lineage_generic_target.mk
+include vendor/bliss/build/target/product/bliss_generic_target.mk
 
 # Always build modules from source
 PRODUCT_MODULE_BUILD_FROM_SOURCE := true
@@ -24,8 +24,8 @@ PRODUCT_MODULE_BUILD_FROM_SOURCE := true
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 
 # Overrides
-PRODUCT_NAME := lineage_sdk_phone_arm64
-PRODUCT_MODEL := LineageOS Android SDK built for arm64
+PRODUCT_NAME := bliss_sdk_phone_arm64
+PRODUCT_MODEL := Bliss Android SDK built for arm64
 
-PRODUCT_SDK_ADDON_NAME := lineage
-PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := vendor/lineage/build/target/product/source.properties
+PRODUCT_SDK_ADDON_NAME := bliss
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := vendor/bliss/build/target/product/source.properties

@@ -1,5 +1,5 @@
-# Inherit common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common Bliss stuff
+$(call inherit-product, vendor/bliss/config/common.mk)
 
 # Include AOSP audio files
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
@@ -16,4 +16,4 @@ PRODUCT_PACKAGES += \
     Catapult \
     LineageCustomizer
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/tv
+PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/tv

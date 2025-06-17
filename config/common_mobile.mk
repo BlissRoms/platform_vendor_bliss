@@ -1,12 +1,12 @@
-# Inherit common mobile Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common mobile Bliss stuff
+$(call inherit-product, vendor/bliss/config/common.mk)
 
 # Include AOSP audio files
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage14.mk)
-include vendor/lineage/config/aosp_audio.mk
+include vendor/bliss/config/aosp_audio.mk
 
-# Include Lineage audio files
-include vendor/lineage/config/lineage_audio.mk
+# Include Bliss audio files
+include vendor/bliss/config/bliss_audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \

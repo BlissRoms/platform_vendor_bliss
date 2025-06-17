@@ -16,19 +16,19 @@ EXPORT_TO_SOONG := \
 # Documentation here:
 # https://github.com/LineageOS/android_build_soong/commit/8328367c44085b948c003116c0ed74a047237a69
 
-SOONG_CONFIG_NAMESPACES += lineageVarsPlugin
+SOONG_CONFIG_NAMESPACES += blissVarsPlugin
 
-SOONG_CONFIG_lineageVarsPlugin :=
+SOONG_CONFIG_blissVarsPlugin :=
 
 define addVar
-  SOONG_CONFIG_lineageVarsPlugin += $(1)
-  SOONG_CONFIG_lineageVarsPlugin_$(1) := $($1)
+  SOONG_CONFIG_blissVarsPlugin += $(1)
+  SOONG_CONFIG_blissVarsPlugin_$(1) := $($1)
 endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
-SOONG_CONFIG_NAMESPACES += lineageGlobalVars
-SOONG_CONFIG_lineageGlobalVars += \
+SOONG_CONFIG_NAMESPACES += blissGlobalVars
+SOONG_CONFIG_blissGlobalVars += \
     bootloader_message_offset \
     camera_needs_client_info_lib \
     camera_needs_client_info_lib_oplus \
@@ -41,10 +41,10 @@ SOONG_CONFIG_lineageGlobalVars += \
     uses_miui_camera
 
 # Soong bool variables
-SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
-SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
-SOONG_CONFIG_lineageGlobalVars_uses_miui_camera := $(TARGET_USES_MIUI_CAMERA)
-SOONG_CONFIG_lineageGlobalVars_spoof_first_api_level_32 := $(SPOOF_FIRST_API_LEVEL_32)
+SOONG_CONFIG_blissGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
+SOONG_CONFIG_blissGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
+SOONG_CONFIG_blissGlobalVars_uses_miui_camera := $(TARGET_USES_MIUI_CAMERA)
+SOONG_CONFIG_blissGlobalVars_spoof_first_api_level_32 := $(SPOOF_FIRST_API_LEVEL_32)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
@@ -55,12 +55,12 @@ TARGET_TRUST_USB_CONTROL_ENABLE ?= 1
 TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
 
 # Soong value variables
-SOONG_CONFIG_lineageGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
-SOONG_CONFIG_lineageGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
-SOONG_CONFIG_lineageGlobalVars_target_libcameraservice_ext_lib := $(TARGET_CAMERA_SERVICE_EXT_LIB)
-SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
-SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
-SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
+SOONG_CONFIG_blissGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
+SOONG_CONFIG_blissGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
+SOONG_CONFIG_blissGlobalVars_target_libcameraservice_ext_lib := $(TARGET_CAMERA_SERVICE_EXT_LIB)
+SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
+SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
+SOONG_CONFIG_blissGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
 
 # Camera
 ifneq ($(TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED),)

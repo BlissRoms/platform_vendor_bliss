@@ -22,7 +22,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Cloned app exemption
 PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml
+    vendor/bliss/prebuilt/common/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml
 
 # Disable async MTE on a few processes
 PRODUCT_SYSTEM_EXT_PROPERTIES += \

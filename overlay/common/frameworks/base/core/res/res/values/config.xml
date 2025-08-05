@@ -237,6 +237,11 @@
         <item>device_personalization_services/Notification__enable_otp_check_for_default_sms_package=true</item>
         <item>device_personalization_services/Notification__enable_otp_in_smart_suggestion=true</item>
 
+       <!-- Now Playing -->
+        <item>device_personalization_services/NowPlaying__enable_now_playing_lock_screen_update=true</item>
+        <item>device_personalization_services/NowPlaying__enable_now_playing_quick_affordance=true</item>
+        <item>device_personalization_services/NowPlaying__enable_now_playing_quick_settings=true</item>
+
         <!-- Screen attention (Pixel 2019) -->
         <item>device_personalization_services/Attention__accel_sensor_enabled=false</item>
         <item>device_personalization_services/Attention__accel_sensor_threshold_mss=0.2</item>

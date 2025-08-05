@@ -7,21 +7,21 @@ device_repos=(
 
 # Updated semi-manually via pixel/update-any-var.sh
 
-readonly build_id="BP2A.250605.031.A2"
+readonly build_id="BP2A.250605.031.A5"
 
 # Updated automatically via pixel/update-device-vars.sh
 
 readonly prev_aosp_tag="aml_tz6_351400020"
-readonly aosp_tag="android-16.0.0_r1"
+readonly aosp_tag="unknown"
 
-readonly build_number="13578606"
+readonly build_number="13701493"
 
-readonly image_url="https://dl.google.com/dl/android/aosp/oriole-bp2a.250605.031.a2-factory-747402f2.zip"
-readonly image_sha256="747402f25eed1c39fe6de3f132e9e27446191e616e6235e51675e9179f888949"
+readonly image_url="https://dl.google.com/dl/android/aosp/oriole-bp2a.250605.031.a5-factory-5a0a6d42.zip"
+readonly image_sha256="5a0a6d42b24082f7884b77bac6500f7bf8e4fd8f9324986c55eccc77444f9ca9"
 
-readonly flash_url="https://flash.android.com/build/13578606?target=oriole-user&signed"
+readonly flash_url="https://flash.android.com/build/13701493?target=oriole-user&signed"
 
-readonly ota_url="https://dl.google.com/dl/android/aosp/oriole-ota-bp2a.250605.031.a2-e6a8072b.zip"
-readonly ota_sha256="e6a8072b436ebb1d0ffd1eef9be1b45bb564550ec62f73c5e40632440d7de6c5"
+readonly ota_url="https://dl.google.com/dl/android/aosp/oriole-ota-bp2a.250605.031.a5-c48ad78f.zip"
+readonly ota_sha256="c48ad78f91f81bedc35d156e13391bd7586abd5471ac656bf4f876a8a0f8f77e"
 
-readonly security_patch="2025-06-05"
+readonly security_patch="unknown"

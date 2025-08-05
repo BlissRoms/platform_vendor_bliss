@@ -7,21 +7,21 @@ device_repos=(
 
 # Updated semi-manually via pixel/update-any-var.sh
 
-readonly build_id="BP2A.250705.008"
+readonly build_id="BP2A.250805.005"
 
 # Updated automatically via pixel/update-device-vars.sh
 
 readonly prev_aosp_tag="aml_tz6_351400020"
 readonly aosp_tag="unknown"
 
-readonly build_number="13578956"
+readonly build_number="13691446"
 
-readonly image_url="https://dl.google.com/dl/android/aosp/comet-bp2a.250705.008-factory-3f997228.zip"
-readonly image_sha256="3f997228407ad0c8b1d005374f6495254f8098698587b0859a843f8e93a8a203"
+readonly image_url="https://dl.google.com/dl/android/aosp/comet-bp2a.250805.005-factory-2eea75d1.zip"
+readonly image_sha256="2eea75d11407c5beb95eb9568547d3897b3267cc5f8b3db3b69f60c6c895a317"
 
-readonly flash_url="https://flash.android.com/build/13578956?target=comet-user&signed"
+readonly flash_url="https://flash.android.com/build/13691446?target=comet-user&signed"
 
-readonly ota_url="https://dl.google.com/dl/android/aosp/comet-ota-bp2a.250705.008-2e87ff3b.zip"
-readonly ota_sha256="2e87ff3b94e23785aed71f0135b0aaa616408d5a7447fc1a8a156cfbca66dbbf"
+readonly ota_url="https://dl.google.com/dl/android/aosp/comet-ota-bp2a.250805.005-d2303753.zip"
+readonly ota_sha256="d230375337f1eed1435781ffce4272877eb45632061431c1c3f96094e189c1d5"
 
 readonly security_patch="unknown"

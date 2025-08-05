@@ -9,21 +9,21 @@ device_repos=(
 
 # Updated semi-manually via pixel/update-any-var.sh
 
-readonly build_id="BP2A.250705.008"
+readonly build_id="BP2A.250805.005"
 
 # Updated automatically via pixel/update-device-vars.sh
 
 readonly prev_aosp_tag="aml_tz6_351400020"
 readonly aosp_tag="unknown"
 
-readonly build_number="13578956"
+readonly build_number="13691446"
 
-readonly image_url="https://dl.google.com/dl/android/aosp/komodo-bp2a.250705.008-factory-696ca9b7.zip"
-readonly image_sha256="696ca9b75993a635d0e4695dc5302ea8fa778b2d7dee87153b97333b8f714036"
+readonly image_url="https://dl.google.com/dl/android/aosp/komodo-bp2a.250805.005-factory-8fec87e8.zip"
+readonly image_sha256="8fec87e863d0f4b0ed4c2d3cf29d8348f19b7409fe68b8e8593226ec6dbef112"
 
-readonly flash_url="https://flash.android.com/build/13578956?target=komodo-user&signed"
+readonly flash_url="https://flash.android.com/build/13691446?target=komodo-user&signed"
 
-readonly ota_url="https://dl.google.com/dl/android/aosp/komodo-ota-bp2a.250705.008-13d920f8.zip"
-readonly ota_sha256="13d920f860eba7f27f8da63c47acd082466408114ef663e996e19c9e3d339fa9"
+readonly ota_url="https://dl.google.com/dl/android/aosp/komodo-ota-bp2a.250805.005-a9b24e2e.zip"
+readonly ota_sha256="a9b24e2e7acb45a27c7c269b86507ccedea886e524d08f43ad573ba5b36123ac"
 
 readonly security_patch="unknown"

@@ -7,3 +7,6 @@ endef
 
 # Include board/platform macros
 include vendor/bliss/build/core/utils.mk
+
+# Include default installed modules
+include vendor/bliss/build/core/default_installed_modules.mk

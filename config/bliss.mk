@@ -1,10 +1,10 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
-#    GameSpace \
+    GameSpace \
 #    LMOFreeform \
 #    LMOFreeformSidebar \
-#    OmniJaws
+    OmniJaws
 
 # Cloned app exemption
 PRODUCT_COPY_FILES += \

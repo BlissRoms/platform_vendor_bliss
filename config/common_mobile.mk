@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
     lineage_charger_animation_vendor
 endif
 
+# Credential storage
+PRODUCT_PACKAGES += \
+    android.software.credentials.prebuilt.xml
+
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true

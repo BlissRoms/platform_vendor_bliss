@@ -14,10 +14,8 @@
 
 $(call inherit-product, device/generic/common/gsi_x86.mk)
 
-include vendor/bliss/build/target/product/bliss_generic_target.mk
+# Allow building otatools
+TARGET_FORCE_OTA_PACKAGE := true
 
-PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
-
-TARGET_NO_KERNEL_OVERRIDE := true
-
-PRODUCT_NAME := bliss_gsi_x86
+# Disable soong defined system image for now
+USE_SOONG_DEFINED_SYSTEM_IMAGE := false

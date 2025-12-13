@@ -1,8 +1,4 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-# Settings
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.settings.large_screen_opt.enabled=true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/large_screen_common.mk)
 
 # Tablet-specific overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/tablet

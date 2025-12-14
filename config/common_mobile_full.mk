@@ -33,7 +33,9 @@ PRODUCT_PACKAGES += \
 # Fonts
 PRODUCT_PACKAGES += \
     fonts_customization.xml \
-    FontGoogleSansFlexOverlay
+    FontGoogleSansFlexOverlay \
+    FontLatoOverlay \
+    FontRubikOverlay
 
 # Include Bliss LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries

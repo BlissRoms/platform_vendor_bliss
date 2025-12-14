@@ -32,13 +32,6 @@ PRODUCT_PACKAGES += \
     unrar \
     zstd
 
-# Fonts
-PRODUCT_PACKAGES += \
-    fonts_customization.xml \
-    FontGoogleSansFlexOverlay \
-    FontLatoOverlay \
-    FontRubikOverlay
-
 # Include Bliss LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay/dictionaries

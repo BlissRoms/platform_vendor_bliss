@@ -8,6 +8,7 @@
 BLISS_VERSION_MAJOR := 20
 BLISS_VERSION_MINOR := 0
 BLISS_CODENAME := Xylobium
+BLISS_PROJECT := BlissRoms
 
 # Bliss Android Version
 BLISS_VERSION_STATIC := 17.0
@@ -40,6 +41,7 @@ endif
 
 # Bliss version properties
 PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bliss.project=$(BLISS_PROJECT) \
     ro.bliss.codename=$(BLISS_CODENAME) \
     ro.bliss.device=$(BLISS_DEVICE) \
     ro.bliss.version=$(BLISS_VERSION) \

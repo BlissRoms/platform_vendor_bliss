@@ -12,26 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#Bootanimation
+# Bootanimation Configuration
 
-TARGET_BOOT_ANIMATION_RES ?= undefined
+BOOTANIMATION_PATH := vendor/bliss/prebuilt/common/bootanimation
 
-ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/720.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),768)
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/768.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),800)
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/1080.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1200)
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/1200.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/1440.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),undefined)
-     $(warning Target bootanimation res is undefined, using generic 1440p bootanimation )
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+# Supported bootanimation resolutions
+SUPPORTED_BOOTANIM_RES := 720 768 800 1080 1200 1440
+
+# Default to 1080p if not specified
+TARGET_BOOT_ANIMATION_RES ?= 1080
+
+# Use resolution-specific bootanimation if supported, otherwise fallback
+ifneq ($(filter $(TARGET_BOOT_ANIMATION_RES),$(SUPPORTED_BOOTANIM_RES)),)
+    PRODUCT_COPY_FILES += $(BOOTANIMATION_PATH)/$(TARGET_BOOT_ANIMATION_RES).zip:system/media/bootanimation.zip
 else
-     $(warning Defined bootanimation res is wrong, using generic 1440p bootanimation )
-     PRODUCT_COPY_FILES += vendor/bliss/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+    $(warning Bootanimation resolution '$(TARGET_BOOT_ANIMATION_RES)' not supported, using default 1080p)
+    PRODUCT_COPY_FILES += $(BOOTANIMATION_PATH)/1080.zip:system/media/bootanimation.zip
 endif

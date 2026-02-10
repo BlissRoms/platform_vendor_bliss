@@ -24,8 +24,8 @@ TARGET_BOOT_ANIMATION_RES ?= 1080
 
 # Use resolution-specific bootanimation if supported, otherwise fallback
 ifneq ($(filter $(TARGET_BOOT_ANIMATION_RES),$(SUPPORTED_BOOTANIM_RES)),)
-    PRODUCT_COPY_FILES += $(BOOTANIMATION_PATH)/$(TARGET_BOOT_ANIMATION_RES).zip:system/media/bootanimation.zip
+    PRODUCT_COPY_FILES += $(BOOTANIMATION_PATH)/$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else
     $(warning Bootanimation resolution '$(TARGET_BOOT_ANIMATION_RES)' not supported, using default 1080p)
-    PRODUCT_COPY_FILES += $(BOOTANIMATION_PATH)/1080.zip:system/media/bootanimation.zip
+    PRODUCT_COPY_FILES += $(BOOTANIMATION_PATH)/1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif

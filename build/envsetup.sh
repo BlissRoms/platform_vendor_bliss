@@ -4,6 +4,9 @@ export LLVM_AOSP_PREBUILTS_VERSION="${CLANG_VERSION}"
 RUST_VERSION=$(grep 'RustDefaultVersion =' ${ANDROID_BUILD_TOP}/build/soong/rust/config/global.go | awk '{print $3}' | awk -F '"' '{print $2}')
 export RUST_AOSP_PREBUILTS_VERSION="${RUST_VERSION}"
 
+# LineageOS kernel manifest branch to sync from
+KERNEL_MANIFEST_BRANCH="lineage-24.0"
+
 # check to see if the supplied product is one we can build
 function check_product()
 {
@@ -1071,7 +1074,7 @@ function build_kernel() {
         echo "Skipping kernel build"
         return
     fi
-    local bliss_version="Bliss-$(_get_build_var_cached PRODUCT_VERSION_MAJOR).$(_get_build_var_cached PRODUCT_VERSION_MINOR)"
+    local bliss_version="${KERNEL_MANIFEST_BRANCH}"
 
     local target_kernel_device="$(_get_build_var_cached TARGET_KERNEL_DEVICE)"
     local target_kernel_dir="${ANDROID_BUILD_TOP}/$(_get_build_var_cached TARGET_KERNEL_DIR)"

@@ -48,8 +48,10 @@ endif
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bliss/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh
+    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
+
+PRODUCT_PACKAGES += \
+    50-bliss.sh
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/addon.d/50-bliss.sh

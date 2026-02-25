@@ -1,6 +1,7 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
+    GameSpace \
     OmniJaws
 
 # Enable Material Design 3 Expressive

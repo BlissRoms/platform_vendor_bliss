@@ -1,6 +1,7 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
+    GameSpace \
     OmniJaws
 
 # Keys

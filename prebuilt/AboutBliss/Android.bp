@@ -1,0 +1,23 @@
+android_app_import {
+    name: "AboutBliss",
+    apk: "AboutBliss.apk",
+
+    privileged: true,
+    certificate: "platform",
+
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+
+    product_specific: true,
+
+    required: ["privapp-permissions-AboutBliss"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-AboutBliss",
+    src: "privapp-permissions-AboutBliss.xml",
+    sub_dir: "permissions",
+    product_specific: true,
+}

@@ -1,3 +1,6 @@
+# Bliss Extras
+$(call inherit-product-if-exists, vendor/extras/extras.mk)
+
 # Bliss Packages
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \

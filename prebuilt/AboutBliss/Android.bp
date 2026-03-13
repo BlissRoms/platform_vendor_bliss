@@ -18,6 +18,7 @@ android_app_import {
 prebuilt_etc {
     name: "privapp-permissions-AboutBliss",
     src: "privapp-permissions-AboutBliss.xml",
+    filename: "privapp-permissions-AboutBliss.xml",
     sub_dir: "permissions",
     product_specific: true,
 }

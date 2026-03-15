@@ -289,5 +289,10 @@ include vendor/bliss/config/version.mk
 
 -include vendor/bliss-priv/keys/keys.mk
 
+# Gapps
+ifeq ($(BLISS_BUILD_VARIANT), gapps)
+$(call inherit-product, vendor/gms/products/gms.mk)
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bliss/config/partner_gms.mk

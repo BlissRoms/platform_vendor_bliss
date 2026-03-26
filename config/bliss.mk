@@ -5,7 +5,6 @@ $(call inherit-product-if-exists, vendor/extras/extras.mk)
 PRODUCT_PACKAGES += \
     BatteryStatsViewer \
     GameSpace \
-    Neuron \
     OmniJaws
 
 # Enable Material Design 3 Expressive

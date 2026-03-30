@@ -294,6 +294,9 @@ include vendor/bliss/config/version.mk
 # Gapps
 ifeq ($(BLISS_BUILD_VARIANT), gapps)
 $(call inherit-product, vendor/gms/products/gms.mk)
+SOONG_CONFIG_NAMESPACES += bliss
+SOONG_CONFIG_bliss += with_gms
+SOONG_CONFIG_bliss_with_gms := true
 endif
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk

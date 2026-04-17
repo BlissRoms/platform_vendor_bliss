@@ -513,4 +513,10 @@
 
     <!-- If AOD can show an ambient version of the wallpaper -->
     <bool name="config_dozeSupportsAodWallpaper">true</bool>
+
+    <!-- Whether to enable glanceable hub features on this device. -->
+    <bool name="config_glanceableHubEnabled">true</bool>
+
+    <!-- Whether glanceable hub is enabled by default. -->
+    <bool name="config_glanceableHubEnabledByDefault">true</bool>
 </resources>

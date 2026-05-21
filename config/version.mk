@@ -6,7 +6,7 @@
 #   BLISS_BUILD_VARIANT - Build variant (vanilla, gapps, etc.) - defaults to vanilla
 
 BLISS_VERSION_MAJOR := 19
-BLISS_VERSION_MINOR := 5
+BLISS_VERSION_MINOR := 6
 BLISS_CODENAME := Waterlily
 BLISS_PROJECT := BlissRoms
 

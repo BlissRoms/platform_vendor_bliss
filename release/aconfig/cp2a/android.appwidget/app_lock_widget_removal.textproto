@@ -1,0 +1,6 @@
+flag_value {
+  package: "android.appwidget"
+  name: "app_lock_widget_removal"
+  state: ENABLED
+  permission: READ_ONLY
+}

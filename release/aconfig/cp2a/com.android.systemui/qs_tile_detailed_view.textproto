@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "qs_tile_detailed_view"
+  state: ENABLED
+  permission: READ_ONLY
+}

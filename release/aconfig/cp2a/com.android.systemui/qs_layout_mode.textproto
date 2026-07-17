@@ -1,6 +1,6 @@
 flag_value {
   package: "com.android.systemui"
-  name: "new_dozing_keyguard_states"
-  state: DISABLED
+  name: "qs_layout_mode"
+  state: ENABLED
   permission: READ_ONLY
 }

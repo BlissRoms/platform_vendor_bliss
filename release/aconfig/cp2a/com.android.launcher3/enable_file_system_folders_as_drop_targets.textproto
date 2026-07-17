@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "enable_file_system_folders_as_drop_targets"
+  state: ENABLED
+  permission: READ_ONLY
+}

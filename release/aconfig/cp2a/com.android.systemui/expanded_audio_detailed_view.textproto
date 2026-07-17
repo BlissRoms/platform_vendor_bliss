@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "expanded_audio_detailed_view"
+  state: ENABLED
+  permission: READ_ONLY
+}

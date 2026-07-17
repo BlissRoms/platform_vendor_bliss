@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.providers.media.flags"
+  name: "enable_trash_and_restore_by_file_path_api"
+  state: ENABLED
+  permission: READ_ONLY
+}

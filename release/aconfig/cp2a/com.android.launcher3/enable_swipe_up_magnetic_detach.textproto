@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "enable_swipe_up_magnetic_detach"
+  state: ENABLED
+  permission: READ_ONLY
+}

@@ -1,0 +1,6 @@
+flag_value {
+  package: "android.security"
+  name: "app_lock_apis"
+  state: ENABLED
+  permission: READ_ONLY
+}

@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "enable_home_screen_files_copy_paste"
+  state: ENABLED
+  permission: READ_ONLY
+}

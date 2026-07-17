@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "enable_widgets_section_in_options_menu"
+  state: ENABLED
+  permission: READ_ONLY
+}

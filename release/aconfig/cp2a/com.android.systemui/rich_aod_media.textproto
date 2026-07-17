@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "rich_aod_media"
+  state: ENABLED
+  permission: READ_ONLY
+}

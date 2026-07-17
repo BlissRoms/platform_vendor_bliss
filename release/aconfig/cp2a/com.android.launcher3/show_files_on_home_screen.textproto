@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "show_files_on_home_screen"
+  state: ENABLED
+  permission: READ_ONLY
+}

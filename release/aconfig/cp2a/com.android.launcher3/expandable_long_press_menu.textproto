@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "expandable_long_press_menu"
+  state: ENABLED
+  permission: READ_ONLY
+}

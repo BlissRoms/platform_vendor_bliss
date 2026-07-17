@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.launcher3"
+  name: "enabled_folders_in_all_apps"
+  state: ENABLED
+  permission: READ_ONLY
+}

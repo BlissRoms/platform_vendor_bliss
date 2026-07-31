@@ -309,7 +309,11 @@ include vendor/bliss/config/version.mk
 
 # Gapps
 ifeq ($(BLISS_BUILD_VARIANT), gapps)
-$(call inherit-product, vendor/gms/products/gms.mk)
+GAPPS_ARCH ?= $(TARGET_ARCH)
+ifeq ($(GAPPS_ARCH),)
+$(error GAPPS_ARCH/TARGET_ARCH not set — define GAPPS_ARCH in your device.mk before inheriting common.mk)
+endif
+$(call inherit-product, vendor/gapps/$(GAPPS_ARCH)/$(GAPPS_ARCH)-vendor.mk)
 SOONG_CONFIG_NAMESPACES += bliss
 SOONG_CONFIG_bliss += with_gms
 SOONG_CONFIG_bliss_with_gms := true

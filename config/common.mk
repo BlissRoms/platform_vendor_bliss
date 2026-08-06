@@ -154,7 +154,7 @@ endif
 
 PRODUCT_PACKAGES += \
     LineageSettingsProvider \
-    Updater
+    BlissUpdater
 
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc

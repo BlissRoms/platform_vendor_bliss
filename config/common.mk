@@ -271,7 +271,7 @@ $(call inherit-product, vendor/bliss/audio/audio.mk)
 
 # SetupWizard
 PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_expressive \
+    setupwizard.theme=glif_v4 \
     setupwizard.feature.day_night_mode_enabled=true
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay/no-rro

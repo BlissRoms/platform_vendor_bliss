@@ -45,8 +45,12 @@
 #                                          Defaults to empty
 #   TARGET_KERNEL_EXT_MODULES          = Optional, the external modules we are
 #                                          building. Defaults to empty
+#   TARGET_KERNEL_UNSAFE_DDK_HEADERS   = Specifies if bazel build should use unsafe headers for DDK
+#                                        modules, this defaults to empty and should only be set to
+#                                        true if no other choice.
 #
 #   USE_CCACHE                         = Enable ccache (global Android flag)
+#   USE_RBE                            = Enable RBE (global Android flag)
 
 include vendor/bliss/build/core/utils.mk
 
@@ -61,6 +65,13 @@ ifeq ($(TARGET_KERNEL_ARCH),)
 else
     KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 endif
+
+ifeq ($(KERNEL_ARCH),arm64)
+KERNEL_GKI_ARCH := aarch64
+else
+KERNEL_GKI_ARCH ?= $(KERNEL_ARCH)
+endif
+KERNEL_GKI_ARCH_DIR_PATH := $(TARGET_KERNEL_SOURCE)/gki/$(KERNEL_GKI_ARCH)
 
 KERNEL_VERSION := $(shell grep -s "^VERSION = " $(TARGET_KERNEL_SOURCE)/Makefile | awk '{ print $$3 }')
 KERNEL_PATCHLEVEL := $(shell grep -s "^PATCHLEVEL = " $(TARGET_KERNEL_SOURCE)/Makefile | awk '{ print $$3 }')
@@ -103,13 +114,42 @@ ifneq ($(USE_CCACHE),)
     endif
 endif
 
-# Clear this first to prevent accidental poisoning from env
+# build/make/core/rbe.mk is only read while dumping the product config, so the
+# rewrapper flags have to be recreated here
+KERNEL_RBE_WRAPPER :=
+ifneq ($(filter-out false,$(USE_REWRAPPER)),)
+    # An out dir outside of the tree can't be a remote input or output
+    ifneq ($(filter $(BUILD_TOP)/%,$(abspath $(OUT_DIR))),)
+        KERNEL_RBE_WRAPPER := $(abspath $(if $(RBE_DIR),$(RBE_DIR),prebuilts/remoteexecution-client/live))/rewrapper
+        KERNEL_RBE_WRAPPER += --labels=type=compile,lang=cpp,compiler=clang
+        KERNEL_RBE_WRAPPER += --env_var_allowlist=PWD
+        KERNEL_RBE_WRAPPER += --exec_strategy=$(if $(RBE_CXX_EXEC_STRATEGY),$(RBE_CXX_EXEC_STRATEGY),local)
+        KERNEL_RBE_WRAPPER += --compare=$(if $(RBE_CXX_COMPARE),$(RBE_CXX_COMPARE),false)
+        ifneq ($(RBE_platform),)
+            KERNEL_RBE_WRAPPER += --platform=$(RBE_platform),Pool=$(if $(RBE_CXX_POOL),$(RBE_CXX_POOL),default)
+        endif
+    endif
+endif
+
+# ccache can't cache anything behind another wrapper, so it gives way to RBE
+ifneq ($(KERNEL_RBE_WRAPPER),)
+    KERNEL_CC_WRAPPER := $(BUILD_TOP)/vendor/bliss/build/tools/kernel_rbe_cc.sh
+else
+    KERNEL_CC_WRAPPER := $(CCACHE_BIN)
+endif
+
+# Clear these first to prevent accidental poisoning from env
+KERNEL_BAZEL_FLAGS :=
 KERNEL_MAKE_FLAGS :=
 
 # Use "safe" default values for kernel build user & host - matches Pixels, helps avoid detection
 KERNEL_MAKE_FLAGS += \
     KBUILD_BUILD_USER="build-user" \
     KBUILD_BUILD_HOST="build-host"
+
+ifeq ($(TARGET_KERNEL_UNSAFE_DDK_HEADERS),true)
+    KERNEL_BAZEL_FLAGS += --//build/kernel/kleaf:allow_ddk_unsafe_headers
+endif
 
 # Add back threads, ninja cuts this to $(getconf _NPROCESSORS_ONLN)/2
 KERNEL_MAKE_FLAGS += -j$(shell getconf _NPROCESSORS_ONLN)
@@ -126,7 +166,7 @@ endif
 KERNEL_MAKE_FLAGS += HOSTCFLAGS="$(KERNEL_HOST_C_LD_FLAGS_SYSROOT) -I$(BUILD_TOP)/prebuilts/kernel-build-tools/linux-x86/include"
 KERNEL_MAKE_FLAGS += HOSTLDFLAGS="$(KERNEL_HOST_C_LD_FLAGS_SYSROOT) -Wl,-rpath,$(BUILD_TOP)/prebuilts/kernel-build-tools/linux-x86/lib64 -L $(BUILD_TOP)/prebuilts/kernel-build-tools/linux-x86/lib64 -fuse-ld=lld --rtlib=compiler-rt"
 
-TOOLS_PATH_OVERRIDE += PATH=$(BUILD_TOP)/prebuilts/tools-lineage/$(HOST_PREBUILT_TAG)/bin:$(TARGET_KERNEL_CLANG_PATH)/bin:$(BUILD_TOP)/prebuilts/rust-toolchain/$(HOST_PREBUILT_TAG)/$(TARGET_KERNEL_RUST_VERSION)/bin:$(BUILD_TOP)/prebuilts/clang-tools/$(HOST_PREBUILT_TAG)/bin:$$PATH
+TOOLS_PATH_OVERRIDE += PATH=$(BUILD_TOP)/prebuilts/tools-lineage/$(HOST_PREBUILT_TAG)/bin:$(BUILD_TOP)/prebuilts/build-tools/$(HOST_PREBUILT_TAG)/bin:$(TARGET_KERNEL_CLANG_PATH)/bin:$(BUILD_TOP)/prebuilts/rust-toolchain/$(HOST_PREBUILT_TAG)/$(TARGET_KERNEL_RUST_VERSION)/bin:$(BUILD_TOP)/prebuilts/clang-tools/$(HOST_PREBUILT_TAG)/bin:$$PATH
 
 # Set DTBO image locations so the build system knows to build them
 ifneq (,$(filter true, $(TARGET_NEEDS_DTBOIMAGE) $(BOARD_KERNEL_SEPARATED_DTBO)))
@@ -162,6 +202,16 @@ KERNEL_MAKE_FLAGS += PAHOLE=$(BUILD_TOP)/prebuilts/kernel-build-tools/linux-x86/
 
 # Tell rust bindgen which libclang to parse the kernel headers with
 KERNEL_MAKE_FLAGS += LIBCLANG_PATH=$(TARGET_KERNEL_LIBCLANG_PATH)
+
+# AutoFDO
+# Ideally, we also want to detect 'CONFIG_AUTOFDO_CLANG=y' from kernel configs...
+# Note: The path `toolchain/pgo-profiles/kernel` contains AutoFDO profiles too
+ifneq ($(TARGET_KERNEL_CLANG_AUTOFDO_PROFILE),none)
+    TARGET_KERNEL_CLANG_AUTOFDO_PROFILE ?= $(KERNEL_GKI_ARCH_DIR_PATH)/afdo/kernel.afdo
+    ifneq ($(wildcard $(TARGET_KERNEL_CLANG_AUTOFDO_PROFILE)),)
+        KERNEL_MAKE_FLAGS += CLANG_AUTOFDO_PROFILE=$(BUILD_TOP)/$(TARGET_KERNEL_CLANG_AUTOFDO_PROFILE)
+    endif
+endif
 
 # Set the out dir for the kernel's O= arg
 # This needs to be an absolute path, so only set this if the standard out dir isn't used

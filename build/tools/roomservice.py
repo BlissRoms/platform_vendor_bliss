@@ -27,6 +27,9 @@ import urllib.parse
 import urllib.request
 from xml.etree import ElementTree
 
+GITHUB_ORG = 'BlissRoms-Devices'
+MANIFEST_REMOTE = 'BlissRoms-Devices'
+
 dryrun = os.getenv('ROOMSERVICE_DRYRUN') == 'true'
 if dryrun:
     print('Dry run roomservice, no change will be made.')
@@ -45,17 +48,20 @@ except IndexError:
 
 if not depsonly:
     print(
-        f'Device {device} not found. Attempting to retrieve device repository from BlissRoms-Devices Github (http://github.com/BlissRoms-Devices).'
+        f'Device {device} not found. Attempting to retrieve device repository from {GITHUB_ORG} Github (https://github.com/{GITHUB_ORG}).'
     )
 
 repositories = []
 
 if not depsonly:
+    query = urllib.parse.quote(f'{device} in:name org:{GITHUB_ORG} fork:true')
     githubreq = urllib.request.Request(
-        'https://raw.githubusercontent.com/BlissRoms/mirror/main/default.xml'
+        f'https://api.github.com/search/repositories?q={query}&per_page=100'
     )
+    if token := os.getenv('GITHUB_TOKEN'):
+        githubreq.add_header('Authorization', f'Bearer {token}')
     try:
-        result = ElementTree.fromstring(
+        result = json.loads(
             urllib.request.urlopen(githubreq, timeout=10).read().decode()
         )
     except urllib.error.URLError:
@@ -64,8 +70,8 @@ if not depsonly:
     except ValueError:
         print('Failed to parse return data from GitHub')
         sys.exit(1)
-    for res in result.findall('.//project'):
-        repositories.append(res.attrib['name'][10:])
+    for res in result.get('items', []):
+        repositories.append(res['name'])
 
 local_manifests = r'.repo/local_manifests'
 if not os.path.exists(local_manifests):
@@ -121,6 +127,28 @@ def get_default_revision():
     d = m.findall('default')[0]
     r = d.get('revision')
     return r.replace('refs/heads/', '').replace('refs/tags/', '')
+
+
+def is_external_repo(repo_name):
+    # 'Org/repo' names point outside BlissRoms-Devices (e.g. LineageOS/...)
+    return '/' in repo_name
+
+
+def get_repo_full_name(repo_name):
+    if is_external_repo(repo_name):
+        return repo_name
+    return f'{GITHUB_ORG}/{repo_name}'
+
+
+def get_bliss_revision():
+    try:
+        m = ElementTree.parse('.repo/manifests/snippets/bliss.xml')
+        for remote in m.findall('remote'):
+            if remote.get('name') == 'BlissRoms' and remote.get('revision'):
+                return remote.get('revision').replace('refs/heads/', '')
+    except Exception:
+        pass
+    return get_default_revision()
 
 
 def get_from_manifest(devicename):
@@ -211,15 +239,17 @@ def add_to_manifest(dependencies):
             repo_revision = dependency['branch']
             print(f'Checking if {repo_target} is fetched from {repo_name}')
             if is_in_manifest('project', 'path', repo_target):
-                print(f'BlissRoms/{repo_name} already fetched to {repo_target}')
+                print(f'{get_repo_full_name(repo_name)} already fetched to {repo_target}')
                 continue
 
             project = ElementTree.Element(
                 'project',
                 attrib={
                     'path': repo_target,
-                    'remote': 'github',
-                    'name': f'LineageOS/{repo_name}',
+                    'remote': 'github'
+                    if is_external_repo(repo_name)
+                    else MANIFEST_REMOTE,
+                    'name': repo_name,
                     'revision': repo_revision,
                 },
             )
@@ -280,7 +310,7 @@ def fetch_dependencies(repo_path):
                     fetch_list.append(dependency)
                     syncable_repos.append(dependency['target_path'])
                     if 'branch' not in dependency:
-                        if dependency.get('remote', 'github') == 'github':
+                        if dependency.get('remote', MANIFEST_REMOTE) == MANIFEST_REMOTE:
                             dependency['branch'] = (
                                 get_default_or_fallback_revision(
                                     dependency['repository']
@@ -314,7 +344,10 @@ def fetch_dependencies(repo_path):
 
 
 def get_default_or_fallback_revision(repo_name):
-    default_revision = get_default_revision()
+    if is_external_repo(repo_name):
+        default_revision = get_default_revision()
+    else:
+        default_revision = get_bliss_revision()
     print(f'Default revision: {default_revision}')
     print('Checking branch info')
 
@@ -324,7 +357,7 @@ def get_default_or_fallback_revision(repo_name):
                 'git',
                 'ls-remote',
                 '-h',
-                'https://:@github.com/BlissRoms/' + repo_name,
+                f'https://:@github.com/{get_repo_full_name(repo_name)}',
             ],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -399,5 +432,5 @@ else:
             sys.exit()
 
 print(
-    f'Repository for {device} not found in the BlissRoms-Devices Github repository list. If this is in error, you may need to manually add it to your local_manifests/roomservice.xml.'
+    f'Repository for {device} not found in the {GITHUB_ORG} Github repository list. If this is in error, you may need to manually add it to your local_manifests/roomservice.xml.'
 )

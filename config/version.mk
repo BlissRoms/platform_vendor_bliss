@@ -6,7 +6,7 @@
 #   BLISS_BUILD_VARIANT - Build variant (vanilla, gapps, etc.) - defaults to vanilla
 
 BLISS_VERSION_MAJOR := 20
-BLISS_VERSION_MINOR := 0
+BLISS_VERSION_MINOR := 1
 BLISS_CODENAME := Xylobium
 BLISS_PROJECT := BlissRoms
 

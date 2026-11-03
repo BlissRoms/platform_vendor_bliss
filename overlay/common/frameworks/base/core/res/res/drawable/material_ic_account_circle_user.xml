@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The BlissRoms Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M63.81,0C68.27,3.03 91.03,20.61 63.81,37.11C36.58,20.61 59.34,3.03 63.81,0Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M45.02,44.57C52.49,13.84 23.83,17.34 18.51,18.32C17.52,23.59 13.98,51.95 45.02,44.57Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M37.49,63.81C20.82,36.86 3.06,59.39 0,63.81C3.06,68.23 20.82,90.76 37.49,63.81Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M90.51,63.81C107.18,36.86 124.94,59.39 128,63.81C124.94,68.23 107.18,90.76 90.51,63.81Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M109.49,18.32C104.17,17.34 75.51,13.84 82.98,44.57C114.02,51.95 110.48,23.59 109.49,18.32Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M19.33,109.52C24.64,110.51 53.15,114.16 45.68,83.43C14.64,76.05 18.17,104.41 19.17,109.68L19.33,109.52Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M64.46,128C68.93,124.97 91.69,107.39 64.46,90.89C37.24,107.39 60,124.97 64.46,128Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M83.63,83.43C76.17,114.16 104.83,110.66 110.15,109.68C111.14,104.41 114.68,76.05 83.63,83.43Z" />
+    <path
+        android:fillColor="@*android:color/materialColorPrimary"
+        android:pathData="M68.63,52.27L63.9,45.98L59.18,52.27L51.35,51.13L52.5,58.88L46.14,63.56L52.5,68.23L51.35,75.99L59.18,74.85L63.9,81.14L68.63,74.85L76.46,75.99L75.31,68.23L81.66,63.56L75.31,58.88L76.46,51.13L68.63,52.27Z" />
+</vector>

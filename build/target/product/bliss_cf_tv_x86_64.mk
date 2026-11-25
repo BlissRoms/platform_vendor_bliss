@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 
-$(call inherit-product, device/google/cuttlefish/vsoc_x86_64/tv/aosp_cf.mk)
+$(call inherit-product, device/google/cuttlefish/vsoc_x86_64_only/tv/aosp_cf.mk)
 
 include vendor/bliss/build/target/product/bliss_generic_tv_target.mk
 
